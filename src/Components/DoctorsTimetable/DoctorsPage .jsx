@@ -1,314 +1,265 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import img1 from '../../assets/Vector.jpg';
-import {
-  ChevronRight,
-  CheckCircle2,
-  Calendar,
-  ChevronDown,
-} from "lucide-react";
-
+import img1 from "../../assets/Vector.jpg"; // Assuming this path is correct
+import { ChevronRight, CheckCircle2, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 const DoctorsPage = () => {
-  const [selectedClinic, setSelectedClinic] = useState("all");
-  // Sample schedule data for the week
+  // Renamed the state variable for clarity and correctness
+  const [selectedSpecialty, setSelectedSpecialty] = useState("all");
+
+  // Sample schedule data for the week (kept as is)
   const scheduleData = {
-    sunday: [
-      {
-        time: "08:00",
-        specialty: "Neurology",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Muldoone. R",
-      },
-      {
-        time: "09:00",
-        specialty: "Maternity",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Muldoone. R",
-      },
-      {
-        time: "10:00",
-        specialty: "Neurology",
-        type: "Consultation",
-        duration: "10:00-11:00",
-        doctor: "Dr. Muldoone. R",
-      },
-      {
-        time: "11:00",
-        specialty: "Physiotherapy",
-        type: "Consultation",
-        duration: "11:00-12:00",
-        doctor: "Dr. Muldoone. R",
-      },
-      {
-        time: "12:00",
-        specialty: "Neurology",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Muldoone. R",
-      },
-      {
-        time: "13:00",
-        specialty: "Oncology",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Muldoone. R",
-      },
-    ],
     monday: [
       {
-        time: "08:00",
-        specialty: "Cardiology",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Brain.M",
+        time: "10:00-11:00",
+        specialty: "Cardiologist",
+        doctor: "Dr. Ankesh Aggarwal",
       },
       {
-        time: "09:00",
-        specialty: "Oncology",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Brain.M",
+        time: "19:30-20:30",
+        specialty: "Gynecologist",
+        doctor: "Gynecologist",
       },
       {
-        time: "10:00",
-        specialty: "Cardiology",
-        type: "Consultation",
-        duration: "10:00-11:00",
-        doctor: "Dr. Brain.M",
+        time: "10:00-12:00",
+        specialty: "ENT Consultant",
+        doctor: "ENT Consultant",
       },
       {
-        time: "11:00",
-        specialty: "Cardiology",
-        type: "Consultation",
-        duration: "11:00-12:00",
-        doctor: "Dr. Brain.M",
+        time: "10:00-12:00",
+        specialty: "Pediatrician",
+        doctor: "Dr. Kunal",
       },
       {
-        time: "12:00",
-        specialty: "Gynaecology",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Brain.M",
+        time: "On Appointment",
+        specialty: "Surgeon",
+        doctor: "Dr. Sunil Jain",
       },
       {
-        time: "13:00",
-        specialty: "Audiology",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Brain.M",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
+      },
+      {
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
     tuesday: [
       {
-        time: "08:00",
-        specialty: "Pathology",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Andaloro",
+        time: "10:00-11:00",
+        specialty: "Cardiologist",
+        doctor: "Dr. Ankesh Aggarwal",
       },
       {
-        time: "09:00",
-        specialty: "Pathology",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Andaloro",
+        time: "10:30-11:30",
+        specialty: "Orthopedic",
+        doctor: "Dr. Sameer",
       },
       {
-        time: "10:00",
-        specialty: "Pathology",
-        type: "Consultation",
-        duration: "10:00-11:00",
-        doctor: "Dr. Andaloro",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
       },
       {
-        time: "11:00",
-        specialty: "Maternity",
-        type: "Consultation",
-        duration: "11:00-12:00",
-        doctor: "Dr. Andaloro",
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
       },
       {
-        time: "12:00",
-        specialty: "Oncology",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Andaloro",
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
       },
       {
-        time: "13:00",
-        specialty: "Pathology",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Andaloro",
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
     wednesday: [
       {
-        time: "08:00",
-        specialty: "Laboratory",
-        type: "Consultation",
-        duration: "08:00-10:00",
-        doctor: "Dr. Markus.S",
+        time: "19:00-20:00",
+        specialty: "Psychiatrist/Neurologist",
+        doctor: "Dr. J Kumar",
       },
       {
-        time: "10:00",
-        specialty: "Gynaecology",
-        type: "Consultation",
-        duration: "10:00-12:00",
-        doctor: "Dr. Markus.S",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
       },
       {
-        time: "12:00",
-        specialty: "Pediatric",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Markus.S",
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
       },
       {
-        time: "13:00",
-        specialty: "Physiotherapy",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Markus.S",
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
     thursday: [
       {
-        time: "08:00",
-        specialty: "Pediatric",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Alex.K",
+        time: "10:00-12:00",
+        specialty: "ENT Consultant",
+        doctor: "ENT Consultant",
       },
       {
-        time: "09:00",
-        specialty: "Audiology",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Alex.K",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
       },
       {
-        time: "10:00",
-        specialty: "Maternity",
-        type: "Consultation",
-        duration: "10:00-11:00",
-        doctor: "Dr. Alex.K",
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
       },
       {
-        time: "11:00",
-        specialty: "Cardiac",
-        type: "Consultation",
-        duration: "11:00-12:00",
-        doctor: "Dr. Alex.K",
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
       },
       {
-        time: "12:00",
-        specialty: "Physiotherapy",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Alex.K",
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
       },
       {
-        time: "13:00",
-        specialty: "Maternity",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Alex.K",
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
     friday: [
       {
-        time: "08:00",
-        specialty: "Physiotherapy",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Markus.S",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
       },
       {
-        time: "09:00",
-        specialty: "Cardiac",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Markus.S",
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
       },
       {
-        time: "10:00",
-        specialty: "Oncology",
-        type: "Consultation",
-        duration: "10:00-12:00",
-        doctor: "Dr. Markus.S",
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
       },
       {
-        time: "12:00",
-        specialty: "Laboratory",
-        type: "Consultation",
-        duration: "12:00-14:00",
-        doctor: "Dr. Markus.S",
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
     saturday: [
       {
-        time: "08:00",
-        specialty: "Urology",
-        type: "Consultation",
-        duration: "08:00-09:00",
-        doctor: "Dr. Darien.G",
+        time: "19:00-20:00",
+        specialty: "Psychiatrist/Neurologist",
+        doctor: "Dr. J Kumar",
       },
       {
-        time: "09:00",
-        specialty: "Urology",
-        type: "Consultation",
-        duration: "09:00-10:00",
-        doctor: "Dr. Darien.G",
+        time: "10:30-11:30",
+        specialty: "Orthopedic",
+        doctor: "Dr. Sameer",
       },
       {
-        time: "10:00",
-        specialty: "Urology",
-        type: "Consultation",
-        duration: "10:00-11:00",
-        doctor: "Dr. Darien.G",
+        time: "On Appointment",
+        specialty: "Medicine Specialist",
+        doctor: "Dr. Rohit Jain",
       },
       {
-        time: "11:00",
-        specialty: "Urology",
-        type: "Consultation",
-        duration: "11:00-12:00",
-        doctor: "Dr. Darien.G",
+        time: "11:00-13:00",
+        specialty: "General Physician",
+        doctor: "Dr. Bhawana Chaudhary",
       },
       {
-        time: "12:00",
-        specialty: "Urology",
-        type: "Consultation",
-        duration: "12:00-13:00",
-        doctor: "Dr. Darien.G",
+        time: "On Appointment",
+        specialty: "Plastic Surgeon",
+        doctor: "Dr. Bharat",
       },
       {
-        time: "13:00",
-        specialty: "Gynaecology",
-        type: "Consultation",
-        duration: "13:00-14:00",
-        doctor: "Dr. Darien.G",
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Sandeep Gupta",
+      },
+      {
+        time: "On Appointment",
+        specialty: "Consultant",
+        doctor: "Dr. Ajay Mittal",
       },
     ],
+
+    sunday: [],
   };
 
-  const timeSlots = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00"];
   const days = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ];
+
+  // Logic to dynamically extract all unique specialties from scheduleData
+  const allSpecialties = useMemo(() => {
+    const specialtiesSet = new Set();
+    Object.values(scheduleData).forEach((daySchedule) => {
+      daySchedule.forEach((item) => {
+        specialtiesSet.add(item.specialty);
+      });
+    });
+    return Array.from(specialtiesSet).sort();
+  }, [scheduleData]);
 
   const certificates = [
     {
@@ -340,57 +291,75 @@ const DoctorsPage = () => {
   const doctors = [
     {
       id: 1,
-      name: "Richard Muldoone",
+      name: "Dr. Ankesh Aggarwal",
       specialty: "Cardiology Specialist",
-      image:
-        img1,
+      image: img1,
       description:
-        "Muldoone obtained his undergraduate degree in Biomedical Engineering at Tulane University prior to attending St George University School of Medicine.",
+        "Dr. Ankesh Aggarwal is a senior cardiology specialist with extensive experience in diagnosing and managing heart-related conditions.",
     },
     {
       id: 2,
-      name: "Michael Brian",
-      specialty: "Dermatologists",
-      image:
-        img1,
+      name: "Dr. Rohit Jain",
+      specialty: "Medicine Specialist",
+      image: img1,
       description:
-        "Brian specializes in treating skin, hair, nail, and mucous membrane. He also address cosmetic issues, helping to revitalize the skin, hair, and...",
+        "Dr. Rohit Jain is a medicine specialist available on appointment, treating a wide range of acute and chronic medical conditions.",
     },
     {
       id: 3,
-      name: "Maria Andaloro",
-      specialty: "Pediatrician",
-      image:
-        img1,
+      name: "Dr. Bhawana Chaudhary",
+      specialty: "General Physician",
+      image: img1,
       description:
-        "Andaloro graduated from medical school and completed 3 years residency program in pediatrics. She passed by the American Board of Pediatrics.",
+        "Dr. Bhawana Chaudhary is a general physician providing comprehensive primary care and preventive health services.",
     },
     {
-      id: 1,
-      name: "Richard Muldoone",
-      specialty: "Cardiology Specialist",
-      image:
-        img1,
+      id: 4,
+      name: "Dr. Sameer",
+      specialty: "Orthopedic Specialist",
+      image: img1,
       description:
-        "Muldoone obtained his undergraduate degree in Biomedical Engineering at Tulane University prior to attending St George University School of Medicine.",
+        "Dr. Sameer specializes in orthopedic care, treating bone, joint, and musculoskeletal disorders.",
     },
     {
-      id: 2,
-      name: "Michael Brian",
-      specialty: "Dermatologists",
-      image:
-       img1,
+      id: 5,
+      name: "Dr. J Kumar",
+      specialty: "Psychiatrist / Neurologist",
+      image: img1,
       description:
-        "Brian specializes in treating skin, hair, nail, and mucous membrane. He also address cosmetic issues, helping to revitalize the skin, hair, and...",
+        "Dr. J Kumar provides expert consultation in psychiatry and neurology, focusing on mental health and nervous system disorders.",
     },
     {
-      id: 3,
-      name: "Maria Andaloro",
-      specialty: "Pediatrician",
-      image:
-       img1,
+      id: 6,
+      name: "Dr. Sunil Jain",
+      specialty: "Surgeon",
+      image: img1,
       description:
-        "Andaloro graduated from medical school and completed 3 years residency program in pediatrics. She passed by the American Board of Pediatrics.",
+        "Dr. Sunil Jain is a senior surgeon available on appointment for surgical consultations and procedures.",
+    },
+    {
+      id: 7,
+      name: "Dr. Bharat",
+      specialty: "Orthopedic Surgeon",
+      image: img1,
+      description:
+        "Dr. Bharat is a orthopedic surgeon specializing in reconstructive and cosmetic surgical procedures.",
+    },
+    {
+      id: 8,
+      name: "Dr. Sandeep Gupta",
+      specialty: "surgeon",
+      image: img1,
+      description:
+        "Dr. Sandeep Gupta is a consultant doctor available on appointment for expert medical opinions.",
+    },
+    {
+      id: 9,
+      name: "Dr. Ajay Mittal",
+      specialty: "Suregon",
+      image: img1,
+      description:
+        "Dr. Ajay Mittal provides consultation services across multiple medical domains and is available on appointment.",
     },
   ];
 
@@ -405,6 +374,7 @@ const DoctorsPage = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        {/*  */}
 
         <div className="relative h-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center h-full">
@@ -442,9 +412,11 @@ const DoctorsPage = () => {
                   timetable to make an appointment.
                 </p>
               </div>
-              <button className="w-full border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#4A5F8F] transition-all duration-300">
-                View Timetable
-              </button>
+              <Link to="/Doctors-Timetable">
+                <button className="w-full border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#4A5F8F] transition-all duration-300">
+                  View Timetable
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -551,6 +523,7 @@ const DoctorsPage = () => {
       <section className="relative w-full bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/*  */}
             {doctors.map((doctor) => (
               <div
                 key={doctor.id}
@@ -559,6 +532,7 @@ const DoctorsPage = () => {
                 {/* Doctor Image */}
                 <div className="relative h-96 overflow-hidden">
                   <img
+                    // Note: img1 is a single imported image, so all doctors will have the same image.
                     src={doctor.image}
                     alt={doctor.name}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -588,91 +562,90 @@ const DoctorsPage = () => {
       </section>
 
       {/* Timetable Section */}
-      <section className="relative w-full bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          {/* Filter Dropdown */}
-          <div className="mb-8">
-            <div className="relative w-64">
-              <select
-                value={selectedClinic}
-                onChange={(e) => setSelectedClinic(e.target.value)}
-                className="w-full px-6 py-4 bg-white border-2 border-gray-200 rounded-lg text-gray-700 font-semibold focus:outline-none focus:ring-2 focus:ring-[#13C5DD] appearance-none cursor-pointer"
-              >
-                <option value="all">All Clinics</option>
-                <option value="neurology">Neurology</option>
-                <option value="cardiology">Cardiology</option>
-                <option value="maternity">Maternity</option>
-                <option value="pediatric">Pediatric</option>
-                <option value="oncology">Oncology</option>
-              </select>
-              <ChevronDown
-                size={20}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
-              />
-            </div>
+      <div className="bg-gray-50 min-h-screen w-full p-4 md:p-10">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-[#283B6A] mb-12">
+            Weekly Schedule & Timetable
+          </h2>
+          {/* Filter */}
+          <div className="max-w-md mx-auto mb-10">
+            <select
+              value={selectedSpecialty}
+              onChange={(e) => setSelectedSpecialty(e.target.value)}
+              className="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-[#13C5DD] focus:ring-2 focus:ring-[#13C5DD] font-semibold appearance-none"
+            >
+              <option value="all">All Specialties</option>
+              {allSpecialties.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+            {/*  */}
           </div>
 
-          {/* Schedule Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <th className="bg-gray-100 p-4 text-left font-semibold text-gray-600 border border-gray-200"></th>
-                  {days.map((day) => (
-                    <th
-                      key={day}
-                      className="bg-[#E8F5F7] p-4 text-center font-semibold text-gray-700 border border-gray-200 min-w-[160px]"
-                    >
-                      {day}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {timeSlots.map((time) => (
-                  <tr key={time}>
-                    <td className="bg-gray-50 p-4 text-center font-semibold text-gray-600 border border-gray-200">
-                      {time}
-                    </td>
-                    {days.map((day) => {
-                      const dayKey = day.toLowerCase();
-                      const appointment = scheduleData[dayKey]?.find(
-                        (appt) => appt.time === time
-                      );
+          {/* Schedule By Day */}
+          <div className="max-w-5xl mx-auto space-y-10">
+            {days.map((day) => {
+              const dayData = scheduleData[day.toLowerCase()]?.filter(
+                (item) =>
+                  selectedSpecialty === "all" ||
+                  item.specialty === selectedSpecialty
+              );
 
-                      return (
-                        <td key={day} className="border border-gray-200 p-0">
-                          {appointment ? (
-                            <div className="bg-[#4A5F8F] text-white p-4 h-full hover:bg-[#3d4f7a] transition-colors cursor-pointer">
-                              <div className="font-bold text-base mb-1">
-                                {appointment.specialty}
-                              </div>
-                              <div className="text-xs opacity-90 mb-2">
-                                {appointment.type}
-                              </div>
-                              <div className="text-xs font-semibold mb-1">
-                                {appointment.duration}
-                              </div>
-                              <div className="text-xs opacity-80">
-                                {appointment.doctor}
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="p-4 h-full bg-white"></div>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              // Only render the day if there is data after filtering
+              if (!dayData || dayData.length === 0) return null;
+
+              return (
+                <section
+                  key={day}
+                  className="bg-white rounded-xl shadow-lg p-6"
+                >
+                  <h2 className="text-2xl font-semibold mb-4 text-[#283B6A] border-b pb-2 border-gray-100">
+                    {day}
+                  </h2>
+
+                  <div className="flex flex-col gap-4">
+                    {dayData.map(({ time, specialty, doctor }, idx) => (
+                      <div
+                        key={idx}
+                        className="flex flex-col md:flex-row md:items-center md:justify-between bg-[#4A5F8F] text-white rounded-lg p-4 hover:bg-[#334155] transition text-sm md:text-base"
+                      >
+                        <div className="md:w-1/3 font-bold mb-1 md:mb-0">
+                          {doctor}
+                        </div>
+                        <div className="md:w-1/3 text-[#13C5DD] font-medium mb-1 md:mb-0">
+                          {specialty}
+                        </div>
+                        <div className="md:w-1/3 text-right font-mono text-white/90">
+                          {time}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+            {/* Display a message if no data matches the filter */}
+            {days.every(
+              (day) =>
+                scheduleData[day.toLowerCase()]?.filter(
+                  (item) =>
+                    selectedSpecialty === "all" ||
+                    item.specialty === selectedSpecialty
+                ).length === 0
+            ) && (
+              <p className="text-center text-gray-500 text-lg py-10">
+                No doctors found for the selected specialty on any day.
+              </p>
+            )}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Custom Styles */}
       <style jsx>{`
+        /* ... your existing custom styles ... */
         :global(.cert-pagination .swiper-pagination-bullet) {
           width: 10px;
           height: 10px;

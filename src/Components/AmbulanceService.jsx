@@ -484,23 +484,23 @@ const AmbulanceService = () => {
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+919355490701"
+              href="tel:+919210399470"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ backgroundColor: COLORS.warm, color: "white" }}
             >
               <Phone size={20} />
-              Call +91 9355490701
+              Call +919210399470
             </motion.a>
             <motion.a
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+919717066234"
+              href="tel:011-49785874"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl bg-white"
               style={{ color: COLORS.deep }}
             >
               <Phone size={20} />
-              Call +91 9717066234
+              Call 011-49785874
             </motion.a>
           </motion.div>
         </motion.div>

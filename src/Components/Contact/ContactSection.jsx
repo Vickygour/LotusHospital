@@ -9,6 +9,7 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   const [expandedFaq, setExpandedFaq] = useState(3); // FAQ state
@@ -23,21 +24,21 @@ const ContactSection = () => {
   const faqs = [
     {
       id: 1,
-      question: "Which Plan Is Right For Me?",
+      question: "How can I book an appointment at Lotus Hospital?",
       answer:
-        "Our staff strives to make each interaction with patients clear, concise, and inviting. Support the important work of Medisch Hospital by making a much-needed donation today. We will work with you to develop individualised care plans, including management of chronic diseases.",
+        "You can book an appointment by filling out the enquiry form on our website, calling our reception desk, or visiting Lotus Hospital in person. Our staff will assist you in scheduling an appointment with the appropriate doctor or department.",
     },
     {
       id: 2,
-      question: "Do I Have To Commit To A Contract?",
+      question: "Do I need an appointment before visiting the hospital?",
       answer:
-        "No long-term contracts required. You can choose monthly or annual plans based on your needs. Cancel anytime with 30 days notice. We believe in providing flexible healthcare solutions that work for your lifestyle.",
+        "While walk-in patients are accepted in certain cases, we recommend booking an appointment in advance to reduce waiting time and ensure the availability of the concerned doctor, especially for specialist consultations.",
     },
     {
       id: 3,
-      question: "What Payment Methods Are Available?",
+      question: "What should I bring for my first visit?",
       answer:
-        "Our staff strives to make each interaction with patients clear, concise, and inviting. Support the important work of Medisch Hospital by making a much-needed donation today. We will work with you to develop individualised care plans, including management of chronic diseases.",
+        "For your first visit, please bring a valid ID, any previous medical reports, prescriptions, test results, and your health insurance details (if applicable). This helps our doctors understand your medical history better.",
     },
   ];
 
@@ -83,12 +84,13 @@ const ContactSection = () => {
             {/* Left - Contact Form */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-[#283B6A] mb-4">
-                How Can We Help?
+                How Can Lotus Hospital Help You?
               </h2>
               <p className="text-gray-600 text-base mb-8">
-                Please feel welcome to contact our friendly reception staff with
-                any general or medical enquiry. Our doctors will receive or
-                return calls.
+                You are welcome to contact Lotus Hospital for appointments,
+                medical enquiries, or general assistance. Our reception team
+                will ensure your query is addressed promptly by the concerned
+                department or doctor.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -97,19 +99,19 @@ const ContactSection = () => {
                   <input
                     type="text"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Patient Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-[#E8F5F7] border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] transition-all"
+                    className="w-full px-6 py-4 bg-[#E8F5F7] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD]"
                     required
                   />
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-[#E8F5F7] border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] transition-all"
+                    className="w-full px-6 py-4 bg-[#E8F5F7] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD]"
                     required
                   />
                 </div>
@@ -121,14 +123,15 @@ const ContactSection = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 bg-[#E8F5F7] border-none rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] appearance-none cursor-pointer transition-all"
+                      className="w-full px-6 py-4 bg-[#E8F5F7] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] appearance-none"
                       required
                     >
-                      <option value="">Subject</option>
-                      <option value="general">General Inquiry</option>
+                      <option value="">Select Inquiry Type</option>
                       <option value="appointment">Book Appointment</option>
-                      <option value="emergency">Emergency</option>
-                      <option value="feedback">Feedback</option>
+                      <option value="general">General Enquiry</option>
+                      <option value="report">Medical Reports</option>
+                      <option value="emergency">Emergency Assistance</option>
+                      <option value="feedback">Feedback / Suggestions</option>
                     </select>
                     <ChevronDown
                       size={20}
@@ -138,36 +141,36 @@ const ContactSection = () => {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Phone"
+                    placeholder="Contact Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 bg-[#E8F5F7] border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] transition-all"
+                    className="w-full px-6 py-4 bg-[#E8F5F7] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD]"
                     required
                   />
                 </div>
 
-                {/* Row 3: Message */}
+                {/* Message */}
                 <textarea
                   name="message"
-                  placeholder="Message"
+                  placeholder="Please describe your concern or requirement"
                   value={formData.message}
                   onChange={handleChange}
                   rows="6"
-                  className="w-full px-6 py-4 bg-[#E8F5F7] border-none rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] resize-none transition-all"
+                  className="w-full px-6 py-4 bg-[#E8F5F7] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#13C5DD] resize-none"
                   required
                 ></textarea>
 
-                {/* Submit Button */}
+                {/* Submit */}
                 <button
                   type="submit"
                   className="w-full bg-[#283B6A] hover:bg-[#1f2e52] text-white py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg"
                 >
-                  Submit Request
+                  Submit Enquiry
                 </button>
               </form>
             </div>
 
-            {/* Right - Info Card with Background Image */}
+            {/* Right - Info Card */}
             <div
               className="relative rounded-2xl overflow-hidden shadow-2xl"
               style={{
@@ -178,24 +181,27 @@ const ContactSection = () => {
               }}
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#13C5DD]/95 to-[#0FA8C0]/90"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#283B6A]/95 to-[#13C5DD]/90"></div>
 
               {/* Content */}
               <div className="relative h-full flex flex-col justify-between p-10 md:p-12 min-h-[600px]">
                 <div>
                   <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-                    Delivering The Best Care For Family
+                    Trusted Care for You & Your Family
                   </h3>
-                  <p className="text-white text-lg italic leading-relaxed mb-8">
-                    With modern, busy lifestyles, it's easy to neglect your
-                    health as you put everyone needs first. So, we're here for
-                    your family.
+                  <p className="text-white text-lg leading-relaxed mb-8">
+                    At Lotus Hospital, we are committed to providing safe,
+                    reliable, and compassionate healthcare using modern medical
+                    practices and experienced specialists — because your
+                    family’s health matters.
                   </p>
                 </div>
 
-                <button className="bg-white text-[#283B6A] px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg self-start">
-                  Find A Doctor
-                </button>
+                <Link to="/Contact">
+                  <button className="bg-white text-[#283B6A] px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg self-start">
+                    Book an Appointment
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -237,20 +243,24 @@ const ContactSection = () => {
             </div>
 
             {/* Right Side - Content & FAQ */}
+            {/* Right Side - Content & FAQ */}
             <div>
               {/* Top Description */}
               <div className="mb-8">
                 <p className="text-[#283B6A] font-semibold text-base leading-relaxed mb-4">
-                  Our staff strives to make each interaction with patients
-                  clear, concise, and inviting. Support them important work of
-                  Medisch Hospital by making a much-needed donation today.
+                  At Lotus Hospital, our dedicated medical and support staff
+                  ensure that every patient receives clear communication,
+                  compassionate care, and timely medical attention in a
+                  comfortable and safe environment.
                 </p>
+
                 <p className="text-gray-600 text-base leading-relaxed">
-                  We will work with you to develop individualised care plans,
-                  including management of chronic diseases. If we cannot assist,
-                  we can provide referrals or advice about the type of
-                  practitioner you require. We treat all enquiries sensitively
-                  and in the strictest confidence.
+                  We work closely with patients and their families to create
+                  personalised treatment plans, including preventive care and
+                  management of chronic conditions. When specialised care is
+                  required, we provide expert referrals and complete guidance.
+                  All consultations and enquiries are handled with utmost
+                  sensitivity and strict confidentiality.
                 </p>
               </div>
 
@@ -295,12 +305,6 @@ const ContactSection = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Make A Gift Button */}
-              <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg flex items-center gap-2">
-                Make A Gift
-                <Heart size={20} className="fill-current" />
-              </button>
             </div>
           </div>
         </div>

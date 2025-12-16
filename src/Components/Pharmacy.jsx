@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Users,
   RefreshCw,
@@ -10,16 +10,16 @@ import {
   Clock4,
   Phone,
   CheckCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
-import img1 from '../assets/Pharmacy1.jpg';
-import img2 from '../assets/Pharmacy2.jpg';
+import img1 from "../assets/Pharmacy1.jpg";
+import img2 from "../assets/Pharmacy2.jpg";
 
 const COLORS = {
-  deep: '#0b5560',
-  accent: '#19a6a6',
-  warm: '#ff914d',
-  muted: '#6b7280',
+  deep: "#0b5560",
+  accent: "#19a6a6",
+  warm: "#ff914d",
+  muted: "#6b7280",
 };
 
 // Animation variants
@@ -28,7 +28,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -37,7 +37,7 @@ const scaleIn = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -54,80 +54,78 @@ const staggerContainer = {
 const pharmacyServices = [
   {
     id: 1,
-    image:
-      img1,
-    title: 'Expert Pharmacist Guidance',
+    image: img1,
+    title: "Expert Pharmacist Guidance",
     description:
-      'Our qualified and experienced pharmacists are available to offer expert guidance, medication counseling, and answer any questions you may have about your prescriptions.',
+      "Our qualified and experienced pharmacists are available to offer expert guidance, medication counseling, and answer any questions you may have about your prescriptions.",
     highlights: [
-      'Medication interaction checks',
-      'Proper dosage instructions',
-      'Side effect management advice',
+      "Medication interaction checks",
+      "Proper dosage instructions",
+      "Side effect management advice",
     ],
   },
   {
     id: 2,
-    image:
-      img2,
-    title: 'Wide Range of Medications',
+    image: img2,
+    title: "Wide Range of Medications",
     description:
-      'The pharmacy stocks a comprehensive range of prescription and over-the-counter medications to address various health conditions, ensuring you find what you need.',
+      "The pharmacy stocks a comprehensive range of prescription and over-the-counter medications to address various health conditions, ensuring you find what you need.",
     highlights: [
-      'Branded and generic medicines',
-      'Emergency critical care drugs',
-      'Pediatric and geriatric formulations',
+      "Branded and generic medicines",
+      "Emergency critical care drugs",
+      "Pediatric and geriatric formulations",
     ],
   },
   {
     id: 3,
     image:
-      'https://images.unsplash.com/photo-1563213126-a4273aed2016?w=800&h=800&fit=crop',
-    title: 'Timely Prescription Fulfillment',
+      "https://images.unsplash.com/photo-1563213126-a4273aed2016?w=800&h=800&fit=crop",
+    title: "Timely Prescription Fulfillment",
     description:
-      'We prioritize quick and efficient prescription fulfillment to ensure you have timely access to the medications prescribed by your healthcare provider.',
+      "We prioritize quick and efficient prescription fulfillment to ensure you have timely access to the medications prescribed by your healthcare provider.",
     highlights: [
-      'Express dispensing for in-patients',
-      'E-prescription compatibility',
-      'Minimal waiting time',
+      "Express dispensing for in-patients",
+      "E-prescription compatibility",
+      "Minimal waiting time",
     ],
   },
   {
     id: 4,
     image:
-      'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=800&fit=crop',
-    title: 'Medication Safety & Authenticity',
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=800&fit=crop",
+    title: "Medication Safety & Authenticity",
     description:
-      'Our pharmacy adheres to stringent safety standards, providing genuine and properly stored medications to maintain their efficacy and ensure patient safety.',
+      "Our pharmacy adheres to stringent safety standards, providing genuine and properly stored medications to maintain their efficacy and ensure patient safety.",
     highlights: [
-      'Temperature-controlled storage',
-      'Batch-tracked medications',
-      'Regular quality audits',
+      "Temperature-controlled storage",
+      "Batch-tracked medications",
+      "Regular quality audits",
     ],
   },
   {
     id: 5,
     image:
-      'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&h=800&fit=crop',
-    title: 'Specialized Compounding Services',
+      "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&h=800&fit=crop",
+    title: "Specialized Compounding Services",
     description:
-      'In cases where specialized formulations are required, our pharmacy offers compounding services to tailor medications to specific patient needs.',
+      "In cases where specialized formulations are required, our pharmacy offers compounding services to tailor medications to specific patient needs.",
     highlights: [
-      'Custom dosage forms',
-      'Pediatric flavor compounding',
-      'Allergy-free formulations',
+      "Custom dosage forms",
+      "Pediatric flavor compounding",
+      "Allergy-free formulations",
     ],
   },
   {
     id: 6,
     image:
-      'https://plus.unsplash.com/premium_photo-1661767381821-152eae652010?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHBoYXJtYWN5fGVufDB8fDB8fHww',
-    title: 'OTC Products & Health Supplements',
+      "https://plus.unsplash.com/premium_photo-1661767381821-152eae652010?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHBoYXJtYWN5fGVufDB8fDB8fHww",
+    title: "OTC Products & Health Supplements",
     description:
-      'Explore our selection of high-quality over-the-counter products, vitamins, minerals, and health supplements to complement your wellness journey.',
+      "Explore our selection of high-quality over-the-counter products, vitamins, minerals, and health supplements to complement your wellness journey.",
     highlights: [
-      'Immunity boosters and multivitamins',
-      'Diabetic care products',
-      'Personal care and hygiene items',
+      "Immunity boosters and multivitamins",
+      "Diabetic care products",
+      "Personal care and hygiene items",
     ],
   },
 ];
@@ -135,39 +133,39 @@ const pharmacyServices = [
 const additionalFeatures = [
   {
     icon: Users,
-    title: 'Friendly & Knowledgeable Staff',
+    title: "Friendly & Knowledgeable Staff",
     description:
-      'Our pharmacy team is dedicated to providing friendly, respectful, and knowledgeable assistance for a positive experience.',
+      "Our pharmacy team is dedicated to providing friendly, respectful, and knowledgeable assistance for a positive experience.",
   },
   {
     icon: RefreshCw,
-    title: 'Easy Prescription Refills',
+    title: "Easy Prescription Refills",
     description:
-      'Request prescription refills easily through our pharmacy counter or phone, streamlining the process for your convenience.',
+      "Request prescription refills easily through our pharmacy counter or phone, streamlining the process for your convenience.",
   },
   {
     icon: Home,
-    title: 'Home Delivery Options',
+    title: "Home Delivery Options",
     description:
-      'For added convenience, we offer home delivery services so you can receive medications without leaving your home.',
+      "For added convenience, we offer home delivery services so you can receive medications without leaving your home.",
   },
   {
     icon: CreditCard,
-    title: 'Insurance Assistance',
+    title: "Insurance Assistance",
     description:
-      'Our staff can help with insurance claims, coverage verification, and reimbursement processes for your pharmacy bills.',
+      "Our staff can help with insurance claims, coverage verification, and reimbursement processes for your pharmacy bills.",
   },
   {
     icon: ShoppingBag,
-    title: 'Health & Wellness Products',
+    title: "Health & Wellness Products",
     description:
-      'Beyond medicines, we stock first aid supplies, baby care items, diabetic monitoring kits, and more for holistic care.',
+      "Beyond medicines, we stock first aid supplies, baby care items, diabetic monitoring kits, and more for holistic care.",
   },
   {
     icon: Clock4,
-    title: '24×7 Emergency Availability',
+    title: "24×7 Emergency Availability",
     description:
-      'In emergency situations, our pharmacy ensures round-the-clock availability to meet urgent medication needs.',
+      "In emergency situations, our pharmacy ensures round-the-clock availability to meet urgent medication needs.",
   },
 ];
 
@@ -179,7 +177,7 @@ const Pharmacy = () => {
         className="relative w-full h-[340px] md:h-[420px] bg-cover bg-center"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=900&fit=crop)',
+            "url(https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=900&fit=crop)",
         }}
       >
         <div
@@ -279,7 +277,7 @@ const Pharmacy = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
                   } items-center gap-8 md:gap-12 lg:gap-16`}
                 >
                   {/* Image Side */}
@@ -484,9 +482,9 @@ const Pharmacy = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+911234567890"
+              href="tel:+919210399470"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
-              style={{ backgroundColor: COLORS.warm, color: 'white' }}
+              style={{ backgroundColor: COLORS.warm, color: "white" }}
             >
               <Phone size={20} />
               Call Pharmacy
