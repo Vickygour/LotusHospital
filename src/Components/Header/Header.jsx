@@ -241,10 +241,6 @@ const Header = () => {
                 <MapPin size={14} />
                 <span>Burari, New Delhi-110084</span>
               </div>
-              <div className="hidden 2xl:flex items-center gap-2 hover:text-[#1F9C9C] transition-colors cursor-pointer">
-                <Clock size={14} />
-                <span>Mon-Fri: 10am – 7pm</span>
-              </div>
 
               <div className="flex items-center mr-5 gap-1 cursor-pointer hover:text-[#1F9C9C] transition-colors">
                 <img

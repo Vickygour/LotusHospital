@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Building2,
   MapPin,
@@ -18,14 +18,14 @@ import {
   Gauge,
   Plane,
   Wrench,
-} from 'lucide-react';
-import ambu from '../assets/ambulance.jpg';
+} from "lucide-react";
+import ambu from "../assets/ambulance.jpg";
 
 const COLORS = {
-  deep: '#0b5560',
-  accent: '#19a6a6',
-  warm: '#ff914d',
-  muted: '#6b7280',
+  deep: "#0b5560",
+  accent: "#19a6a6",
+  warm: "#ff914d",
+  muted: "#6b7280",
 };
 
 // Animation variants
@@ -34,7 +34,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -43,7 +43,7 @@ const scaleIn = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -60,15 +60,14 @@ const staggerContainer = {
 const ambulanceServices = [
   {
     id: 1,
-    image:
-      ambu,
-    title: '24/7 Emergency Response',
+    image: ambu,
+    title: "24/7 Emergency Response",
     description:
-      'Our fleet of fully-equipped modern ambulances is ready to respond promptly to medical emergencies around the clock, 24 hours a day, 7 days a week.',
+      "Our fleet of fully-equipped modern ambulances is ready to respond promptly to medical emergencies around the clock, 24 hours a day, 7 days a week.",
     highlights: [
-      'Rapid response time under 15 minutes',
-      'GPS-enabled fleet for quick dispatch',
-      'Dedicated emergency control room',
+      "Rapid response time under 15 minutes",
+      "GPS-enabled fleet for quick dispatch",
+      "Dedicated emergency control room",
     ],
   },
 ];
@@ -76,54 +75,53 @@ const ambulanceServices = [
 const additionalFeatures = [
   {
     icon: Activity,
-    title: 'Cardiac Monitors and Defibrillators',
+    title: "Cardiac Monitors and Defibrillators",
     description:
-      'Our ambulances are outfitted with state-of-the-art cardiac monitors and defibrillators, ensuring real-time monitoring of vital signs and immediate response to cardiac emergencies.',
+      "Our ambulances are outfitted with state-of-the-art cardiac monitors and defibrillators, ensuring real-time monitoring of vital signs and immediate response to cardiac emergencies.",
   },
   {
     icon: Wind,
-    title: 'Ventilators and Airway Management Equipment',
+    title: "Ventilators and Airway Management Equipment",
     description:
-      'For patients requiring respiratory support, our ambulances are equipped with advanced ventilators and airway management equipment to ensure optimal oxygenation during transit. In cases of intubated and ventilated patients, our ambulances are equipped with specialised transport ventilators, providing continuous respiratory support during the journey.',
+      "For patients requiring respiratory support, our ambulances are equipped with advanced ventilators and airway management equipment to ensure optimal oxygenation during transit. In cases of intubated and ventilated patients, our ambulances are equipped with specialised transport ventilators, providing continuous respiratory support during the journey.",
   },
   {
     icon: Syringe,
-    title: 'Infusion Pumps and Medication Administration Tools',
+    title: "Infusion Pumps and Medication Administration Tools",
     description:
-      'To facilitate seamless administration of medications and intravenous fluids, our ambulances are equipped with infusion pumps and other essential tools for medication delivery.',
+      "To facilitate seamless administration of medications and intravenous fluids, our ambulances are equipped with infusion pumps and other essential tools for medication delivery.",
   },
   {
     icon: Shield,
-    title: 'Spine Boards and Immobilisation Devices',
+    title: "Spine Boards and Immobilisation Devices",
     description:
-      'For patients with suspected spinal injuries or trauma, our ambulances are equipped with spine boards and immobilisation devices to ensure safe and secure transport.',
+      "For patients with suspected spinal injuries or trauma, our ambulances are equipped with spine boards and immobilisation devices to ensure safe and secure transport.",
   },
   {
     icon: HeartPulse,
-    title: 'Portable Life-Saving Equipment',
+    title: "Portable Life-Saving Equipment",
     description:
-      'Our commitment to patient safety extends to the inclusion of portable life-saving equipment such as balloon pumps, pacemakers, and monitors, ensuring that critical interventions can be initiated during transit.',
+      "Our commitment to patient safety extends to the inclusion of portable life-saving equipment such as balloon pumps, pacemakers, and monitors, ensuring that critical interventions can be initiated during transit.",
   },
   {
     icon: Gauge,
-    title: 'Oxygen Cylinders',
+    title: "Oxygen Cylinders",
     description:
-      'Every ambulance in our fleet is equipped with oxygen cylinders to provide immediate respiratory support to patients experiencing breathing difficulties.',
+      "Every ambulance in our fleet is equipped with oxygen cylinders to provide immediate respiratory support to patients experiencing breathing difficulties.",
   },
   {
     icon: Plane,
-    title: 'Specialised Equipment for Air Ambulance Services',
+    title: "Specialised Equipment for Air Ambulance Services",
     description:
-      'In our Air Ambulance services, we go a step further by arranging specialised equipment tailored for air transport. This includes equipment that meets the unique challenges of high-altitude medical care.',
+      "In our Air Ambulance services, we go a step further by arranging specialised equipment tailored for air transport. This includes equipment that meets the unique challenges of high-altitude medical care.",
   },
   {
     icon: Wrench,
-    title: 'Continuous Monitoring and Maintenance',
+    title: "Continuous Monitoring and Maintenance",
     description:
-      'Our equipment undergoes regular monitoring and maintenance to ensure optimal functionality. Our commitment to patient care extends to the reliability and effectiveness of every piece of equipment in our ambulances.',
+      "Our equipment undergoes regular monitoring and maintenance to ensure optimal functionality. Our commitment to patient care extends to the reliability and effectiveness of every piece of equipment in our ambulances.",
   },
 ];
-
 
 const AmbulanceService = () => {
   return (
@@ -133,7 +131,7 @@ const AmbulanceService = () => {
         className="relative w-full h-[340px] md:h-[420px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${ambu})`,
-          backgroundPosition: 'center',
+          backgroundPosition: "center",
         }}
       >
         <div
@@ -191,21 +189,21 @@ const AmbulanceService = () => {
             <div className="h-12 w-px bg-white/30 hidden md:block"></div>
             <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4">
               <a
-                href="tel:+919355490701"
+                href="tel:+919210399470"
                 className="flex items-center gap-2 bg-white/20 hover:bg-white/30 transition-colors px-4 py-2.5 rounded-lg backdrop-blur-sm"
               >
                 <Phone size={20} />
                 <span className="font-semibold text-base md:text-lg">
-                  +91 9355490701
+                  +91 9210399470
                 </span>
               </a>
               <a
-                href="tel:+919717066234"
+                href="tel:011-49785874"
                 className="flex items-center gap-2 bg-white/20 hover:bg-white/30 transition-colors px-4 py-2.5 rounded-lg backdrop-blur-sm"
               >
                 <Phone size={20} />
                 <span className="font-semibold text-base md:text-lg">
-                  +91 9717066234
+                  011-49785874
                 </span>
               </a>
             </div>
@@ -344,7 +342,7 @@ const AmbulanceService = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
                   } items-center gap-8 md:gap-12 lg:gap-16`}
                 >
                   {/* Image Side */}
@@ -488,7 +486,7 @@ const AmbulanceService = () => {
               whileTap={{ scale: 0.95 }}
               href="tel:+919355490701"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
-              style={{ backgroundColor: COLORS.warm, color: 'white' }}
+              style={{ backgroundColor: COLORS.warm, color: "white" }}
             >
               <Phone size={20} />
               Call +91 9355490701
