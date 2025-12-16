@@ -1,0 +1,41 @@
+@import "tailwindcss";
+body {
+  font-family: "Rubik", sans-serif;
+}
+body * {
+  cursor: none !important;
+}
+input,
+textarea,
+select {
+  cursor: text !important;
+  pointer-events: auto !important;
+}
+button,
+a,
+[role="button"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+:root {
+  /* fallback value used before JS calculates height */
+  --header-height: 112px;
+}
+
+/* main wrapper that keeps everything below header */
+.main-below-header {
+  padding-top: var(--header-height);
+  transition: padding-top 120ms linear;
+}
+
+/* anchor / in-page link offset */
+html {
+  scroll-padding-top: var(--header-height);
+}
+
+/* small fallback for mobile if JS disabled */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 96px;
+  }
+}

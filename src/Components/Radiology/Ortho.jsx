@@ -1,0 +1,562 @@
+// src/Components/facilities/OrthopedicsServices.jsx
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { Phone } from "lucide-react";
+import {
+  FaBone,
+  FaHospitalAlt,
+  FaRunning,
+  FaWheelchair,
+  FaUserMd,
+} from "react-icons/fa";
+
+// Images - replace these placeholders with your real assets
+import orthoBanner from "../../assets/OrthoBanner.jpg";
+import orthoTheatre from "../../assets/Ortho1.jpg";
+import orthoXraySample from "../../assets/Ortho2.jpg";
+import orthoDocImg from "../../assets/img2.png";
+const COLORS = {
+  deep: "#18394a", // deep blue-green
+  accent: "#1fa6a6",
+  warm: "#ff914d",
+  muted: "#6b7280",
+};
+
+const container = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { staggerChildren: 0.07 } },
+};
+const fadeInUp = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.52, ease: "easeOut" } },
+};
+
+const SERVICES = [
+  {
+    id: 1,
+    icon: <FaBone />,
+    title: "Joint Replacement",
+    desc: "Hip, knee and shoulder replacement using modern implants and enhanced recovery pathways.",
+  },
+  {
+    id: 2,
+    icon: <FaRunning />,
+    title: "Arthroscopy & Sports Injury",
+    desc: "Minimally invasive repair for ACL, meniscus, rotator cuff and other sports injuries.",
+  },
+  {
+    id: 3,
+    icon: <FaWheelchair />,
+    title: "Trauma & Fracture Care",
+    desc: "Acute fracture management, ORIF, external fixation and polytrauma coordination.",
+  },
+  {
+    id: 4,
+    icon: <FaUserMd />,
+    title: "Spine Surgery",
+    desc: "Degenerative and deformity care including microdiscectomy, fusion and minimally invasive options.",
+  },
+];
+
+const CONTACT = {
+  landline: "011-49785874",
+  mobile: "9210399470",
+};
+
+export default function OrthopedicsServices() {
+  const controls = useAnimation();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) =>
+        entries.forEach(
+          (entry) => entry.isIntersecting && controls.start("show")
+        ),
+      { threshold: 0.12 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [controls]);
+
+  const Pill = ({ children }) => (
+    <span
+      className="inline-block px-3 py-1 rounded-full text-xs font-medium"
+      style={{ background: '#eefafa', color: COLORS.accent }}
+    >
+      {children}
+    </span>
+  );
+
+  return (
+    <div className="bg-gray-50 text-gray-900 pt-23 md:pt-40">
+      <style>{`body.modal-open { overflow: hidden; } .service-modal-close { width:44px;height:44px;border-radius:9999px;background:${COLORS.warm};color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.12); }`}</style>
+
+      {/* HERO */}
+      <header className="relative">
+        <div className="relative h-100 sm:h-64 md:h-72 lg:h-96 xl:h-[420px] overflow-hidden">
+          <img
+            src={orthoBanner}
+            alt="Gynecology banner"
+            className="w-full h-full object-cover transform scale-[1.02] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10" />
+          <div className="absolute inset-0 flex items-center px-4 sm:px-6 md:px-8">
+            <div className="max-w-7xl mx-auto w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-10 shadow-xl ring-1 ring-gray-100 max-w-3xl"
+              >
+                <Pill>Advanced Laser Unit</Pill>
+                <h1
+                  className="mt-2 sm:mt-3 text-xl sm:text-2xl md:text-3xl lg:text-3xl font-extrabold leading-tight"
+                  style={{ color: COLORS.deep }}
+                >
+                  Orthopedics — Joint, Spine & Trauma Services
+                </h1>
+
+                <p className="mt-3 text-gray-700 text-sm md:text-base">
+                  Comprehensive care for bone, joint and soft tissue conditions
+                  — from acute trauma to elective joint replacement and sports
+                  injury rehabilitation.
+                </p>
+                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg text-white font-medium text-sm sm:text-base hover:opacity-90 transition-opacity"
+                    style={{ background: COLORS.accent }}
+                  >
+                    Book Appointment
+                  </a>
+
+                  <a
+                    href="tel:9210399470"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
+                  >
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    9210399470
+                  </a>
+                </div>
+                <p className="mt-2 sm:mt-3 text-gray-700 text-xs sm:text-sm leading-relaxed">
+                  <span
+                    className="font-semibold"
+                    style={{ color: COLORS.deep }}
+                  >
+                    Location:
+                  </span>{' '}
+                  <span>
+                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
+                    Nagar, Burari, Delhi – 110084.
+                  </span>
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* MAIN */}
+      <main className="max-w-7xl mx-auto px-6 md:px-10 pb-24" ref={ref}>
+        {/* Intro + metrics + Sidebar */}
+        <motion.section
+          variants={container}
+          initial="hidden"
+          animate={controls}
+          className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
+        >
+          <motion.div variants={fadeInUp} className="lg:col-span-2">
+            <h2
+              className="text-3xl md:text-4xl font-bold"
+              style={{ color: COLORS.deep }}
+            >
+              Overview & Clinical Focus
+            </h2>
+
+            <motion.p
+              variants={fadeInUp}
+              className="mt-5 text-gray-700 leading-relaxed font-sans prose max-w-none"
+            >
+              Our Orthopedics service delivers evidence-based surgical and
+              non-surgical treatment for arthritis, fractures, sports injuries
+              and spinal disorders. We emphasise functional recovery, pain
+              control and early rehabilitation.
+            </motion.p>
+
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4"
+            >
+              <StatCard
+                title="Surgeries"
+                value="Joint & Trauma"
+                subtitle="Primary & revision joint replacement"
+              />
+              <StatCard
+                title="Minimally Invasive"
+                value="Arthroscopy"
+                subtitle="Faster recovery, less pain"
+              />
+              <StatCard
+                title="Rehab"
+                value="Physiotherapy"
+                subtitle="Structured post-op programs"
+              />
+            </motion.div>
+          </motion.div>
+
+          <motion.aside variants={fadeInUp} className="w-full lg:col-span-1">
+            <div className="bg-white rounded-2xl p-5 shadow-lg ring-1 ring-gray-100">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-gray-400">Appointment Line</div>
+                  <div
+                    className="text-lg font-semibold"
+                    style={{ color: COLORS.deep }}
+                  >
+                    {CONTACT.landline}
+                  </div>
+                </div>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs text-gray-400">Timing</span>
+                  <span className="text-sm text-green-500 font-medium">
+                    Mon–Sat • 9am–5pm
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <a
+                  href="/contact"
+                  className="w-full inline-flex items-center justify-center gap-3 px-4 py-3 rounded-lg text-white font-medium transition-colors"
+                  style={{ background: COLORS.accent }}
+                >
+                  Book Ortho Consult
+                </a>
+              </div>
+
+              <div className="mt-4 text-xs text-gray-500 text-center">
+                For fractures/bad pain use emergency line immediately.
+              </div>
+            </div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="mt-6 bg-white rounded-2xl p-4 shadow-lg ring-1 ring-gray-50"
+            >
+              <h4
+                className="text-sm font-semibold"
+                style={{ color: COLORS.deep }}
+              >
+                Why choose our Orthopedics Unit
+              </h4>
+              <p className="text-xs text-gray-600 mt-2">
+                High-volume joint replacement program, experienced trauma team,
+                dedicated physiotherapy and pain management services.
+              </p>
+              <a
+                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block text-sm text-[#2448a5] hover:underline"
+              >
+                View on map
+              </a>
+            </motion.div>
+          </motion.aside>
+        </motion.section>
+
+        {/* Theatre image & content */}
+        <section className="mt-16 w-full">
+          <div className="max-w-7xl mx-auto py-8 bg-white rounded-2xl shadow-xl ring-1 ring-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start p-6 md:p-10">
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-xl overflow-hidden shadow-2xl border-4 border-white"
+              >
+                <img
+                  src={orthoTheatre}
+                  alt="Orthopedic theatre / implants"
+                  className="w-full h-auto object-cover"
+                />
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: COLORS.deep }}
+                >
+                  Orthopedic Surgery & Rehabilitation
+                </h3>
+                <p className="mt-4 text-gray-700 leading-relaxed">
+                  We offer modern arthroplasty techniques, ligament
+                  reconstruction, fracture fixation and spine procedures. Each
+                  patient receives a personalised plan including prehab,
+                  multimodal analgesia and structured rehab for optimal
+                  recovery.
+                </p>
+
+                <div className="mt-6 grid grid-cols-1 gap-4">
+                  <DetailRow label="When to see an orthopedician?">
+                    Severe joint pain limiting daily activities, deformity,
+                    traumatic fractures, persistent back/neck pain or sports
+                    injuries.
+                  </DetailRow>
+
+                  <DetailRow label="Pre-op & rehab">
+                    Pre-operative optimisation and tailored physiotherapy plans
+                    (inpatient & outpatient) to speed recovery and restore
+                    function.
+                  </DetailRow>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services grid */}
+        <section className="mt-16 w-full" id="services">
+          <div className="w-full bg-white rounded-2xl shadow-xl ring-1 ring-gray-100">
+            <div className="max-w-7xl mx-auto p-6 md:p-10">
+              <div className="flex items-center justify-between mb-8">
+                <h3
+                  className="text-2xl font-bold"
+                  style={{ color: COLORS.deep }}
+                >
+                  Our Orthopedic Services
+                </h3>
+                <div
+                  className="hidden md:block w-24 h-1 rounded-2xl"
+                  style={{ background: COLORS.warm }}
+                />
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                {SERVICES.map((s) => (
+                  <motion.button
+                    key={s.id}
+                    variants={fadeInUp}
+                    className="group bg-[#eef8f8] p-6 rounded-2xl text-left flex flex-col items-center gap-4 hover:-translate-y-2 transition-transform shadow-md focus:outline-none focus:ring-4 focus:ring-[rgba(31,156,156,0.08)] h-full"
+                    type="button"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md ring-1 ring-gray-100 p-3 shrink-0">
+                      <div className="text-3xl" style={{ color: COLORS.deep }}>
+                        {s.icon}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col items-center flex-grow">
+                      <div className="text-center text-sm text-[#274c56] leading-tight font-extrabold">
+                        {s.title}
+                      </div>
+                      <div className="text-xs text-gray-500 mt-2 text-center flex-grow">
+                        {s.desc}
+                      </div>
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Knowledge block with X-ray sample */}
+        <section className="max-w-7xl mx-auto mt-16 py-10 bg-white shadow-2xl rounded-2xl ring-1 ring-gray-100 p-6 md:p-10">
+          <motion.h2
+            variants={fadeInUp}
+            initial="hidden"
+            animate={controls}
+            className="text-center text-3xl font-extrabold mb-10"
+            style={{ color: COLORS.deep }}
+          >
+            Understanding Common Orthopedic Tests
+          </motion.h2>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div className="lg:sticky lg:top-8">
+              <img
+                src={orthoXraySample}
+                alt="Orthopedic X-ray sample"
+                className="w-full rounded-xl shadow-2xl border-4 border-gray-100"
+              />
+              <p className="text-xs text-gray-600 mt-3 text-center">
+                X-ray, CT and MRI guide diagnosis and surgical planning for bone
+                and joint disorders.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <SmallCard title="X-ray & Imaging">
+                Primary tool for fractures, alignment and joint space
+                assessment.
+              </SmallCard>
+              <SmallCard title="MRI / CT">
+                Soft tissue and complex bone detail for surgical planning.
+              </SmallCard>
+              <SmallCard title="Gait & Functional Assessment">
+                Pre and post-op evaluation of mobility and function.
+              </SmallCard>
+              <SmallCard title="Physiotherapy">
+                Early mobilisation, strength and functional recovery programs.
+              </SmallCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Detail cards & specialists */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <ServiceDetailCard
+            title="Primary & Revision Joint Replacement"
+            desc="Total knee, hip and shoulder arthroplasty with modern implants and ERAS protocols."
+          />
+          <ServiceDetailCard
+            title="Arthroscopy & Ligament Repair"
+            desc="ACL, meniscus, shoulder arthroscopy and cartilage preservation techniques."
+          />
+          <ServiceDetailCard
+            title="Trauma & Fracture Care"
+            desc="Acute fracture stabilization, definitive fixation and multidisciplinary trauma care."
+          />
+          <ServiceDetailCard
+            title="Spine Care"
+            desc="Microdiscectomy, decompression, fusion and conservative spine management."
+          />
+        </motion.div>
+
+        <section className="mt-16">
+          <motion.h3
+            variants={fadeInUp}
+            initial="hidden"
+            animate="show"
+            className="text-2xl font-bold mb-6"
+            style={{ color: COLORS.deep }}
+          >
+            Our Orthopedic Team
+          </motion.h3>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+          >
+            {[
+              { name: 'Dr. Amit Sharma', role: 'Joint Replacement Surgeon' },
+              { name: 'Dr. Neha Gupta', role: 'Arthroscopy & Sports Surgeon' },
+              { name: 'Mr. Suresh Rao', role: 'Trauma Lead' },
+              { name: 'Ms. Ritu Bansal', role: 'Senior Physiotherapist' },
+            ].map((t, i) => (
+              <motion.div variants={fadeInUp} key={i}>
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg ring-1 ring-gray-100 hover:shadow-xl transition-shadow">
+                  <img
+                    src={orthoDocImg}
+                    alt={t.name}
+                    className="w-full h-44 object-cover object-top"
+                    loading="lazy"
+                  />
+                  <div className="p-4 text-center">
+                    <div
+                      className="text-md font-semibold"
+                      style={{ color: COLORS.deep }}
+                    >
+                      {t.name}
+                    </div>
+                    <div className="text-sm text-gray-500">{t.role}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+/* --- small reusable components --- */
+
+function StatCard({ title, value, subtitle }) {
+  const localFade = {
+    hidden: { opacity: 0, y: 14 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.48, ease: "easeOut" } },
+  };
+  return (
+    <motion.div
+      variants={localFade}
+      className="bg-white rounded-2xl p-5 shadow-sm ring-1 ring-gray-50 transition-shadow hover:shadow-md"
+    >
+      <div className="text-sm text-gray-500">{title}</div>
+      <div className="mt-2 text-2xl font-bold" style={{ color: COLORS.deep }}>
+        {value}
+      </div>
+      <div className="mt-1 text-xs text-gray-400">{subtitle}</div>
+    </motion.div>
+  );
+}
+
+function DetailRow({ label, children }) {
+  return (
+    <div
+      className="p-4 border-l-4 rounded shadow-sm"
+      style={{ borderColor: COLORS.accent, background: "#f8fffb" }}
+    >
+      <div className="text-sm font-bold" style={{ color: COLORS.deep }}>
+        {label}
+      </div>
+      <div className="text-sm text-gray-700 mt-1">{children}</div>
+    </div>
+  );
+}
+
+function SmallCard({ title, children }) {
+  return (
+    <div
+      className="p-4 border-l-4 rounded shadow-md"
+      style={{ borderColor: COLORS.warm, backgroundColor: "#fffbeb" }}
+    >
+      <h4 className="font-extrabold" style={{ color: COLORS.deep }}>
+        {title}
+      </h4>
+      <p className="text-sm text-gray-700 mt-1">{children}</p>
+    </div>
+  );
+}
+
+function ServiceDetailCard({ title, desc }) {
+  const localFade = {
+    hidden: { opacity: 0, y: 14 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.52, ease: "easeOut" } },
+  };
+  return (
+    <motion.article
+      variants={localFade}
+      whileHover={{ y: -4, boxShadow: "0 10px 30px rgba(24,57,74,0.06)" }}
+      className="bg-white rounded-2xl p-6 focus:outline-none focus:ring-4 focus:ring-[rgba(31,156,156,0.06)] ring-1 ring-gray-100 shadow-md transition-all cursor-pointer"
+    >
+      <div className="flex items-start gap-4">
+        <div
+          className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
+          style={{ background: "#f7fdfe" }}
+        >
+          <FaBone size={18} style={{ color: COLORS.accent }} />
+        </div>
+        <div className="flex-1">
+          <h4 className="text-lg font-semibold" style={{ color: COLORS.deep }}>
+            {title}
+          </h4>
+          <p className="mt-2 text-sm text-gray-600">{desc}</p>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
