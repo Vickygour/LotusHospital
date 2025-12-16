@@ -74,40 +74,40 @@ const CardItem = ({ Icon, title, description }) => {
 
 const steps = [
   {
-    number: '01.',
+    number: "01.",
     icon: FileText,
-    title: 'Check the Doctors Timetable',
+    title: "Check the Doctors Timetable",
     description:
-      'Learn admission steps, prepare essential documents, and follow the procedure to ensure smooth hospital entry.',
-    linkText: 'Doctors Timetable',
-    linkHref: '/Doctors-Timetable',
+      "Learn admission steps, prepare essential documents, and follow the procedure to ensure smooth hospital entry.",
+    linkText: "Doctors Timetable",
+    linkHref: "/Doctors-Timetable",
   },
   {
-    number: '02.',
+    number: "02.",
     icon: FileText,
-    title: 'Review Admission Process',
+    title: "Review Admission Process",
     description:
-      'Understand admission guidelines, required documents, and the step-by-step procedure for a smooth hospital entry.',
-    linkText: 'Start Admission',
-    linkHref: '/Admission',
+      "Understand admission guidelines, required documents, and the step-by-step procedure for a smooth hospital entry.",
+    linkText: "Start Admission",
+    linkHref: "/Admission",
   },
   {
-    number: '03.',
+    number: "03.",
     icon: FileText,
-    title: 'Explore Rooms & Facilities',
+    title: "Explore Rooms & Facilities",
     description:
-      'Choose from General, Semi-Private, Private, and Deluxe rooms equipped with modern comfort and 24/7 care.',
-    linkText: 'View Room Facilities',
-    linkHref: '/services/room-facilities',
+      "Choose from General, Semi-Private, Private, and Deluxe rooms equipped with modern comfort and 24/7 care.",
+    linkText: "View Room Facilities",
+    linkHref: "/services/room-facilities",
   },
   {
-    number: '04.',
+    number: "04.",
     icon: FileText,
-    title: 'Connect With Our Doctors',
+    title: "Connect With Our Doctors",
     description:
-      'Reach out for consultations, enquiries, or follow-ups. Our support team ensures quick and helpful assistance.',
-    linkText: 'Contact Us',
-    linkHref: '/Contact',
+      "Reach out for consultations, enquiries, or follow-ups. Our support team ensures quick and helpful assistance.",
+    linkText: "Contact Us",
+    linkHref: "/Contact",
   },
 ];
 
@@ -261,12 +261,12 @@ const HeroSection = () => {
             spaceBetween={0}
             slidesPerView={1}
             navigation={{
-              prevEl: '.swiper-button-prev-custom',
-              nextEl: '.swiper-button-next-custom',
+              prevEl: ".swiper-button-prev-custom",
+              nextEl: ".swiper-button-next-custom",
             }}
             pagination={{
               clickable: true,
-              el: '.swiper-pagination-custom',
+              el: ".swiper-pagination-custom",
             }}
             autoplay={{
               delay: 7000,
@@ -292,13 +292,13 @@ const HeroSection = () => {
                   <div
                     className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center"
                     style={{
-                      minHeight: '420px',
+                      minHeight: "420px",
                     }}
                   >
                     <div className="w-full md:w-2/3 lg:w-3/4 xl:w-2/3 text-white">
                       {/* small animated line (TypeAnimation) */}
                       <TypeAnimation
-                        sequence={[slide.title, 1000, '', 500]}
+                        sequence={[slide.title, 1000, "", 500]}
                         wrapper="p"
                         speed={50}
                         className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed opacity-90"
@@ -426,7 +426,7 @@ const HeroSection = () => {
                     </p>
                   </div>
                   <Link to="/Doctors-Timetable">
-                    {' '}
+                    {" "}
                     <button className="border-2 border-white/40 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-white hover:text-[#4A5F8F] transition-all duration-300 flex items-center gap-2 text-sm sm:text-base">
                       <span className="w-4 sm:w-6 h-0.5 bg-white"></span>
                       View Timetable
@@ -448,14 +448,14 @@ const HeroSection = () => {
                       24x7 Emergency & Ambulance
                     </h3>
                     <p className="text-white/90 text-sm sm:text-md leading-relaxed mb-3 sm:mb-4">
-                       Emergency & Ambulance
+                      Emergency & Ambulance
                     </p>
                     <p className="text-white/90 text-sm sm:text-md leading-relaxed mb-3 sm:mb-4">
                       24x7 Emergency Care Available
                     </p>
                   </div>
                   <a
-                    href="https://maps.app.goo.gl/sPcEVyjfTqWvALhA7"
+                    href="tel:+919210399470"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -850,9 +850,9 @@ const HeroSection = () => {
                   modules={[Pagination, Autoplay]}
                   pagination={{
                     clickable: true,
-                    el: '.custom-pagination',
-                    bulletClass: 'custom-bullet',
-                    bulletActiveClass: 'custom-bullet-active',
+                    el: ".custom-pagination",
+                    bulletClass: "custom-bullet",
+                    bulletActiveClass: "custom-bullet-active",
                   }}
                   autoplay={{
                     delay: 5000,
@@ -968,21 +968,21 @@ const HeroSection = () => {
                   <CheckCircle2
                     size={16}
                     className="flex-shrink-0 sm:w-[18px] sm:h-[18px]"
-                  />{' '}
+                  />{" "}
                   Quality Control System
                 </li>
                 <li className="flex items-center gap-2 text-[#13C5DD] text-xs sm:text-sm">
                   <CheckCircle2
                     size={16}
                     className="flex-shrink-0 sm:w-[18px] sm:h-[18px]"
-                  />{' '}
+                  />{" "}
                   Unrivalled Workmanship
                 </li>
                 <li className="flex items-center gap-2 text-[#13C5DD] text-xs sm:text-sm">
                   <CheckCircle2
                     size={16}
                     className="flex-shrink-0 sm:w-[18px] sm:h-[18px]"
-                  />{' '}
+                  />{" "}
                   100% Satisfaction Guarantee
                 </li>
               </ul>

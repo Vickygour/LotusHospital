@@ -1,29 +1,29 @@
 // src/Components/facilities/Gynecologist.jsx
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import doctorImg from '../../assets/doctorImage.jpg';
-import patientImg from '../../assets/patient.jpeg';
-import { Phone, X } from 'lucide-react';
-import gynecologyBanner from '../../assets/BannerGyno.jpg';
-import icon1 from '../../assets/GynoVector/21afaf9e283cebe5cd63cce585c93953.svg';
-import icon2 from '../../assets/GynoVector/3566ad4bdbbb83f3df0f6c1be58300bc.svg';
-import icon3 from '../../assets/GynoVector/38e537276497b3f1b97ad38a0c8d9391.svg';
-import icon4 from '../../assets/GynoVector/448ffaf4c2bd63e84e6ed485e71566d4.svg';
-import icon5 from '../../assets/GynoVector/8a3fb2019cba96499f2ccecde6d3e2f7.svg';
-import icon6 from '../../assets/GynoVector/9bf7e9d7aedb70dd5c39a564a09d18c0.svg';
-import icon7 from '../../assets/GynoVector/aa9410a067c15ff3f35ea67979c15a36.svg';
-import icon8 from '../../assets/GynoVector/cb2362d88fe9510862170675a2fbf92f.svg';
-import icon9 from '../../assets/GynoVector/d3fbf9e3c0b27457e243a9795d8d7039.svg';
-import icon10 from '../../assets/GynoVector/ef87ac2e85f8264e5bc9ce617ce5fe8a.svg';
-import icon11 from '../../assets/GynoVector/f4d72be59f25229a4de61c54bb155810.svg';
-import icon12 from '../../assets/GynoVector/women-1.svg';
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import doctorImg from "../../assets/doctorImage.jpg";
+import patientImg from "../../assets/patient.jpeg";
+import { Phone, X } from "lucide-react";
+import gynecologyBanner from "../../assets/BannerGyno.jpg";
+import icon1 from "../../assets/GynoVector/21afaf9e283cebe5cd63cce585c93953.svg";
+import icon2 from "../../assets/GynoVector/3566ad4bdbbb83f3df0f6c1be58300bc.svg";
+import icon3 from "../../assets/GynoVector/38e537276497b3f1b97ad38a0c8d9391.svg";
+import icon4 from "../../assets/GynoVector/448ffaf4c2bd63e84e6ed485e71566d4.svg";
+import icon5 from "../../assets/GynoVector/8a3fb2019cba96499f2ccecde6d3e2f7.svg";
+import icon6 from "../../assets/GynoVector/9bf7e9d7aedb70dd5c39a564a09d18c0.svg";
+import icon7 from "../../assets/GynoVector/aa9410a067c15ff3f35ea67979c15a36.svg";
+import icon8 from "../../assets/GynoVector/cb2362d88fe9510862170675a2fbf92f.svg";
+import icon9 from "../../assets/GynoVector/d3fbf9e3c0b27457e243a9795d8d7039.svg";
+import icon10 from "../../assets/GynoVector/ef87ac2e85f8264e5bc9ce617ce5fe8a.svg";
+import icon11 from "../../assets/GynoVector/f4d72be59f25229a4de61c54bb155810.svg";
+import icon12 from "../../assets/GynoVector/women-1.svg";
 
 /* Colors & variants */
 const COLORS = {
-  deep: '#0f3b5a',
-  accent: '#1f9c9c',
-  warm: '#ff914d',
-  muted: '#6b7280',
+  deep: "#0f3b5a",
+  accent: "#1f9c9c",
+  warm: "#ff914d",
+  muted: "#6b7280",
 };
 
 const container = {
@@ -33,7 +33,7 @@ const container = {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.52, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.52, ease: "easeOut" } },
 };
 
 function useCountUp(to, duration = 900) {
@@ -56,89 +56,116 @@ function useCountUp(to, duration = 900) {
 }
 
 /* DEFAULT ICON */
-const DEFAULT_ICON = '/mnt/data/8a3fb2019cba96499f2ccecde6d3e2f7.svg';
+const DEFAULT_ICON = "/mnt/data/8a3fb2019cba96499f2ccecde6d3e2f7.svg";
 
 /* Services data (12 items) */
 const SERVICES = [
   {
     id: 1,
     img: icon1,
-    title: 'High-risk Pregnancy Cases and Ensure Safe Delivery',
-    desc: 'High‑risk pregnancies due to factors such as high blood pressure, diabetes, thyroid disorders, IUGR, previous caesarean, twins, fetal malformations or maternal age are managed by our multidisciplinary team with continuous monitoring and neonatal backup.',
+    title: "High-risk Pregnancy Cases and Ensure Safe Delivery",
+    desc: "High‑risk pregnancies due to factors such as high blood pressure, diabetes, thyroid disorders, IUGR, previous caesarean, twins, fetal malformations or maternal age are managed by our multidisciplinary team with continuous monitoring and neonatal backup.",
   },
   {
     id: 2,
     img: icon2,
-    title: 'High-risk Pregnancies',
-    desc: 'We manage maternal-fetal complications, tailored antenatal monitoring plans, and timely interventions to maximize outcomes for mother and baby.',
+    title: "High-risk Pregnancies",
+    desc: "We manage maternal-fetal complications, tailored antenatal monitoring plans, and timely interventions to maximize outcomes for mother and baby.",
   },
   {
     id: 3,
     img: icon3,
-    title: 'Comprehensive Antenatal Care',
-    desc: 'Regular antenatal visits, clinical examinations, blood tests, ultrasound scans and counselling on nutrition, exercise and danger signs in pregnancy.',
+    title: "Comprehensive Antenatal Care",
+    desc: "Regular antenatal visits, clinical examinations, blood tests, ultrasound scans and counselling on nutrition, exercise and danger signs in pregnancy.",
   },
   {
     id: 4,
     img: icon4,
-    title: 'Labour Analgesia Care',
-    desc: 'Labour room equipped for normal, assisted and emergency caesarean deliveries with options including epidural analgesia where appropriate.',
+    title: "Labour Analgesia Care",
+    desc: "Labour room equipped for normal, assisted and emergency caesarean deliveries with options including epidural analgesia where appropriate.",
   },
   {
     id: 5,
     img: icon5,
-    title: 'Postnatal Care',
-    desc: 'Close monitoring of mothers and newborns for bleeding, infection, blood pressure, breastfeeding issues and jaundice with lactation counselling and follow-up.',
+    title: "Postnatal Care",
+    desc: "Close monitoring of mothers and newborns for bleeding, infection, blood pressure, breastfeeding issues and jaundice with lactation counselling and follow-up.",
   },
   {
     id: 6,
     img: icon6,
-    title: 'Minimally Invasive Gynecological Procedures',
-    desc: 'Laparoscopy and hysteroscopy for fibroids, ovarian cysts, endometriosis, heavy bleeding or pelvic pain with faster recovery and smaller scars.',
+    title: "Minimally Invasive Gynecological Procedures",
+    desc: "Laparoscopy and hysteroscopy for fibroids, ovarian cysts, endometriosis, heavy bleeding or pelvic pain with faster recovery and smaller scars.",
   },
   {
     id: 7,
     img: icon7,
-    title: 'Laparoscopic Hysterectomy',
-    desc: 'High-precision laparoscopic hysterectomy for benign and select malignant conditions with quicker discharge and minimal scarring.',
+    title: "Laparoscopic Hysterectomy",
+    desc: "High-precision laparoscopic hysterectomy for benign and select malignant conditions with quicker discharge and minimal scarring.",
   },
   {
     id: 8,
     img: icon8,
-    title: 'Diagnostic & Therapeutic Hysteroscopic Surgery',
-    desc: 'Diagnostic and operative hysteroscopy for abnormal bleeding, polyps, adhesions and intrauterine pathology.',
+    title: "Diagnostic & Therapeutic Hysteroscopic Surgery",
+    desc: "Diagnostic and operative hysteroscopy for abnormal bleeding, polyps, adhesions and intrauterine pathology.",
   },
   {
     id: 9,
     img: icon9,
-    title: 'FOGSI-certified Training Centre for Gynaecologists',
-    desc: 'Hands-on training, workshops and fellowships in laparoscopy and hysteroscopy for practising gynecologists.',
+    title: "FOGSI-certified Training Centre for Gynaecologists",
+    desc: "Hands-on training, workshops and fellowships in laparoscopy and hysteroscopy for practising gynecologists.",
   },
   {
     id: 10,
     img: icon10,
-    title: 'Ultrasonographic Evaluation',
-    desc: 'High-resolution ultrasound, fetal anatomy scans, growth surveillance and doppler studies guided by fetal medicine specialists.',
+    title: "Ultrasonographic Evaluation",
+    desc: "High-resolution ultrasound, fetal anatomy scans, growth surveillance and doppler studies guided by fetal medicine specialists.",
   },
   {
     id: 11,
     img: icon11,
-    title: 'Gynecological Oncology',
-    desc: 'Multidisciplinary management and surgical care for gynecologic cancers with tumour board planning.',
+    title: "Gynecological Oncology",
+    desc: "Multidisciplinary management and surgical care for gynecologic cancers with tumour board planning.",
   },
   {
     id: 12,
     img: icon12,
-    title: 'Gynae-endocrinology Division',
-    desc: 'Hormonal evaluation and management of menstrual disorders, PCOS, menopause and endocrine infertility.',
+    title: "Gynae-endocrinology Division",
+    desc: "Hormonal evaluation and management of menstrual disorders, PCOS, menopause and endocrine infertility.",
   },
+];
+
+/* Scope of OBS & GYNAE Services */
+const SCOPE_SERVICES = [
+  "Age under 17 years or over 35 years",
+  "Chronic medical conditions such as diabetes or hypertension",
+  "Gestational diabetes during pregnancy",
+  "Heart disease complicating pregnancy",
+  "History of preterm birth",
+  "Multiple pregnancies (twins or more)",
+  "Pregnancy with Rh-negative blood group",
+  "Pregnancy complicated with anemia",
+  "Antepartum hemorrhage (APH)",
+  "Placenta previa",
+  "Pre-eclampsia & eclampsia",
+  "Post-dated pregnancy",
+  "Premature rupture of membranes (PROM)",
+  "Preterm labor",
+  "Prolonged or obstructed labor",
+  "Cord prolapse",
+  "Post-partum hemorrhage",
+  "Previous miscarriage",
+  "Recurrent pregnancy loss",
+  "History of fibroids or other gynecological problems",
+  "Infectious diseases during pregnancy",
+  "Kidney or gastrointestinal disease",
+  "Fetal growth restriction (IUGR)",
 ];
 
 /* Small UI subcomponents */
 const Pill = ({ children }) => (
   <span
     className="inline-block px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium"
-    style={{ background: '#eefafa', color: COLORS.accent }}
+    style={{ background: "#eefafa", color: COLORS.accent }}
   >
     {children}
   </span>
@@ -198,13 +225,13 @@ function TeamCard({ name, role, img }) {
 function ServiceCard({ title, desc }) {
   return (
     <motion.article
-      whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(15,59,90,0.06)' }}
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(15,59,90,0.06)" }}
       className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 focus:outline-none focus:ring-4 focus:ring-[rgba(31,156,156,0.06)] ring-1 ring-gray-50 shadow-sm hover:shadow-md transition-all"
     >
       <div className="flex items-start gap-3 sm:gap-4">
         <div
           className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center shrink-0"
-          style={{ background: '#f7fdfe' }}
+          style={{ background: "#f7fdfe" }}
         >
           <svg
             width="18"
@@ -249,10 +276,10 @@ export default function Gynecologist() {
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) controls.start('show');
+          if (entry.isIntersecting) controls.start("show");
         });
       },
-      { threshold: 0.12 },
+      { threshold: 0.12 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -264,21 +291,21 @@ export default function Gynecologist() {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    if (openService) document.body.classList.add('modal-open');
-    else document.body.classList.remove('modal-open');
+    if (openService) document.body.classList.add("modal-open");
+    else document.body.classList.remove("modal-open");
   }, [openService]);
 
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === 'Escape') setOpenService(null);
+      if (e.key === "Escape") setOpenService(null);
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   useEffect(() => {
     if (openService && modalRef.current) {
-      const btn = modalRef.current.querySelector('.service-modal-close');
+      const btn = modalRef.current.querySelector(".service-modal-close");
       btn?.focus();
     } else if (!openService && prevActive.current) {
       prevActive.current.focus?.();
@@ -289,18 +316,18 @@ export default function Gynecologist() {
     prevActive.current = e?.currentTarget;
     setOpenService(service);
     // Optionally scroll to top on mobile when modal opens
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const team = [
-    { name: 'Dr. Priya Sharma', role: 'Head - Obstetrics', img: doctorImg },
-    { name: 'Dr. Arjun Mehta', role: 'Chief Gynaecologist', img: doctorImg },
+    { name: "Dr. Priya Sharma", role: "Head - Obstetrics", img: doctorImg },
+    { name: "Dr. Arjun Mehta", role: "Chief Gynaecologist", img: doctorImg },
     {
-      name: 'Dr. Anjali Gupta',
-      role: 'Maternal-Fetal Specialist',
+      name: "Dr. Anjali Gupta",
+      role: "Maternal-Fetal Specialist",
       img: doctorImg,
     },
-    { name: 'Dr. Sunil Verma', role: 'Laparoscopic Surgeon', img: doctorImg },
+    { name: "Dr. Sunil Verma", role: "Laparoscopic Surgeon", img: doctorImg },
   ];
 
   return (
@@ -367,7 +394,7 @@ export default function Gynecologist() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -377,7 +404,7 @@ export default function Gynecologist() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
                     Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
                     Nagar, Burari, Delhi – 110084.
@@ -564,6 +591,42 @@ export default function Gynecologist() {
             </motion.div>
           </motion.aside>
         </motion.section>
+        {/* Scope of Obstetrics & Gynaecology Services */}
+        <section className="mt-10 sm:mt-12 md:mt-14">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm ring-1 ring-gray-100">
+            <h3
+              className="text-xl sm:text-2xl md:text-3xl font-bold"
+              style={{ color: COLORS.deep }}
+            >
+              Scope of Obstetrics & Gynaecology Services
+            </h3>
+
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-600 max-w-4xl">
+              Our department is fully equipped to manage both routine and
+              high-risk obstetric and gynaecological conditions with experienced
+              specialists, advanced monitoring and 24×7 emergency support.
+            </p>
+
+            <div className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {SCOPE_SERVICES.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-[#f7fdfe] p-3 sm:p-4 rounded-lg ring-1 ring-gray-50 hover:shadow-md transition"
+                >
+                  <span
+                    className="mt-1 w-5 h-5 flex items-center justify-center rounded-full text-white text-xs shrink-0"
+                    style={{ background: COLORS.accent }}
+                  >
+                    ✓
+                  </span>
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Services grid */}
         <section className="mt-8 sm:mt-10 md:mt-12 w-full">
@@ -644,7 +707,6 @@ export default function Gynecologist() {
           </motion.div>
         </section>
       </main>
-
 
       {/* Modal */}
       {openService && (
