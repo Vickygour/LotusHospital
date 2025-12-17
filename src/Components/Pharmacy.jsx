@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import {
   Users,
   RefreshCw,
@@ -14,6 +15,9 @@ import {
 
 import img1 from "../assets/Pharmacy1.jpg";
 import img2 from "../assets/Pharmacy2.jpg";
+import pharmacy3 from "../assets/pharmacy3.jpg";
+import pharmacy4 from "../assets/pharmacy.jpg";
+import pharmacy5 from "../assets/Pharmacy5.jpg";
 
 const COLORS = {
   deep: "#0b5560",
@@ -78,8 +82,7 @@ const pharmacyServices = [
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1563213126-a4273aed2016?w=800&h=800&fit=crop",
+    image: pharmacy3,
     title: "Timely Prescription Fulfillment",
     description:
       "We prioritize quick and efficient prescription fulfillment to ensure you have timely access to the medications prescribed by your healthcare provider.",
@@ -91,8 +94,7 @@ const pharmacyServices = [
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=800&fit=crop",
+    image: pharmacy4,
     title: "Medication Safety & Authenticity",
     description:
       "Our pharmacy adheres to stringent safety standards, providing genuine and properly stored medications to maintain their efficacy and ensure patient safety.",
@@ -104,8 +106,7 @@ const pharmacyServices = [
   },
   {
     id: 5,
-    image:
-      "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&h=800&fit=crop",
+    image: img2,
     title: "Specialized Compounding Services",
     description:
       "In cases where specialized formulations are required, our pharmacy offers compounding services to tailor medications to specific patient needs.",
@@ -117,8 +118,7 @@ const pharmacyServices = [
   },
   {
     id: 6,
-    image:
-      "https://plus.unsplash.com/premium_photo-1661767381821-152eae652010?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHBoYXJtYWN5fGVufDB8fDB8fHww",
+    image: img1,
     title: "OTC Products & Health Supplements",
     description:
       "Explore our selection of high-quality over-the-counter products, vitamins, minerals, and health supplements to complement your wellness journey.",

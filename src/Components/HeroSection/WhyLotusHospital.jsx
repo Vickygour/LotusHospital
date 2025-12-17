@@ -37,19 +37,24 @@ const WhylotusHospitals = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* LEFT SIDE CONTENT */}
           <div className="pr-6 md:mt-12">
-            <h3 className="text-2xl font-extrabold" style={{ color: ACCENT }}>
-              Why Lotus Multispeciality Hospital ??
+            <h3 className="text-3xl md:text-4xl font-bold text-[#283B6A] ">
+              Why Lotus Multispeciality Hospital ?
             </h3>
 
             <p className="mt-6 text-gray-600 max-w-xl leading-relaxed">
-              Lotus Multispeciality Hospital stands as a beacon of health
-              excellence, driven by our core mission to provide Exceptional
-              Medical Care with Unwavering Compassion. We seamlessly integrate
-              cutting-edge medical technology with a highly experienced and
-              dedicated team of specialists. Our philosophy is rooted in a
-              patient-centric approach, ensuring personalized attention and
-              superior outcomes. At Lotus, your well-being isn't just a
-              priority—it is the foundation of everything we do.
+              Lotus Multispeciality Hospital stands as a symbol of trust and
+              medical excellence, driven by a clear and compassionate mission to
+              provide exceptional healthcare services to our community. We are
+              committed to delivering high-quality medical care by seamlessly
+              combining state-of-the-art technology with the expertise of a
+              highly experienced and dedicated team of doctors, nurses, and
+              healthcare professionals. Our approach to healthcare is deeply
+              patient-centric, focusing not only on effective treatment but also
+              on empathy, comfort, and personalized attention at every stage of
+              care. We believe that every patient deserves respect,
+              transparency, and the highest standards of clinical excellence. At
+              Lotus Multispeciality Hospital, your health and well-being are at
+              the heart of everything we do.
             </p>
 
             <Link to="/About-us" className="inline-block mt-8">

@@ -1,5 +1,8 @@
 import React from "react";
 import { Microscope, Scissors, Pill, Users, ArrowRight } from "lucide-react";
+import ICU from "../../assets/gallery8.jpg";
+import Patient from "../../assets/Corridor.jpg";
+import Pharmacy from "../../assets/pharmacy1.jpg";
 
 const OurFacilities = () => {
   const facilities = [
@@ -17,8 +20,7 @@ const OurFacilities = () => {
       title: "Operation Theatre",
       description:
         "State-of-the-art OT with advanced surgical technology, strict infection control & experienced surgeons. Delivering safe, successful & patient-focused surgical outcomes.",
-      image:
-        "https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&h=800&fit=crop",
+      image: ICU,
       accent: "#283B6A",
     },
     {
@@ -26,8 +28,7 @@ const OurFacilities = () => {
       title: "Pharmacy & Drug Dispensary",
       description:
         "Fully equipped hospital pharmacy offering genuine medicines & medical essentials round the clock. Efficient dispensing system to ensure accuracy and patient convenience.",
-      image:
-        "https://images.unsplash.com/photo-1576602976047-174e57a47881?w=1200&h=800&fit=crop",
+      image: Pharmacy,
       accent: "#00B8DB",
     },
     {
@@ -35,8 +36,7 @@ const OurFacilities = () => {
       title: "Patient & Visitor Amenities",
       description:
         "Comfortable waiting lounges, cafeteria facilities, clean restrooms & supportive staff. Designed to ensure convenience, safety & a stress-free hospital experience.",
-      image:
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&h=800&fit=crop",
+      image: Patient,
       accent: "#283B6A",
     },
   ];
@@ -46,7 +46,7 @@ const OurFacilities = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#283B6A] mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#283B6A] mb-3">
             Our Facilities
           </h2>
           <p className="text-gray-700 text-md md:text-lg max-w-2xl mx-auto leading-relaxed">

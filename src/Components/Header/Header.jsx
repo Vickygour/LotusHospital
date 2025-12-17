@@ -224,22 +224,27 @@ const Header = () => {
         <div className="hidden xl:block bg-[#1B5FA3] text-white text-sm py-2.5 px-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <span className="opacity-90 text-xs xl:text-sm">
-                Our Clinic sees over 10,000 patients every year
+              <span className="text-xs xl:text-sm text-white">
+                Lotus Hospital cares for over 10,000 patients every year.
               </span>
-              <span className="text-white font-medium text-xs xl:text-sm hover:text-[#1F9C9C] transition-colors cursor-pointer">
-                Tips For Eating Healthy →
+              <span className="text-white font-medium text-xs xl:text-sm hover:text-red-500 transition-colors cursor-pointer">
+                24×7 Emergency Care Available →
               </span>
             </div>
             <div className="flex items-center gap-4 text-xs xl:text-sm">
               <div className="flex items-center gap-2 hover:text-[#1F9C9C] transition-colors cursor-pointer">
                 <Phone size={14} />
                 <span className="hidden xl:inline">Emergency: </span>
-                <span>011-49785874</span>
+
+                <a href="tel:+9210399470">
+                  <span>011-49785874 || 9210399470</span>
+                </a>
               </div>
               <div className="hidden 2xl:flex items-center gap-2 hover:text-[#1F9C9C] transition-colors cursor-pointer">
                 <MapPin size={14} />
-                <span>Burari, New Delhi-110084</span>
+                <a href="https://maps.app.goo.gl/fVmHRAVNeR76k4jf6">
+                  <span>Burari, New Delhi-110084</span>
+                </a>
               </div>
 
               <div className="flex items-center mr-5 gap-1 cursor-pointer hover:text-[#1F9C9C] transition-colors">
@@ -507,11 +512,11 @@ const Header = () => {
               >
                 Doctors' Timetable
               </Link>
-              <Link to="/Contact">
+              <a href="tel:+9210399470">
                 <button className="bg-[#1F9C9C] text-white px-3 xl:px-6 py-2 xl:py-3 rounded-lg font-medium text-xs xl:text-sm hover:bg-[#0FA8C0] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
                   Make Appointment →
                 </button>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Hamburger */}

@@ -44,7 +44,7 @@ export default function Gallery() {
 
   return (
     <div className="py-12 px-4 md:px-10">
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-[#283B6A]">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#283B6A] mb-8 text-center">
         Medical Gallery
       </h2>
       <p className="text-center text-gray-600 max-w-3xl mx-auto mt-3">

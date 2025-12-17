@@ -1,17 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import img1 from '../assets/Image2.jpg';
-import img2 from '../assets/lotus-multispeciality-hospital-burari-delhi-hospitals-tk86l7gabv.jpg';
-import img3 from '../assets/Imagehjdj.jpg';
-import img4 from '../assets/djjjj.jpg';
-import img5 from '../assets/Corridor.jpg';
-import img6 from '../assets/General2.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import img1 from "../assets/Image2.jpg";
+import img2 from "../assets/lotus-multispeciality-hospital-burari-delhi-hospitals-tk86l7gabv.jpg";
+import img3 from "../assets/Imagehjdj.jpg";
+import img4 from "../assets/djjjj.jpg";
+import img5 from "../assets/Corridor.jpg";
+import img6 from "../assets/General2.jpg";
 import {
   ConciergeBell,
   Languages,
@@ -20,13 +20,13 @@ import {
   ClipboardList,
   Bell,
   CheckCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
 const COLORS = {
-  deep: '#0b5560',
-  accent: '#19a6a6',
-  warm: '#ff914d',
-  muted: '#6b7280',
+  deep: "#0b5560",
+  accent: "#19a6a6",
+  warm: "#ff914d",
+  muted: "#6b7280",
 };
 
 // Animation variants
@@ -35,7 +35,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -44,7 +44,7 @@ const scaleIn = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -60,47 +60,47 @@ const staggerContainer = {
 
 const roomHighlights = [
   {
-    images: [img3,  img2], // Multiple images for each room type
-    title: 'Private Rooms',
+    images: [img3, img2], // Multiple images for each room type
+    title: "Private Rooms",
     description:
-      'Choose from a range of premium private and semi-private rooms designed to offer comfort, privacy, and a peaceful healing environment.',
+      "Choose from a range of premium private and semi-private rooms designed to offer comfort, privacy, and a peaceful healing environment.",
     points: [
-      'Noise-controlled environment',
-      'Hygienic and well-ventilated rooms',
-      'Daily housekeeping and linen change',
+      "Noise-controlled environment",
+      "Hygienic and well-ventilated rooms",
+      "Daily housekeeping and linen change",
     ],
   },
   {
     images: [img4, img2],
-    title: 'Semi Private Rooms',
+    title: "Semi Private Rooms",
     description:
-      'Enjoy a diverse, nutritious, and hygienic menu curated by our dietary and culinary team as per your medical and personal preferences.',
+      "Enjoy a diverse, nutritious, and hygienic menu curated by our dietary and culinary team as per your medical and personal preferences.",
     points: [
-      'Dietitian-approved meal plans',
-      'Custom meals for diabetic, cardiac & pediatric patients',
-      'Timely meal service at your convenience',
+      "Dietitian-approved meal plans",
+      "Custom meals for diabetic, cardiac & pediatric patients",
+      "Timely meal service at your convenience",
     ],
   },
   {
     images: [img2, img6],
-    title: 'General Rooms',
+    title: "General Rooms",
     description:
-      'Our skilled nursing team is available round the clock to monitor your condition, administer medication, and support all your clinical needs.',
+      "Our skilled nursing team is available round the clock to monitor your condition, administer medication, and support all your clinical needs.",
     points: [
-      'Regular vitals monitoring',
-      'Dedicated nurse allocation for critical cases',
-      'Compassionate bedside assistance',
+      "Regular vitals monitoring",
+      "Dedicated nurse allocation for critical cases",
+      "Compassionate bedside assistance",
     ],
   },
   {
     images: [img5],
-    title: 'Corridor Rooms',
+    title: "Corridor Rooms",
     description:
-      'Stay connected and relaxed with multiple entertainment options, helping you feel more at home during your hospital stay.',
+      "Stay connected and relaxed with multiple entertainment options, helping you feel more at home during your hospital stay.",
     points: [
-      'LED TV with multiple channels',
-      'High-speed Wi‑Fi connectivity',
-      'Charging points near bed and seating',
+      "LED TV with multiple channels",
+      "High-speed Wi‑Fi connectivity",
+      "Charging points near bed and seating",
     ],
   },
 ];
@@ -108,42 +108,42 @@ const roomHighlights = [
 const specialServices = [
   {
     icon: ConciergeBell,
-    title: 'Concierge Assistance',
+    title: "Concierge Assistance",
     description:
-      'From arranging transport and pharmacy support to guiding attendants, our concierge team helps with all non-medical requirements.',
+      "From arranging transport and pharmacy support to guiding attendants, our concierge team helps with all non-medical requirements.",
   },
   {
     icon: Languages,
-    title: 'Interpreter Support',
+    title: "Interpreter Support",
     description:
-      'For patients and families more comfortable in other languages, interpreter services ensure clear and respectful communication.',
+      "For patients and families more comfortable in other languages, interpreter services ensure clear and respectful communication.",
   },
   {
     icon: Sofa,
-    title: 'Comfortable Furnishings',
+    title: "Comfortable Furnishings",
     description:
-      'Spacious rooms with comfortable beds, attendant couch, ample storage, and soothing interiors to promote relaxation and recovery.',
+      "Spacious rooms with comfortable beds, attendant couch, ample storage, and soothing interiors to promote relaxation and recovery.",
   },
 ];
 
 const howToRequest = [
   {
     icon: Phone,
-    title: 'Contact the Front Desk',
+    title: "Contact the Front Desk",
     description:
-      'Dial the room service or front desk number from your bedside phone for any room-related request or assistance.',
+      "Dial the room service or front desk number from your bedside phone for any room-related request or assistance.",
   },
   {
     icon: ClipboardList,
-    title: 'Share Your Preferences',
+    title: "Share Your Preferences",
     description:
-      'Inform our team about your room preferences, meal choices, dietary restrictions, or any special requirements.',
+      "Inform our team about your room preferences, meal choices, dietary restrictions, or any special requirements.",
   },
   {
     icon: Bell,
-    title: 'Nursing & On‑Call Support',
+    title: "Nursing & On‑Call Support",
     description:
-      'Use the bedside call‑bell for immediate nursing assistance at any time, day or night.',
+      "Use the bedside call‑bell for immediate nursing assistance at any time, day or night.",
   },
 ];
 
@@ -154,8 +154,7 @@ const RoomFacilities = () => {
       <section
         className="relative w-full h-[340px] md:h-[420px] bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&h=900&fit=crop)',
+          backgroundImage: `url(${img5})`,
         }}
       >
         <div
@@ -254,7 +253,7 @@ const RoomFacilities = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
                   } items-center gap-8 md:gap-12 lg:gap-16`}
                 >
                   {/* Swiper Image Side */}

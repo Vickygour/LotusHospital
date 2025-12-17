@@ -6,6 +6,7 @@ import img2 from "../../assets/banner2.jpg";
 import img3 from "../../assets/gallery6.jpg";
 import img4 from "../../assets/banner4.jpg";
 import LotusFront from "../../assets/LotusFront.jpg";
+import Sunil from "../../assets/SunilSir.jpg";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import {
@@ -229,7 +230,7 @@ const HeroSection = () => {
       id: 1,
       quote:
         "Their doctors include highly qualified practitioners who come from a range of backgrounds & bring with them a diversity of skills and special interests. They also registered nurses available to triage any urgent matters, and the administration and staff all have exceptional skills!!",
-      author: "Sami Wade",
+      author: "Sarthak",
       role: "Promina",
       avatar: "https://i.pravatar.cc/100?img=12",
     },
@@ -237,7 +238,7 @@ const HeroSection = () => {
       id: 2,
       quote:
         "The medical care provided was exceptional. The staff was professional, caring, and always available when needed. I highly recommend their services to anyone looking for quality healthcare.",
-      author: "John Mitchell",
+      author: "Nikhil Sarthak",
       role: "Healthcare Professional",
       avatar: "https://i.pravatar.cc/100?img=33",
     },
@@ -245,7 +246,7 @@ const HeroSection = () => {
       id: 3,
       quote:
         "Outstanding service from start to finish. The doctors took time to explain everything clearly and the support team was incredibly helpful throughout my treatment journey.",
-      author: "Emily Roberts",
+      author: "Khushi Naik",
       role: "Patient",
       avatar: "https://i.pravatar.cc/100?img=45",
     },
@@ -392,17 +393,21 @@ const HeroSection = () => {
                       <div className="bg-white/20 p-2 sm:p-3 rounded-lg">
                         <Phone size={16} className="text-white sm:w-5 sm:h-5" />
                       </div>
-                      <span className="text-xl sm:text-2xl font-bold">
-                        011-49785874
-                      </span>
+                      <a href="tel:+011-49785874">
+                        <span className="text-xl sm:text-2xl font-bold">
+                          011-49785874
+                        </span>
+                      </a>
                     </div>
                     <div className="flex items-center gap-2 sm:gap-3">
                       <div className="bg-white/20 p-2 sm:p-3 rounded-lg">
                         <Phone size={16} className="text-white sm:w-5 sm:h-5" />
                       </div>
-                      <span className="text-xl sm:text-2xl font-bold">
-                        9210399470
-                      </span>
+                      <a href="tel:+9210399470">
+                        <span className="text-xl sm:text-2xl font-bold">
+                          9210399470
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -616,14 +621,14 @@ const HeroSection = () => {
                 >
                   <Calendar size={16} /> OPD Timings
                 </Link>
-
-                <Link
-                  to="/Contact"
+                <a href="tel:+"></a>
+                <a
+                  href="tel:+9210399470"
                   className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-md text-sm font-medium text-[#283B6A] shadow-sm hover:bg-white transition"
                   aria-label="Book appointment"
                 >
                   <Activity size={16} /> Book Appointment
-                </Link>
+                </a>
 
                 <a
                   href="tel:01149785874"
@@ -648,9 +653,10 @@ const HeroSection = () => {
       {/* Since 1987 Quality Care Section - FULLY RESPONSIVE */}
       <section className="w-full py-10 sm:py-12 md:py-16 bg-[#0F2142] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 sm:gap-8 md:gap-10">
-            {/* Left: Heading + copy + CTA - RESPONSIVE */}
-            <div className="lg:col-span-6 flex flex-col lg:flex-row gap-6 sm:gap-10 md:gap-20 lg:gap-40 xl:gap-80">
+          <div className="grid grid-cols-1 gap-10">
+            {/* Top Content */}
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-24">
+              {/* Left: Year */}
               <div className="text-center lg:text-left">
                 <p className="text-cyan-400 text-xs sm:text-sm font-semibold tracking-wide">
                   Sets The Standard For High Quality Care Since
@@ -660,28 +666,32 @@ const HeroSection = () => {
                 </h2>
               </div>
 
-              <div className="space-y-4 sm:space-y-6">
+              {/* Right: Content */}
+              <div className="max-w-xl space-y-4 sm:space-y-6 text-center lg:text-left">
                 <p className="text-white/90 text-sm sm:text-base">
                   Our doctors include highly qualified male and female
-                  practitioners who come from a range of backgrounds and bring a
-                  diversity of skills, and our administration and support staff
-                  all have exceptional people skills.
-                </p>
-                <p className="text-white/70 text-xs sm:text-sm">
-                  Our administration and support staff have exceptional people
-                  skills and are trained to assist with all medical enquiries.
+                  practitioners from diverse backgrounds, bringing a wide range
+                  of expertise. Our administration and support staff are trained
+                  to assist you with all medical enquiries with care and
+                  professionalism.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                  <button className="rounded-lg bg-cyan-600 px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-colors hover:bg-cyan-500 w-full sm:w-auto">
+                <p className="text-white/70 text-xs sm:text-sm">
+                  We are committed to delivering ethical, compassionate, and
+                  advanced healthcare services for every patient.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                  <button className="rounded-lg bg-cyan-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-cyan-500 w-full sm:w-auto">
                     Our Core Values
                   </button>
+
                   <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                      <Users size={16} className="text-white sm:w-5 sm:h-5" />
+                    <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                      <Users size={18} className="text-white" />
                     </div>
                     <div>
-                      <div className="text-white font-semibold text-xs sm:text-sm">
+                      <div className="text-white font-semibold text-sm">
                         Mr. Sunil Dutt
                       </div>
                       <div className="text-white/70 text-xs">
@@ -693,39 +703,40 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right: 5 cards - RESPONSIVE GRID */}
-            <div className="lg:col-span-6 ">
-              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 ">
+            {/* Cards Section */}
+            <div className="flex flex-col items-center">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 place-items-center text-center">
                 <CardItem
                   Icon={Stethoscope}
-                  title="Medical Advices & Check Ups"
-                  description="Consult our doctors any time"
+                  title="Expert Medical Consultation"
+                  description="Consult experienced specialists with confidence"
                 />
                 <CardItem
                   Icon={BookOpen}
                   title="Trusted Medical Treatment"
-                  description="Quality care by specialists"
+                  description="High-quality care by qualified doctors"
                 />
                 <CardItem
                   Icon={Heart}
-                  title="Emergency Help Available"
-                  description="Rapid response 24/7"
+                  title="24×7 Emergency Services"
+                  description="Immediate medical care available anytime"
                 />
                 <CardItem
                   Icon={Users}
-                  title="Only Qualified Doctors"
-                  description="Certified and experienced"
+                  title="Qualified & Experienced Doctors"
+                  description="Certified professionals you can trust"
                 />
               </div>
 
               <div className="mt-4 sm:mt-6 text-center">
                 <p className="text-white/80 text-xs sm:text-sm">
-                  Delivering tomorrow's health care for your family.{` `}
+                  Delivering advanced and compassionate healthcare for your
+                  family.{" "}
                   <Link
                     to="/Doctors-Timetable"
                     className="text-cyan-400 underline-offset-4 hover:underline"
                   >
-                    View Doctors' Timetable
+                    View Doctors&apos; Timetable
                   </Link>
                 </p>
               </div>
@@ -733,6 +744,7 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
+
       <MediaGallery />
       {/* Programs + Testimonials Section - FULLY RESPONSIVE */}
       <section className="relative w-full bg-gradient-to-b from-white to-gray-50 py-10 sm:py-12 md:py-16 lg:py-20">
@@ -805,44 +817,27 @@ const HeroSection = () => {
 
           {/* Image Collage + Testimonial Section - RESPONSIVE */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 items-center">
-            {/* Left - Image Collage - RESPONSIVE */}
+            {/* Left - Image Collage */}
             <div className="lg:col-span-5 relative">
-              {/* Decorative shapes - HIDDEN ON MOBILE */}
+              {/* Decorative shapes */}
               <div className="hidden sm:block absolute -top-8 -left-8 w-24 h-24 sm:w-32 sm:h-32 bg-cyan-200/15 rounded-3xl -z-10"></div>
               <div className="hidden sm:block absolute top-20 -right-6 w-20 h-20 sm:w-24 sm:h-24 bg-cyan-100/20 rounded-2xl -z-10"></div>
               <div className="hidden sm:block absolute -bottom-6 left-10 w-24 h-24 sm:w-28 sm:h-28 bg-cyan-300/10 rounded-[2rem] -z-10"></div>
 
-              {/* Main large image - RESPONSIVE HEIGHT */}
+              {/* Main Image */}
               <div className="relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=700&fit=crop"
-                  alt="Happy medical professional"
+                  src={Sunil}
+                  alt="Doctor at Lotus Multispeciality Hospital"
                   className="w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover rounded-3xl shadow-2xl"
-                />
-              </div>
-
-              {/* Small overlapping images - RESPONSIVE SIZING */}
-              <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -left-3 sm:-left-4 md:-left-6 z-20">
-                <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=180&h=180&fit=crop"
-                  alt="Smiling patient"
-                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-2xl shadow-xl border-2 sm:border-4 border-white"
-                />
-              </div>
-
-              <div className="absolute bottom-0 -right-2 sm:-right-3 md:-right-4 z-20">
-                <img
-                  src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=160&h=160&fit=crop"
-                  alt="Child patient"
-                  className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 object-cover rounded-2xl shadow-xl border-2 sm:border-4 border-white"
                 />
               </div>
             </div>
 
-            {/* Right - Testimonials Slider - RESPONSIVE */}
+            {/* Right - Testimonials */}
             <div className="lg:col-span-7 mt-16 sm:mt-0">
               <p className="text-[#13C5DD] font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 sm:mb-6">
-                Hear The Inspiring Stories Of Our Patients
+                Trusted by Families Across Our Community
               </p>
 
               <div className="relative">
@@ -858,7 +853,7 @@ const HeroSection = () => {
                     delay: 5000,
                     disableOnInteraction: false,
                   }}
-                  loop={true}
+                  loop
                   spaceBetween={30}
                   className="testimonial-swiper pb-4"
                 >
@@ -866,7 +861,7 @@ const HeroSection = () => {
                     <SwiperSlide key={testimonial.id}>
                       <div className="animate-fadeInUp">
                         <blockquote className="relative">
-                          {/* Quote mark - RESPONSIVE SIZE */}
+                          {/* Quote */}
                           <span className="absolute -top-2 sm:-top-4 -right-1 sm:-right-2 text-7xl sm:text-8xl md:text-[120px] text-[#283B6A]/5 leading-none select-none font-serif">
                             "
                           </span>
@@ -875,7 +870,7 @@ const HeroSection = () => {
                             {testimonial.quote}
                           </p>
 
-                          {/* Author info - RESPONSIVE */}
+                          {/* Author */}
                           <div className="flex items-center gap-3 sm:gap-4">
                             <img
                               src={testimonial.avatar}
@@ -897,7 +892,7 @@ const HeroSection = () => {
                   ))}
                 </Swiper>
 
-                {/* Custom pagination */}
+                {/* Pagination */}
                 <div className="custom-pagination flex justify-end gap-2 mt-4 sm:mt-6"></div>
               </div>
             </div>
