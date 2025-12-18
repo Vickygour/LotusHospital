@@ -59,6 +59,7 @@ const Footer = () => {
     { name: "Our Doctors", path: "/Doctors" },
     { name: "Services", path: "/Service" },
     { name: "Contact Us", path: "/Contact" },
+    { name: "Privacy Policy", path: "/Privacy-policy" },
   ];
 
   // Additional services
@@ -255,7 +256,7 @@ const Footer = () => {
         {/* Bottom Section - Copyright */}
         <div className="text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Lotus Hospital - By{" "}
+            © 2025-2026 Lotus Hospital - By{" "}
             <a
               href="https://a2vgroups.com"
               target="_blank"

@@ -202,11 +202,11 @@ export default function TpaPartners() {
             TPA Desk: +91-9210399470
           </a>
           <a
-            href="mailto:sunilduttgaur80@gmail.com?subject=Billing%20Query&body=Hello%20Lotus%20Hospital,"
+            href="mailto:lotushospitalsantnagar@gmail.com?subject=Billing%20Query&body=Hello%20Lotus%20Hospital,"
             className="flex items-center gap-3 font-semibold text-white/90 hover:text-white transition"
           >
             <Mail size={20} className="text-[#ff914d]" />
-            sunilduttgaur80@gmail.com
+            lotushospitalsantnagar@gmail.com
           </a>
         </div>
       </header>
@@ -428,7 +428,7 @@ export default function TpaPartners() {
                     Call TPA Desk
                   </a>
                   <a
-                    href="mailto:sunilduttgaur80@gmail.com?subject=Billing%20Query&body=Hello%20Lotus%20Hospital,"
+                    href="mailto:lotushospitalsantnagar@gmail.com?subject=Billing%20Query&body=Hello%20Lotus%20Hospital,"
                     className="px-4 py-2 rounded-md border font-semibold transition hover:bg-gray-50"
                     style={{ color: TOKENS.deep, borderColor: TOKENS.muted }}
                   >

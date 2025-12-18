@@ -33,7 +33,7 @@ import RoomFacilities from "./Components/RoomFacilities.jsx";
 import Pharmacy from "./Components/Pharmacy.jsx";
 import AmbulanceService from "./Components/AmbulanceService.jsx";
 import WhatsAppFloat from "./Components/WhatsAppFloat";
-
+import PrivacyPolicy from "./Components/PrivacyPolicy";
 // ScrollToTop logic directly in App component
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -77,6 +77,7 @@ function App() {
           <Route path="/facilities/Ent" element={<Ent />} />
           <Route path="/Radiology/XRay" element={<Xray />} />
           <Route path="/Admission" element={<Admission />} />
+          <Route path="/Privacy-policy" element={<PrivacyPolicy />} />
           <Route
             path="/services/room-facilities"
             element={<RoomFacilities />}

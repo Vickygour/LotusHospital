@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import Banner from "../assets/banner2.jpg";
 import {
   ClipboardCheck,
   Calendar,
@@ -15,131 +16,131 @@ import {
   Mail,
   Clock,
   CheckCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
 const COLORS = {
-  deep: '#0b5560',
-  accent: '#19a6a6',
-  warm: '#ff914d',
-  muted: '#6b7280',
+  deep: "#0b5560",
+  accent: "#19a6a6",
+  warm: "#ff914d",
+  muted: "#6b7280",
 };
 
 const admissionSteps = [
   {
     id: 1,
     icon: ClipboardCheck,
-    title: 'Pre-Registration',
+    title: "Pre-Registration",
     description:
-      'Begin your admission process by pre-registering online or over the phone. This step helps us gather essential information and prepare for your arrival.',
+      "Begin your admission process by pre-registering online or over the phone. This step helps us gather essential information and prepare for your arrival.",
     highlights: [
-      'Online registration available',
-      'Phone registration support',
-      'Faster admission process',
+      "Online registration available",
+      "Phone registration support",
+      "Faster admission process",
     ],
   },
   {
     id: 2,
     icon: Calendar,
-    title: 'Appointment Scheduling',
+    title: "Appointment Scheduling",
     description:
-      'If your admission is planned, our scheduling team will assist you in fixing a convenient date and time for your admission. For emergency admissions, our team is ready 24/7 to assist you promptly.',
+      "If your admission is planned, our scheduling team will assist you in fixing a convenient date and time for your admission. For emergency admissions, our team is ready 24/7 to assist you promptly.",
     highlights: [
-      'Flexible scheduling options',
-      '24/7 emergency support',
-      'Dedicated scheduling team',
+      "Flexible scheduling options",
+      "24/7 emergency support",
+      "Dedicated scheduling team",
     ],
   },
   {
     id: 3,
     icon: FileText,
-    title: 'Document Submission',
+    title: "Document Submission",
     description:
-      'Please bring the necessary documents, including a government-issued photo ID, insurance details (if applicable), and any relevant medical records or prescriptions. This helps us streamline the admission process.',
+      "Please bring the necessary documents, including a government-issued photo ID, insurance details (if applicable), and any relevant medical records or prescriptions. This helps us streamline the admission process.",
     highlights: [
-      'Photo ID required',
-      'Insurance details if applicable',
-      'Previous medical records',
+      "Photo ID required",
+      "Insurance details if applicable",
+      "Previous medical records",
     ],
   },
   {
     id: 4,
     icon: Users,
-    title: 'Admission Desk',
+    title: "Admission Desk",
     description:
-      'Upon arrival, visit our admission desk where our friendly staff will guide you through the necessary paperwork and assist with any queries you may have. You will be issued an admission ID for easy tracking.',
+      "Upon arrival, visit our admission desk where our friendly staff will guide you through the necessary paperwork and assist with any queries you may have. You will be issued an admission ID for easy tracking.",
     highlights: [
-      'Friendly staff assistance',
-      'Quick paperwork processing',
-      'Admission ID issued',
+      "Friendly staff assistance",
+      "Quick paperwork processing",
+      "Admission ID issued",
     ],
   },
   {
     id: 5,
     icon: Stethoscope,
-    title: 'Medical Examination',
+    title: "Medical Examination",
     description:
-      'Our medical team will conduct a thorough examination to assess your health condition and determine the appropriate course of treatment. This step is crucial for ensuring personalized and effective care.',
+      "Our medical team will conduct a thorough examination to assess your health condition and determine the appropriate course of treatment. This step is crucial for ensuring personalized and effective care.",
     highlights: [
-      'Comprehensive health assessment',
-      'Expert medical evaluation',
-      'Personalized care approach',
+      "Comprehensive health assessment",
+      "Expert medical evaluation",
+      "Personalized care approach",
     ],
   },
   {
     id: 6,
     icon: MessageSquare,
-    title: 'Treatment Plan Discussion',
+    title: "Treatment Plan Discussion",
     description:
-      'After the examination, our healthcare professionals will discuss the proposed treatment plan, including any procedures, surgeries, or therapies required. We encourage you to ask questions and seek clarification about your care.',
+      "After the examination, our healthcare professionals will discuss the proposed treatment plan, including any procedures, surgeries, or therapies required. We encourage you to ask questions and seek clarification about your care.",
     highlights: [
-      'Detailed treatment explanation',
-      'Open communication encouraged',
-      'Patient-centric approach',
+      "Detailed treatment explanation",
+      "Open communication encouraged",
+      "Patient-centric approach",
     ],
   },
   {
     id: 7,
     icon: DollarSign,
-    title: 'Financial Counseling',
+    title: "Financial Counseling",
     description:
-      'Our financial counselors will guide you through the billing process, providing a transparent overview of estimated costs, insurance coverage (if applicable), and available payment options. We aim to make financial aspects clear and manageable.',
+      "Our financial counselors will guide you through the billing process, providing a transparent overview of estimated costs, insurance coverage (if applicable), and available payment options. We aim to make financial aspects clear and manageable.",
     highlights: [
-      'Transparent cost breakdown',
-      'Insurance coordination support',
-      'Flexible payment options',
+      "Transparent cost breakdown",
+      "Insurance coordination support",
+      "Flexible payment options",
     ],
   },
   {
     id: 8,
     icon: Bed,
-    title: 'Admission to the Ward',
+    title: "Admission to the Ward",
     description:
-      'Once the paperwork is complete, you will be escorted to your assigned ward or room. Our nursing staff will ensure your comfort and address any immediate needs.',
+      "Once the paperwork is complete, you will be escorted to your assigned ward or room. Our nursing staff will ensure your comfort and address any immediate needs.",
     highlights: [
-      'Comfortable room assignment',
-      'Professional nursing care',
-      'Immediate needs addressed',
+      "Comfortable room assignment",
+      "Professional nursing care",
+      "Immediate needs addressed",
     ],
   },
   {
     id: 9,
     icon: Heart,
-    title: 'Visitor Information',
+    title: "Visitor Information",
     description:
-      'We encourage family and friends to support you during your stay. Our staff will provide information on visiting hours, amenities, and any guidelines to ensure a conducive healing environment.',
+      "We encourage family and friends to support you during your stay. Our staff will provide information on visiting hours, amenities, and any guidelines to ensure a conducive healing environment.",
     highlights: [
-      'Family support encouraged',
-      'Clear visiting guidelines',
-      'Conducive healing environment',
+      "Family support encouraged",
+      "Clear visiting guidelines",
+      "Conducive healing environment",
     ],
   },
 ];
 
 const requiredDocuments = [
-  'Valid Government-issued Photo ID (Aadhaar Card / Passport / Driving License)',
-  'Health Insurance Policy Documents (if applicable)',
-  'Previous Medical Records and Prescriptions',
-  'Referral Letter from Physician (if any)',
+  "Valid Government-issued Photo ID (Aadhaar Card / Passport / Driving License)",
+  "Health Insurance Policy Documents (if applicable)",
+  "Previous Medical Records and Prescriptions",
+  "Referral Letter from Physician (if any)",
 ];
 
 // Animation Variants
@@ -148,7 +149,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -167,7 +168,7 @@ const scaleIn = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -178,8 +179,7 @@ const Admission = () => {
       <section
         className="relative w-full h-[340px] md:h-[420px] bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1920&h=900&fit=crop)',
+          backgroundImage: `url(${Banner})`,
         }}
       >
         <div
@@ -274,7 +274,7 @@ const Admission = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   variants={fadeInUp}
                   className={`flex flex-col ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    isEven ? "md:flex-row" : "md:flex-row-reverse"
                   } items-center gap-8 md:gap-12 lg:gap-16`}
                 >
                   {/* Icon/Vector Side */}
@@ -563,7 +563,7 @@ const Admission = () => {
               whileTap={{ scale: 0.95 }}
               href="tel:+911234567890"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl"
-              style={{ backgroundColor: COLORS.warm, color: 'white' }}
+              style={{ backgroundColor: COLORS.warm, color: "white" }}
             >
               <Phone size={20} />
               Call Admission Helpline
