@@ -90,10 +90,10 @@ const Footer = () => {
 
             {/* Hospital Description */}
             <h3 className="text-lg font-bold mb-3 text-[#00B8DB]">
-              Lotus Multispecialist Hospital
+              Lotus Multispeciality Hospital
             </h3>
             <p className="text-gray-300 text-sm  mb-6">
-              At Lotus Multispecialist Hospital, we are dedicated to providing
+              At Lotus Multispeciality Hospital, we are dedicated to providing
               advanced medical treatment coupled with compassionate care to
               every patient. Backed by experienced doctors and modern healthcare
               facilities, we are perpetually committed to your health and
@@ -222,8 +222,7 @@ const Footer = () => {
             <div className="flex items-start gap-3 mb-4">
               <MapPin size={18} className="text-[#00B8DB] flex-shrink-0 mt-1" />
               <p className="text-gray-400 text-sm leading-relaxed">
-                Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant Nagar,
-                Burari, Delhi – 110084.
+                KH.NO-122/14.PLOT NO-2, Bhagat Colony, Burari, Delhi, 110084
               </p>
             </div>
 
@@ -256,16 +255,7 @@ const Footer = () => {
         {/* Bottom Section - Copyright */}
         <div className="text-center">
           <p className="text-gray-400 text-sm">
-            © 2025-2026 Lotus Hospital - By{" "}
-            <a
-              href="https://a2vgroups.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#00B8DB] hover:text-[#0FA8C0] transition-colors duration-300"
-            >
-              A2V Groups
-            </a>
-            . All Rights Reserved.
+            © 2025-2026 Lotus Hospital - By - All Rights Reserved.
           </p>
         </div>
       </div>

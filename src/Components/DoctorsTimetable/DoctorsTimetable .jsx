@@ -16,239 +16,95 @@ const fadeInUp = {
 const scheduleData = {
   monday: [
     {
-      time: "10:00-11:00",
-      specialty: "Cardiologist",
-      doctor: "Dr. Ankesh Aggarwal",
+      time: 'Tuesday 10:00-11:00 AM',
+      specialty: 'DM  Cardiology ',
+      doctor: 'Dr. Ankesh Aggarwal',
     },
     {
-      time: "19:30-20:30",
-      specialty: "Gynecologist",
-      doctor: "Gynecologist",
+      time: 'Monday to Saturday 07:00-08:00 PM',
+      specialty: 'MS Gynecology',
+      doctor: 'Dr. Kiran',
+    },
+
+    {
+      time: 'Monday to Saturday 10:00 AM-12:00 PM',
+      specialty: 'MD Pediatrician',
+      doctor: 'Dr. Kunal',
     },
     {
-      time: "10:00-12:00",
-      specialty: "ENT Consultant",
-      doctor: "ENT Consultant",
+      time: 'Monday to Saturday On Appointment',
+      specialty: 'MS Surgery',
+      doctor: 'Dr. Sunil Jain',
     },
     {
-      time: "10:00-12:00",
-      specialty: "Pediatrician",
-      doctor: "Dr. Kunal",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Surgeon",
-      doctor: "Dr. Sunil Jain",
+      time: 'On Appointment',
+      specialty: 'DNB Urology',
+      doctor: 'Dr. Anil Aggarwal',
     },
 
     // ⭐ NEW ADDED DOCTORS
     {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
+      time: 'Monday to Saturday 2PM - 3PM',
+      specialty: 'MD Medicine Specialist',
+      doctor: 'Dr. Rohit Jain',
     },
     {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
+      time: 'Monday to Saturday 11:00 AM-01:00 PM',
+      specialty: 'MD Skin Specialist',
+      doctor: 'Dr. Bhawana Chaudhary',
     },
     {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
+      time: 'On Appointment',
+      specialty: 'Plastic Surgeon',
+      doctor: 'Dr. Bharat',
     },
     {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
+      time: 'On Appointment',
+      specialty: 'MS Surgery',
+      doctor: 'Dr. Sandeep Gupta',
     },
     {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
+      time: 'MOnday , Thursday 1PM - 2PM',
+      specialty: 'DNB Ortho',
+      doctor: 'Dr. Ajay Mittal',
+    },
+    {
+      time: 'Wednesday,Saturday 10:30 AM-11:30 AM',
+      specialty: 'MS Ortho',
+      doctor: 'Dr. Sameer Kad',
+    },
+    {
+      time: 'Wednesday,Saturday 07:00 PM-08:00 PM',
+      specialty: 'MD Psychiatry',
+      doctor: 'Dr. J Kumar',
+    },
+    {
+      time: 'On Appointment',
+      specialty: 'MD Gastro',
+      doctor: 'Dr. Anil Sharma',
+    },
+    {
+      time: 'On Appointment',
+      specialty: 'MD Anesthisia',
+      doctor: 'Dr. Pankaj Sharma',
+    },
+    {
+      time: 'On Appointment',
+      specialty: 'MD Anesthisia',
+      doctor: 'Dr. Gagan Dabas',
+    },
+    {
+      time: 'On Appointment',
+      specialty: 'MD Anesthisia',
+      doctor: 'Dr. Amit Sahu',
     },
   ],
 
-  tuesday: [
-    {
-      time: "10:00-11:00",
-      specialty: "Cardiologist",
-      doctor: "Dr. Ankesh Aggarwal",
-    },
-    {
-      time: "10:30-11:30",
-      specialty: "Orthopedic",
-      doctor: "Dr. Sameer",
-    },
 
-    // ⭐ SAME DOCTORS (Mon–Sat)
-    {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
-    },
-    {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
-    },
-  ],
 
-  wednesday: [
-    {
-      time: "19:00-20:00",
-      specialty: "Psychiatrist/Neurologist",
-      doctor: "Dr. J Kumar",
-    },
+ 
 
-    // ⭐ Added
-    {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
-    },
-    {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
-    },
-  ],
 
-  thursday: [
-    {
-      time: "10:00-12:00",
-      specialty: "ENT Consultant",
-      doctor: "ENT Consultant",
-    },
-
-    // ⭐ Added
-    {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
-    },
-    {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
-    },
-  ],
-
-  friday: [
-    // ⭐ They all work Mon–Sat
-    {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
-    },
-    {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
-    },
-  ],
-
-  saturday: [
-    {
-      time: "19:00-20:00",
-      specialty: "Psychiatrist/Neurologist",
-      doctor: "Dr. J Kumar",
-    },
-    {
-      time: "10:30-11:30",
-      specialty: "Orthopedic",
-      doctor: "Dr. Sameer",
-    },
-
-    // ⭐ Added
-    {
-      time: "On Appointment",
-      specialty: "Medicine Specialist",
-      doctor: "Dr. Rohit Jain",
-    },
-    {
-      time: "11:00-13:00",
-      specialty: "General Physician",
-      doctor: "Dr. Bhawana Chaudhary",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Plastic Surgeon",
-      doctor: "Dr. Bharat",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Sandeep Gupta",
-    },
-    {
-      time: "On Appointment",
-      specialty: "Consultant",
-      doctor: "Dr. Ajay Mittal",
-    },
-  ],
-
-  sunday: [],
 };
 
 const days = [
@@ -280,7 +136,7 @@ const DoctorsTimetable = () => {
         className="relative w-full h-[340px] md:h-[420px] bg-cover bg-center md:mt-30"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1920&h=900&fit=crop)",
+            'url(https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1920&h=900&fit=crop)',
         }}
       >
         <div
@@ -322,7 +178,7 @@ const DoctorsTimetable = () => {
               className="text-3xl md:text-4xl font-bold tracking-tight"
               style={{ color: COLORS.deep }}
             >
-              Welcome to Lotus Hospital
+              Welcome to Lotus Multispeciality Hospital
             </h2>
             <p
               className="mt-4 text-base md:text-lg leading-relaxed"
@@ -359,8 +215,8 @@ const DoctorsTimetable = () => {
           {days.map((day) => {
             const dayData = scheduleData[day.toLowerCase()]?.filter(
               (item) =>
-                selectedSpecialty === "all" ||
-                item.specialty === selectedSpecialty
+                selectedSpecialty === 'all' ||
+                item.specialty === selectedSpecialty,
             );
 
             if (!dayData || dayData.length === 0) return null;

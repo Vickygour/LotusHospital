@@ -27,9 +27,9 @@ const AboutTop = () => {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{
           clickable: true,
-          el: ".hero-pagination",
-          bulletClass: "hero-bullet",
-          bulletActiveClass: "hero-bullet-active",
+          el: '.hero-pagination',
+          bulletClass: 'hero-bullet',
+          bulletActiveClass: 'hero-bullet-active',
         }}
         loop={true}
         speed={1200}
@@ -68,8 +68,8 @@ const AboutTop = () => {
                     <div className="flex items-start gap-3 text-white/90 mb-8">
                       <MapPin size={22} className="mt-1" />
                       <p className="text-sm md:text-base leading-relaxed max-w-md">
-                        Bus Stop, Opp. Main Market, Virendar Nagar, <br />
-                        Block B, Sant Nagar, Burari, Delhi – 110084.
+                        KH.NO-122/14.PLOT NO-2, Bhagat Colony, Burari,
+                        Delhi, 110084 <br />
                       </p>
                     </div>
 
@@ -78,6 +78,10 @@ const AboutTop = () => {
                       <button className="flex items-center gap-2 bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
                         <Phone size={20} />
                         011-49785874
+                      </button>
+                      <button className="flex items-center gap-2 bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
+                        <Phone size={20} />
+                        9210399470
                       </button>
                     </div>
                   </div>

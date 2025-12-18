@@ -349,10 +349,10 @@ const AboutMain = () => {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-6 md:mt-8">
                 <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#13C5DD] transition-all duration-300 text-center">
-                  Our Core Values
+                  Make Appointment
                 </button>
-                <button className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
-                  More About Us
+                <button  className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                  Contact Us
                 </button>
               </div>
             </div>

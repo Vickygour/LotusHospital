@@ -14,51 +14,195 @@ const OurDoctor = () => {
   const doctors = [
     {
       id: 1,
-      name: "Dr. Ankesh Aggarwal",
-      specialty: "Consultant Cardiologist",
+      name: 'Dr. Ankesh Aggarwal',
+      specialty: 'Consultant Cardiologist',
       image: DoctorVector,
       description:
-        "Dr. Ankesh Aggarwal specializes in the diagnosis and treatment of heart-related conditions. He is known for his clinical expertise and patient-centric cardiac care at Lotus Multispeciality Hospital.",
+        'Dr. Ankesh Aggarwal specializes in the diagnosis and treatment of heart-related conditions. He is known for his clinical expertise and patient-centric cardiac care at Lotus Multispeciality Hospital.',
     },
     {
       id: 4,
-      name: "Dr. Kunal",
-      specialty: "Consultant Pediatrician",
+      name: 'Dr. Kunal',
+      specialty: 'Consultant Pediatrician',
       image: DoctorVector,
       description:
-        "Dr. Kunal provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.",
+        'Dr. Kunal provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
     },
     {
       id: 5,
-      name: "Dr. Sunil Jain",
-      specialty: "General & Laparoscopic Surgeon",
+      name: 'Dr. Sunil Jain',
+      specialty: 'General & Laparoscopic Surgeon',
       image: DoctorVector,
       description:
-        "Dr. Sunil Jain offers surgical care with precision and safety, handling both general and laparoscopic procedures. Available strictly on prior appointment.",
+        'Dr. Sunil Jain offers surgical care with precision and safety, handling both general and laparoscopic procedures. Available strictly on prior appointment.',
     },
     {
       id: 6,
-      name: "Dr. Rohit Jain",
-      specialty: "Medicine Specialist",
+      name: 'Dr. Sandeep Gupta',
+      specialty: 'General & Laparoscopic Surgeon',
       image: DoctorVector,
       description:
-        "Dr. Rohit Jain specializes in the diagnosis and management of acute and chronic medical conditions, providing holistic and evidence-based treatment.",
+        'Dr. Sandeep Gupta offers surgical care with precision and safety, handling both general and laparoscopic procedures. Available strictly on prior appointment.',
     },
     {
       id: 7,
-      name: "Dr. Bhawana Chaudhary",
-      specialty: "General Physician",
+      name: 'Dr. Sunil Aggarwal',
+      specialty: 'General & Laparoscopic Surgeon',
       image: DoctorVector,
       description:
-        "Dr. Bhawana Chaudhary focuses on preventive healthcare, routine medical consultations, and management of common illnesses with a patient-friendly approach.",
+        'Dr. Sunil Aggarwal offers surgical care with precision and safety, handling both general and laparoscopic procedures. Available strictly on prior appointment.',
+    },
+    {
+      id: 6,
+      name: 'Dr. Rohit Jain',
+      specialty: 'Medicine Specialist',
+      image: DoctorVector,
+      description:
+        'Dr. Rohit Jain specializes in the diagnosis and management of acute and chronic medical conditions, providing holistic and evidence-based treatment.',
+    },
+    {
+      id: 7,
+      name: 'Dr. Bhawana Chaudhary',
+      specialty: 'Skin Specialist',
+      image: DoctorVector,
+      description:
+        'Dr. Bhawana Chaudhary focuses on preventive healthcare, routine medical consultations, and management of common illnesses with a patient-friendly approach.',
     },
     {
       id: 8,
-      name: "Dr. Bharat",
-      specialty: "Plastic Surgeon",
+      name: 'Dr. Bharat',
+      specialty: 'Plastic Surgeon',
       image: DoctorVector,
       description:
-        "Dr. Bharat specializes in aesthetic and reconstructive plastic surgery procedures, offering advanced treatments with a focus on safety and patient satisfaction.",
+        'Dr. Bharat specializes in aesthetic and reconstructive plastic surgery procedures, offering advanced treatments with a focus on safety and patient satisfaction.',
+    },
+    {
+      id: 9,
+      name: 'Dr. Sameer kad',
+      specialty: 'Orthopedic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Sameer kad specializes in aesthetic and reconstructive plastic surgery procedures, offering advanced treatments with a focus on safety and patient satisfaction.',
+    },
+    {
+      id: 9,
+      name: 'Dr. Ajay Mittal',
+      specialty: 'Orthopedic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Ajay Mittal specializes in aesthetic and reconstructive plastic surgery procedures, offering advanced treatments with a focus on safety and patient satisfaction.',
+    },
+    {
+      id: 9,
+      name: 'Dr. Deepak Tyagi',
+      specialty: 'Orthopedic surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Deepak Tyagi specializes in aesthetic and reconstructive plastic surgery procedures, offering advanced treatments with a focus on safety and patient satisfaction.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Vikas Chaudhary',
+      specialty: 'Consultant Pediatrician',
+      image: DoctorVector,
+      description:
+        'Dr. Vikas Chaudhary provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Kiran',
+      specialty: 'Gynecologist',
+      image: DoctorVector,
+      description:
+        'Dr. Kiran provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. J. Chaudhary',
+      specialty: 'Gynecologist',
+      image: DoctorVector,
+      description:
+        'Dr. J. Chaudhary provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. J. Kumar',
+      specialty: 'Psychiatrist',
+      image: DoctorVector,
+      description:
+        'Dr. J. Kumar provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Manoj Miglani',
+      specialty: 'Spine Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Manoj Milani provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Anil Kansal',
+      specialty: 'Neurosurgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Anil Kansal provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Pankaj Sharma',
+      specialty: 'Anasthetic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Pankaj Sharma provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Gagan Dabaas',
+      specialty: 'Anasthetic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Gagan Dabaas provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Amit Sahu',
+      specialty: 'Anasthetic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Amit Sahu provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Gurwinder',
+      specialty: 'Anasthetic Surgeon',
+      image: DoctorVector,
+      description:
+        'Dr. Gurwinder provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Ankit Sharma',
+      specialty: 'physiotherapist',
+      image: DoctorVector,
+      description:
+        'Dr. Ankit Sharma provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Anil Sharma',
+      specialty: 'MD Gastro',
+      image: DoctorVector,
+      description:
+        'Dr. Anil Sharma provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
+    },
+    {
+      id: 10,
+      name: 'Dr. Anil Aggarwal',
+      specialty: 'DNB Urology',
+      image: DoctorVector,
+      description:
+        'Dr. Anil Aggarwal provides specialized medical care for infants, children, and adolescents, focusing on growth, development, and preventive healthcare.',
     },
   ];
 
@@ -79,7 +223,7 @@ const OurDoctor = () => {
         {/* Doctors Slider */}
         <div className="relative">
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Navigation, Pagination, ]}
             spaceBetween={30}
             slidesPerView={1}
             navigation={{
@@ -160,11 +304,10 @@ const OurDoctor = () => {
             </div>
             <p className="text-gray-700 text-sm md:text-base">
               <span className="font-semibold text-[#283B6A]">OPD Timings:</span>{" "}
-              Monday to Saturday, 10:00 AM – 7:00 PM. Please call the hospital
-              to confirm doctor availability.
+             General OPD & Emergency 24×7. Please Call for Appointment 
             </p>
           </div>
-          <a href="tel:+9210399470">
+          <a href="tel:9210399470">
             <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-xl">
               Book Appointment →
             </button>

@@ -405,7 +405,7 @@ const HeroSection = () => {
                       <div className="bg-white/20 p-2 sm:p-3 rounded-lg">
                         <Phone size={16} className="text-white sm:w-5 sm:h-5" />
                       </div>
-                      <a href="tel:+9210399470">
+                      <a href="tel:9210399470">
                         <span className="text-xl sm:text-2xl font-bold">
                           9210399470
                         </span>
@@ -625,7 +625,7 @@ const HeroSection = () => {
                 </Link>
                 <a href="tel:+"></a>
                 <a
-                  href="tel:+9210399470"
+                  href="tel:9210399470"
                   className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-md text-sm font-medium text-[#283B6A] shadow-sm hover:bg-white transition"
                   aria-label="Book appointment"
                 >

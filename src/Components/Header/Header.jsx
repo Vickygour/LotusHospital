@@ -238,7 +238,7 @@ const Header = () => {
                 <Phone size={14} />
                 <span className="hidden xl:inline">Emergency: </span>
 
-                <a href="tel:+9210399470">
+                <a href="tel:9210399470">
                   <span>011-49785874 || 9210399470</span>
                 </a>
               </div>
