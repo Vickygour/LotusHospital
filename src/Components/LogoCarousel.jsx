@@ -120,8 +120,8 @@ const LogoCarousel = ({ logos }) => {
       <div
         className="relative overflow-hidden py-8 my-8"
         style={{
-          borderTop: `1px solid ${TOKENS.muted}40`,
-          borderBottom: `1px solid ${TOKENS.muted}40`,
+          borderTop: `0px solid ${TOKENS.muted}40`,
+          borderBottom: `0px solid ${TOKENS.muted}40`,
         }}
       >
         <motion.div
