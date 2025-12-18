@@ -520,7 +520,7 @@ const Header = () => {
                 rel="noopener noreferrer"
               >
                 <button className="bg-[#1F9C9C] text-white px-3 xl:px-6 py-2 xl:py-3 rounded-lg font-medium text-xs xl:text-sm hover:bg-[#0FA8C0] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
-                  Make Appointment →
+                  Book Appointment →
                 </button>
               </a>
             </div>
@@ -682,7 +682,7 @@ const Header = () => {
                     className="w-full bg-[#1F9C9C] text-white py-3 rounded-lg font-medium hover:bg-[#0FA8C0] transition-all shadow-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Make Appointment →
+                    Book Appointment →
                   </button>
                 </Link>
               </div>

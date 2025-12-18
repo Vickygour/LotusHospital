@@ -394,7 +394,7 @@ const DoctorsPage = () => {
 
               <div className="flex flex-wrap gap-4">
                 <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
-                  Make Appointment
+                  Book Appointment
                 </button>
                 <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#283B6A] transition-all duration-300">
                   More About Us
