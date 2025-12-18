@@ -340,7 +340,7 @@ export default function ENT() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -350,10 +350,10 @@ export default function ENT() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -518,7 +518,7 @@ export default function ENT() {
                 available.
               </p>
               <a
-                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-block text-sm text-[#2448a5] hover:underline"

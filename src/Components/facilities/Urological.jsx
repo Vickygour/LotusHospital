@@ -308,7 +308,7 @@ export default function Urological() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -318,7 +318,7 @@ export default function Urological() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
                     Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
                     Nagar, Burari, Delhi – 110084.
@@ -351,10 +351,10 @@ export default function Urological() {
               The Urology Department is a Centre of Excellence dedicated to the
               diagnosis and treatment of conditions affecting the urinary tract
               in men and women, and the male reproductive system. We offer
-              specialized care in <strong>Uro-oncology</strong>,{' '}
+              specialized care in <strong>Uro-oncology</strong>,{" "}
               <strong>Kidney Stone Management</strong> (using laser and
-              lithotripsy), <strong>Andrology</strong>, and{' '}
-              <strong>Reconstructive Urology</strong>. Our focus on{' '}
+              lithotripsy), <strong>Andrology</strong>, and{" "}
+              <strong>Reconstructive Urology</strong>. Our focus on{" "}
               <strong>Minimal Access Surgery (MAS)</strong> ensures faster
               recovery, less pain, and better cosmetic results for our patients.
             </motion.p>
@@ -497,7 +497,7 @@ export default function Urological() {
                 available.
               </p>
               <a
-                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-block text-sm text-[#2448a5] hover:underline"

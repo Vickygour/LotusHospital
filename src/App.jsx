@@ -9,6 +9,7 @@ import AboutMain from "./Components/About/AboutMain.jsx";
 import ContactSection from "./Components/Contact/ContactSection.jsx";
 import DoctorsTimetable from "./Components/DoctorsTimetable/DoctorsTimetable .jsx";
 import DoctorsPage from "./Components/DoctorsTimetable/DoctorsPage .jsx";
+import TpaInsaurence from "./Components/Insaurance/TpaInsaurence.jsx";
 import BlogSection from "./Components/Blog/BlogSection.jsx";
 import Service from "./Components/Service/Service.jsx";
 import Gynecologist from "./Components/facilities/Gynecologist.jsx";
@@ -31,6 +32,7 @@ import Admission from "./Components/Admission.jsx";
 import RoomFacilities from "./Components/RoomFacilities.jsx";
 import Pharmacy from "./Components/Pharmacy.jsx";
 import AmbulanceService from "./Components/AmbulanceService.jsx";
+import WhatsAppFloat from "./Components/WhatsAppFloat";
 
 // ScrollToTop logic directly in App component
 function ScrollToTop() {
@@ -56,6 +58,7 @@ function App() {
           <Route path="/Contact" element={<ContactSection />} />
           <Route path="/Doctors-Timetable" element={<DoctorsTimetable />} />
           <Route path="/DoctorsPage" element={<DoctorsPage />} />
+          <Route path="/TPA-Insurance" element={<TpaInsaurence />} />
           <Route path="/Service" element={<Service />} />
           <Route path="/facilities/Gynecology" element={<Gynecologist />} />
           <Route path="/facilities/Laparoscopic" element={<Laparoscopic />} />
@@ -81,6 +84,7 @@ function App() {
           <Route path="/services/pharmacy" element={<Pharmacy />} />
           <Route path="/services/ambulance" element={<AmbulanceService />} />
         </Routes>
+        <WhatsAppFloat />
         <Footer />
       </BrowserRouter>
     </>

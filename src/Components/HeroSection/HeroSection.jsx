@@ -9,6 +9,8 @@ import LotusFront from "../../assets/LotusFront.jpg";
 import Sunil from "../../assets/SunilSir.jpg";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import LogoCarousel from "../LogoCarousel";
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -484,12 +486,12 @@ const HeroSection = () => {
                       Location, Directions
                     </h3>
                     <p className="text-white/90 text-sm sm:text-md leading-relaxed mb-3 sm:mb-4">
-                      Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                      Nagar, Burari, Delhi – 110084.
+                      KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                      110084
                     </p>
                   </div>
                   <a
-                    href="https://maps.app.goo.gl/sPcEVyjfTqWvALhA7"
+                    href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -746,6 +748,8 @@ const HeroSection = () => {
       </section>
 
       <MediaGallery />
+      <LogoCarousel />
+
       {/* Programs + Testimonials Section - FULLY RESPONSIVE */}
       <section className="relative w-full bg-gradient-to-b from-white to-gray-50 py-10 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -801,7 +805,7 @@ const HeroSection = () => {
                     doctors will receive your urgent calls.
                   </p>
                   <a
-                    href="https://maps.app.goo.gl/gwUtgN4Sy2o3euVp9"
+                    href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                     className="inline-flex items-center gap-2 text-[#283B6A] text-xs sm:text-sm font-semibold hover:underline underline-offset-4 transition-all duration-200"
                   >
                     Get Directions

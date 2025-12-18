@@ -5,7 +5,7 @@ import { Phone, Droplet } from "lucide-react";
 import { FaHeartbeat, FaSyringe, FaWalking, FaBaby } from "react-icons/fa";
 
 // IMPORT IMAGES (use real files inside src/assets)
-import dopplerBanner from '../../assets/ColorBanner.jpg';
+import dopplerBanner from "../../assets/ColorBanner.jpg";
 import dopplerMachine from "../../assets/color1.jpg";
 import dopplerReadout from "../../assets/color2.jpg";
 import patientImg from "../../assets/doppler3.jpg";
@@ -20,7 +20,7 @@ const COLORS = {
 const Pill = ({ children }) => (
   <span
     className="inline-block px-3 py-1 rounded-full text-xs font-medium"
-    style={{ background: '#eefafa', color: COLORS.accent }}
+    style={{ background: "#eefafa", color: COLORS.accent }}
   >
     {children}
   </span>
@@ -134,7 +134,7 @@ export default function ColorDopplerServices() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -144,10 +144,10 @@ export default function ColorDopplerServices() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -178,7 +178,7 @@ export default function ColorDopplerServices() {
               className="mt-5 text-gray-700 leading-relaxed font-sans prose max-w-none"
             >
               Color Doppler Ultrasound combines traditional ultrasound's
-              anatomical imaging with the Doppler Effect to visualize{' '}
+              anatomical imaging with the Doppler Effect to visualize{" "}
               <strong>blood flow</strong> in real-time. This non-invasive test
               is essential for diagnosing <strong>vascular disorders</strong>,
               assessing fetal circulation, and evaluating blood supply to major
@@ -461,10 +461,10 @@ export default function ColorDopplerServices() {
             className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
           >
             {[
-              { name: 'Dr. Arun Tyagi', role: 'Senior Radiologist' },
-              { name: 'Dr. Priya Sharma', role: 'Consultant Radiologist' },
-              { name: 'Dr. Vikas Jain', role: 'Vascular Sonographer' },
-              { name: 'Ms. Neha Singh', role: 'Technician (Sonography)' },
+              { name: "Dr. Arun Tyagi", role: "Senior Radiologist" },
+              { name: "Dr. Priya Sharma", role: "Consultant Radiologist" },
+              { name: "Dr. Vikas Jain", role: "Vascular Sonographer" },
+              { name: "Ms. Neha Singh", role: "Technician (Sonography)" },
             ].map((t, i) => (
               <motion.div variants={fadeInUp} key={i}>
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg ring-1 ring-gray-100 hover:shadow-xl transition-shadow">

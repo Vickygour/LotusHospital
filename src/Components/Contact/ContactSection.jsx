@@ -61,7 +61,7 @@ const ContactSection = () => {
       {/* Google Map Section */}
       <section className="relative w-full h-[500px] mt-23 md:mt-40">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13991.872736938161!2d77.18650235253644!3d28.75036685960588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfe212b4623ed%3A0x53ac4e83c884f385!2sLotus%20hospital%20and%20maternity%20centre!5e0!3m2!1sen!2sin!4v1765359013747!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.1597593611796!2d77.1988375!3d28.744646700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cff37cea6e23d%3A0xc33aedf6ca1013a5!2sLotus%20Multispeciality%20Hospital!5e0!3m2!1sen!2sin!4v1766037115945!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}

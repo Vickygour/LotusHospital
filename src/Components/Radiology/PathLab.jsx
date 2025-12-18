@@ -5,10 +5,10 @@ import { Phone, Microscope } from "lucide-react";
 import { FaSyringe, FaFlask, FaVial, FaDna } from "react-icons/fa";
 
 // Images (replace placeholders with real Path Lab images inside src/assets)
-import labBanner from '../../assets/PathBanner.jpg';
-import labMachine from '../../assets/Pathlab1.jpg';
-import reportReadout from '../../assets/Pathlab2.jpg';
-import patientImg from '../../assets/img2.png';
+import labBanner from "../../assets/PathBanner.jpg";
+import labMachine from "../../assets/Pathlab1.jpg";
+import reportReadout from "../../assets/Pathlab2.jpg";
+import patientImg from "../../assets/img2.png";
 
 const COLORS = {
   deep: "#0a566a",
@@ -77,11 +77,10 @@ export default function PathLabServices() {
     return () => obs.disconnect();
   }, [controls]);
 
-
   const Pill = ({ children }) => (
     <span
       className="inline-block px-3 py-1 rounded-full text-xs font-medium"
-      style={{ background: '#eefafa', color: COLORS.accent }}
+      style={{ background: "#eefafa", color: COLORS.accent }}
     >
       {children}
     </span>
@@ -135,7 +134,7 @@ export default function PathLabServices() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -145,10 +144,10 @@ export default function PathLabServices() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -178,12 +177,12 @@ export default function PathLabServices() {
               variants={fadeInUp}
               className="mt-5 text-gray-700 leading-relaxed font-sans prose max-w-none"
             >
-              Our Pathology Lab utilizes{' '}
+              Our Pathology Lab utilizes{" "}
               <strong style={{ color: COLORS.accent }}>
                 state-of-the-art automated analysers
-              </strong>{' '}
+              </strong>{" "}
               to provide <strong>accurate and reliable</strong> results quickly.
-              We offer a full spectrum of{' '}
+              We offer a full spectrum of{" "}
               <strong style={{ color: COLORS.accent }}>
                 Blood, Urine, and Tissue tests
               </strong>
@@ -300,7 +299,7 @@ export default function PathLabServices() {
                 </h3>
                 <p className="mt-4 text-gray-700 leading-relaxed">
                   We utilize <strong>Fully Automated Analysers</strong> which
-                  ensure speed and precision. Samples are processed following{' '}
+                  ensure speed and precision. Samples are processed following{" "}
                   <strong>Standardized Protocols</strong> to guarantee
                   <strong> reliable results</strong> every time. Our trained
                   technicians and doctors deeply examine the results.
@@ -464,12 +463,12 @@ export default function PathLabServices() {
             className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
           >
             {[
-              { name: 'Dr. Arun Tyagi', role: 'Senior Pathologist' },
-              { name: 'Dr. Priya Sharma', role: 'Consultant Pathologist' },
-              { name: 'Dr. Vikas Jain', role: 'Clinical Biochemist' },
+              { name: "Dr. Arun Tyagi", role: "Senior Pathologist" },
+              { name: "Dr. Priya Sharma", role: "Consultant Pathologist" },
+              { name: "Dr. Vikas Jain", role: "Clinical Biochemist" },
               {
-                name: 'Ms. Neha Singh',
-                role: 'Phlebotomist (Sample Collection)',
+                name: "Ms. Neha Singh",
+                role: "Phlebotomist (Sample Collection)",
               },
             ].map((t, i) => (
               <motion.div variants={fadeInUp} key={i}>

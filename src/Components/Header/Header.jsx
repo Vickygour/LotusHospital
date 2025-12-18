@@ -27,6 +27,7 @@ import ecg from "../../assets/GynoVector/Copilot_20251129_152104.png";
 import color from "../../assets/GynoVector/a2vcolor.svg";
 import echo from "../../assets/GynoVector/Echocardiographyicon.svg";
 import laser from "../../assets/GynoVector/a2vlaser.svg";
+import TpaInsaurence from "../../Components/Insaurance/TpaInsaurence";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -96,6 +97,7 @@ const Header = () => {
     { name: "About Us", path: "/About-us" },
     { name: "Our Specialties", path: "/departments", hasMegaMenu: true },
     { name: "Doctors", path: "/DoctorsPage" },
+    { name: "TPA Insurance", path: "/TPA-Insurance" },
     { name: "Services", path: "/Service", hasDropdown: true },
     { name: "Contact", path: "/Contact" },
   ];
@@ -512,7 +514,11 @@ const Header = () => {
               >
                 Doctors' Timetable
               </Link>
-              <a href="tel:+9210399470">
+              <a
+                href="https://wa.me/919210399470?text=Hello%20Lotus%20Hospital%20👋%20I%20want%20to%20book%20an%20appointment."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="bg-[#1F9C9C] text-white px-3 xl:px-6 py-2 xl:py-3 rounded-lg font-medium text-xs xl:text-sm hover:bg-[#0FA8C0] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
                   Make Appointment →
                 </button>

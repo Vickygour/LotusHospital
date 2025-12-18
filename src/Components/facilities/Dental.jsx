@@ -430,7 +430,7 @@ export default function Dental() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -440,10 +440,10 @@ export default function Dental() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -605,14 +605,14 @@ export default function Dental() {
                 className="text-sm font-semibold"
                 style={{ color: COLORS.deep }}
               >
-                Our Address
+                Location
               </h4>
               <p className="text-xs text-gray-600 mt-2">
                 Lotus Hospital - Burari, Delhi — Near Burari Metro. Free parking
                 available.
               </p>
               <a
-                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-block text-sm text-[#2448a5] hover:underline"
@@ -626,31 +626,31 @@ export default function Dental() {
         <section className="mt-16 w-full">
           <div className="flex justify-center border-b border-gray-200 mb-8">
             <button
-              onClick={() => setActiveTab('primary')}
+              onClick={() => setActiveTab("primary")}
               className={`py-3 px-6 text-lg font-semibold transition-colors ${
-                activeTab === 'primary'
-                  ? 'border-b-4'
-                  : 'text-gray-500 hover:text-gray-700'
+                activeTab === "primary"
+                  ? "border-b-4"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
               style={{
-                color: activeTab === 'primary' ? COLORS.deep : undefined,
+                color: activeTab === "primary" ? COLORS.deep : undefined,
                 borderColor:
-                  activeTab === 'primary' ? COLORS.accent : undefined,
+                  activeTab === "primary" ? COLORS.accent : undefined,
               }}
             >
               Routine & Surgical Services
             </button>
             <button
-              onClick={() => setActiveTab('cosmetic')}
+              onClick={() => setActiveTab("cosmetic")}
               className={`py-3 px-6 text-lg font-semibold transition-colors ${
-                activeTab === 'cosmetic'
-                  ? 'border-b-4'
-                  : 'text-gray-500 hover:text-gray-700'
+                activeTab === "cosmetic"
+                  ? "border-b-4"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
               style={{
-                color: activeTab === 'cosmetic' ? COLORS.deep : undefined,
+                color: activeTab === "cosmetic" ? COLORS.deep : undefined,
                 borderColor:
-                  activeTab === 'cosmetic' ? COLORS.accent : undefined,
+                  activeTab === "cosmetic" ? COLORS.accent : undefined,
               }}
             >
               Cosmetic Dentistry
@@ -685,7 +685,6 @@ export default function Dental() {
         </section>
       </main>
 
-
       {openService && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 transition-opacity duration-300"
@@ -700,7 +699,7 @@ export default function Dental() {
             initial={{ opacity: 0, y: 100, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             ref={modalRef}
             className="relative max-w-3xl w-full"
           >

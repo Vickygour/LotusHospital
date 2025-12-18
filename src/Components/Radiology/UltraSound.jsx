@@ -10,10 +10,10 @@ import {
   FaUserMd,
 } from "react-icons/fa";
 
-import usBanner from '../../assets/UltraBanner.jpg';
-import usMachine from '../../assets/Ultra1.jpg';
-import usSample from '../../assets/Ultra2.jpg';
-import radiologistImg from '../../assets/img2.png';
+import usBanner from "../../assets/UltraBanner.jpg";
+import usMachine from "../../assets/Ultra1.jpg";
+import usSample from "../../assets/Ultra2.jpg";
+import radiologistImg from "../../assets/img2.png";
 
 const COLORS = {
   deep: "#0b5560",
@@ -70,7 +70,7 @@ export default function UltrasoundServices() {
   const Pill = ({ children }) => (
     <span
       className="inline-block px-3 py-1 rounded-full text-xs font-medium"
-      style={{ background: '#eefafa', color: COLORS.accent }}
+      style={{ background: "#eefafa", color: COLORS.accent }}
     >
       {children}
     </span>
@@ -139,7 +139,7 @@ export default function UltrasoundServices() {
                     href="tel:9210399470"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg border-2 text-sm sm:text-base border-[#2FA1A5] hover:bg-[#2FA1A5] hover:text-white transition-all"
                   >
-                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{' '}
+                    <Phone className="text-[#2FA1A5] w-4 h-4 sm:w-5 sm:h-5" />{" "}
                     9210399470
                   </a>
                 </div>
@@ -149,10 +149,10 @@ export default function UltrasoundServices() {
                     style={{ color: COLORS.deep }}
                   >
                     Location:
-                  </span>{' '}
+                  </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -459,10 +459,10 @@ export default function UltrasoundServices() {
             className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
           >
             {[
-              { name: 'Dr. Leena Agarwal', role: 'Consultant Radiologist' },
-              { name: 'Dr. Rajiv Menon', role: 'Fetal Medicine Specialist' },
-              { name: 'Ms. Anu Verma', role: 'Senior Sonographer' },
-              { name: 'Mr. Rohit Singh', role: 'Ultrasound Technologist' },
+              { name: "Dr. Leena Agarwal", role: "Consultant Radiologist" },
+              { name: "Dr. Rajiv Menon", role: "Fetal Medicine Specialist" },
+              { name: "Ms. Anu Verma", role: "Senior Sonographer" },
+              { name: "Mr. Rohit Singh", role: "Ultrasound Technologist" },
             ].map((t, i) => (
               <motion.div variants={fadeInUp} key={i}>
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg ring-1 ring-gray-100 hover:shadow-xl transition-shadow">

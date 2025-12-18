@@ -581,7 +581,7 @@ export default function Gynecologist() {
                 available.
               </p>
               <a
-                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-block text-xs sm:text-sm text-[#2448a5] hover:underline"
