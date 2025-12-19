@@ -435,7 +435,7 @@ export default function LaserSurgery() {
                   className="w-full inline-flex items-center justify-center gap-3 px-4 py-2 rounded-lg text-white font-medium"
                   style={{ background: COLORS.accent }}
                 >
-                  Book Consultation
+                  Book Appointment
                 </a>
               </div>
 

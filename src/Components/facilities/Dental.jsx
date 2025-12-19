@@ -720,7 +720,7 @@ export default function Dental() {
                     className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white font-medium text-sm transition-colors hover:opacity-90"
                     style={{ background: COLORS.warm }}
                   >
-                    Book Consultation
+                    Make Appointment
                   </a>
                 </div>
                 <div className="hidden md:block">

@@ -429,9 +429,11 @@ const Header = () => {
                                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs xl:text-sm focus:outline-none focus:ring-2 focus:ring-[#1F9C9C]"
                               />
                             </div>
-                            <button className="w-full bg-white text-[#1B5FA3] py-2 xl:py-2.5 rounded-md font-semibold text-xs xl:text-sm hover:bg-gray-50 transition-colors shadow-md hover:shadow-lg">
-                              BOOK CONSULTATION
-                            </button>
+                            <a href="tel:+919210399470">
+                              <button className="w-full bg-white text-[#1B5FA3] py-2 xl:py-2.5 rounded-md font-semibold text-xs xl:text-sm hover:bg-gray-50 transition-colors shadow-md hover:shadow-lg">
+                                BOOK CONSULTATION
+                              </button>
+                            </a>
                           </div>
                         </div>
                       </div>
