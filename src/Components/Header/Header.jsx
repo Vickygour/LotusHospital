@@ -97,7 +97,10 @@ const Header = () => {
     { name: "About Us", path: "/About-us" },
     { name: "Our Specialties", path: "/departments", hasMegaMenu: true },
     { name: "Doctors", path: "/DoctorsPage" },
-    { name: "TPA Insurance", path: "/TPA-Insurance" },
+    {
+      name: "TPA Insurance (Soon)",
+      path: "/TPA-Insurance",
+    },
     { name: "Services", path: "/Service", hasDropdown: true },
     { name: "Contact", path: "/Contact" },
   ];
