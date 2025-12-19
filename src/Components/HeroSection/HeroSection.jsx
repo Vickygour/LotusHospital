@@ -335,7 +335,7 @@ const HeroSection = () => {
                             type="button"
                             className="flex flex-col items-center justify-center gap-2 bg-white rounded-lg p-3 sm:p-4 shadow-md hover:shadow-lg transition transform hover:scale-[1.03] text-[#283B6A] group"
                           >
-                            <div className="text-[#283B6A] group-hover:text-white transition-colors">
+                            <div className="text-[#283B6A]  transition-colors">
                               {service.icon}
                             </div>
                             <span className="text-xs sm:text-sm md:text-base font-semibold text-center">

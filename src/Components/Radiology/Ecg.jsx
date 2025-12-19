@@ -225,7 +225,7 @@ export default function ECGServices() {
                 <div className="flex flex-col items-end">
                   <span className="text-xs text-gray-400">Timing</span>
                   <span className="text-sm text-green-500 font-medium">
-                    Mon–Sat • 8am–6pm
+                    24 hours available
                   </span>
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function ECGServices() {
                 reporting.
               </p>
               <a
-                href="https://maps.app.goo.gl/7qxmg1MJakjr1eJ57"
+                href="https://maps.app.goo.gl/h7a2B8ipfTtkJbhV6"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-block text-sm text-[#2448a5] hover:underline"
