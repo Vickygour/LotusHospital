@@ -242,7 +242,7 @@ const ContactSection = () => {
             {/* Left Side - Map & Text */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-[#283B6A] leading-tight mb-8">
-                Helping Patients From Around The Globe!!
+                Helping Patients Fromhh Around The Globe!!
               </h2>
               <div className="relative w-full max-w-2xl">
                 <div className="relative">
