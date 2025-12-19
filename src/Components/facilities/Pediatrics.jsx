@@ -348,8 +348,8 @@ export default function Paediatrics() {
                     Location:
                   </span>{" "}
                   <span>
-                    Bus stop, Opp. Main Market, Virendar Nagar, Block B, Sant
-                    Nagar, Burari, Delhi – 110084.
+                    KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi,
+                    110084
                   </span>
                 </p>
               </motion.div>
@@ -512,8 +512,7 @@ export default function Paediatrics() {
                 Location
               </h4>
               <p className="text-xs text-gray-600 mt-2">
-                Lotus Hospital - Burari, Delhi — Near Burari Metro. Parking
-                available.
+                KH.NO-122/14.PLOT NO-2, 84, Bhagat Colony, Burari, Delhi, 110084
               </p>
               <a
                 href="https://maps.app.goo.gl/u3t64QQ2kBsR7kj67"

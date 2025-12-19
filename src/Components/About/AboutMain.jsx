@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AboutTop from "./AboutTop";
 import HealthCareSection from "./HealthCareSection";
 import WhylotusHospitals from "../HeroSection/WhyLotusHospital";
-import img1 from "../../assets/banner1.jpg";
+// import img1 from "../../assets/banner1.jpg";
 import {
   Stethoscope,
   FileText,
@@ -10,17 +10,12 @@ import {
   Award,
   Users,
   ChevronDown,
-  Plus,
-  Minus,
-  CheckCircle2,
   Activity,
   Baby,
   Scissors,
   AlertCircle,
   UserCheck,
   Building2,
-  Shield,
-  Quote,
 } from "lucide-react";
 import OurDoctor from "../HeroSection/OurDoctor";
 import MissionVision from "../MissionVision";
@@ -351,7 +346,7 @@ const AboutMain = () => {
                 <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#13C5DD] transition-all duration-300 text-center">
                   Book Appointment
                 </button>
-                <button  className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                <button className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
                   Contact Us
                 </button>
               </div>

@@ -1,365 +1,207 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import img1 from "../../assets/Vector.jpg"; // Assuming this path is correct
+import DoctorVector from "../../assets/Vector.jpg";
 import { ChevronRight, CheckCircle2, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-// Import Swiper styles
+import TimeTableData from "../DoctorsTimetable/TimeTableData";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
 const DoctorsPage = () => {
-  // Renamed the state variable for clarity and correctness
-  const [selectedSpecialty, setSelectedSpecialty] = useState("all");
-
-  // Sample schedule data for the week (kept as is)
-  const scheduleData = {
-    monday: [
-      {
-        time: "10:00-11:00",
-        specialty: "Cardiologist",
-        doctor: "Dr. Ankesh Aggarwal",
-      },
-      {
-        time: "19:30-20:30",
-        specialty: "Gynecologist",
-        doctor: "Gynecologist",
-      },
-      {
-        time: "10:00-12:00",
-        specialty: "ENT Consultant",
-        doctor: "ENT Consultant",
-      },
-      {
-        time: "10:00-12:00",
-        specialty: "Pediatrician",
-        doctor: "Dr. Kunal",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Surgeon",
-        doctor: "Dr. Sunil Jain",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    tuesday: [
-      {
-        time: "10:00-11:00",
-        specialty: "Cardiologist",
-        doctor: "Dr. Ankesh Aggarwal",
-      },
-      {
-        time: "10:30-11:30",
-        specialty: "Orthopedic",
-        doctor: "Dr. Sameer",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    wednesday: [
-      {
-        time: "19:00-20:00",
-        specialty: "Psychiatrist/Neurologist",
-        doctor: "Dr. J Kumar",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    thursday: [
-      {
-        time: "10:00-12:00",
-        specialty: "ENT Consultant",
-        doctor: "ENT Consultant",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    friday: [
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    saturday: [
-      {
-        time: "19:00-20:00",
-        specialty: "Psychiatrist/Neurologist",
-        doctor: "Dr. J Kumar",
-      },
-      {
-        time: "10:30-11:30",
-        specialty: "Orthopedic",
-        doctor: "Dr. Sameer",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Medicine Specialist",
-        doctor: "Dr. Rohit Jain",
-      },
-      {
-        time: "11:00-13:00",
-        specialty: "General Physician",
-        doctor: "Dr. Bhawana Chaudhary",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Plastic Surgeon",
-        doctor: "Dr. Bharat",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Sandeep Gupta",
-      },
-      {
-        time: "On Appointment",
-        specialty: "Consultant",
-        doctor: "Dr. Ajay Mittal",
-      },
-    ],
-
-    sunday: [],
-  };
-
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  // Logic to dynamically extract all unique specialties from scheduleData
-  const allSpecialties = useMemo(() => {
-    const specialtiesSet = new Set();
-    Object.values(scheduleData).forEach((daySchedule) => {
-      daySchedule.forEach((item) => {
-        specialtiesSet.add(item.specialty);
-      });
-    });
-    return Array.from(specialtiesSet).sort();
-  }, [scheduleData]);
-
-  const certificates = [
-    {
-      id: 1,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/1.png",
-    },
-    {
-      id: 2,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/2.png",
-    },
-    {
-      id: 3,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/4.png",
-    },
-    {
-      id: 4,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/6.png",
-    },
-    {
-      id: 5,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/3.png",
-    },
-    {
-      id: 6,
-      image: "https://demo.zytheme.com/medisch/assets/images/careers/5.png",
-    },
-  ];
-
   const doctors = [
     {
       id: 1,
       name: "Dr. Ankesh Aggarwal",
-      specialty: "Cardiology Specialist",
-      image: img1,
+      specialty: "Consultant Cardiologist",
+      image: DoctorVector,
       description:
-        "Dr. Ankesh Aggarwal is a senior cardiology specialist with extensive experience in diagnosing and managing heart-related conditions.",
+        "Dr. Ankesh Aggarwal is a Consultant Cardiologist who treats heart-related problems such as high blood pressure, chest pain, and heart rhythm issues.",
     },
     {
       id: 2,
-      name: "Dr. Rohit Jain",
-      specialty: "Medicine Specialist",
-      image: img1,
+      name: "Dr. Kunal",
+      specialty: "Consultant Pediatrician",
+      image: DoctorVector,
       description:
-        "Dr. Rohit Jain is a medicine specialist available on appointment, treating a wide range of acute and chronic medical conditions.",
+        "Dr. Kunal is a Consultant Pediatrician who takes care of children’s health, growth, and common childhood illnesses with a gentle approach.",
     },
     {
       id: 3,
-      name: "Dr. Bhawana Chaudhary",
-      specialty: "General Physician",
-      image: img1,
+      name: "Dr. Sunil Jain",
+      specialty: "General & Laparoscopic Surgeon",
+      image: DoctorVector,
       description:
-        "Dr. Bhawana Chaudhary is a general physician providing comprehensive primary care and preventive health services.",
+        "Dr. Sunil Jain is a General & Laparoscopic Surgeon who performs surgeries safely with proper planning and patient care.",
     },
     {
       id: 4,
-      name: "Dr. Sameer",
-      specialty: "Orthopedic Specialist",
-      image: img1,
+      name: "Dr. Sandeep Gupta",
+      specialty: "General & Laparoscopic Surgeon",
+      image: DoctorVector,
       description:
-        "Dr. Sameer specializes in orthopedic care, treating bone, joint, and musculoskeletal disorders.",
+        "Dr. Sandeep Gupta is a General & Laparoscopic Surgeon known for safe surgical treatment and patient-focused care.",
     },
     {
       id: 5,
-      name: "Dr. J Kumar",
-      specialty: "Psychiatrist / Neurologist",
-      image: img1,
+      name: "Dr. Sunil Aggarwal",
+      specialty: "General & Laparoscopic Surgeon",
+      image: DoctorVector,
       description:
-        "Dr. J Kumar provides expert consultation in psychiatry and neurology, focusing on mental health and nervous system disorders.",
+        "Dr. Sunil Aggarwal is a General & Laparoscopic Surgeon who provides safe and reliable surgical treatment.",
     },
     {
       id: 6,
-      name: "Dr. Sunil Jain",
-      specialty: "Surgeon",
-      image: img1,
+      name: "Dr. Rohit Jain",
+      specialty: "Medicine Specialist",
+      image: DoctorVector,
       description:
-        "Dr. Sunil Jain is a senior surgeon available on appointment for surgical consultations and procedures.",
+        "Dr. Rohit Jain is a Medicine Specialist who treats common and long-term medical problems with proper diagnosis.",
     },
     {
       id: 7,
-      name: "Dr. Bharat",
-      specialty: "Orthopedic Surgeon",
-      image: img1,
+      name: "Dr. Bhawana Chaudhary",
+      specialty: "Skin Specialist",
+      image: DoctorVector,
       description:
-        "Dr. Bharat is a orthopedic surgeon specializing in reconstructive and cosmetic surgical procedures.",
+        "Dr. Bhawana Chaudhary is a Skin Specialist who treats skin, hair, and common skin-related problems.",
     },
     {
       id: 8,
-      name: "Dr. Sandeep Gupta",
-      specialty: "surgeon",
-      image: img1,
+      name: "Dr. Bharat",
+      specialty: "Plastic Surgeon",
+      image: DoctorVector,
       description:
-        "Dr. Sandeep Gupta is a consultant doctor available on appointment for expert medical opinions.",
+        "Dr. Bharat is a Plastic Surgeon who performs cosmetic and reconstructive procedures with patient safety.",
     },
     {
       id: 9,
-      name: "Dr. Ajay Mittal",
-      specialty: "Suregon",
-      image: img1,
+      name: "Dr. Sameer kad",
+      specialty: "Orthopedic Surgeon",
+      image: DoctorVector,
       description:
-        "Dr. Ajay Mittal provides consultation services across multiple medical domains and is available on appointment.",
+        "Dr. Sameer Kad is an Orthopedic Surgeon who treats bone, joint, and muscle-related problems.",
+    },
+    {
+      id: 10,
+      name: "Dr. Ajay Mittal",
+      specialty: "Orthopedic Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Ajay Mittal is an Orthopedic Surgeon providing treatment for bone and joint pain.",
+    },
+    {
+      id: 11,
+      name: "Dr. Deepak Tyagi",
+      specialty: "Orthopedic surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Deepak Tyagi is an Orthopedic Surgeon who helps patients with bone and joint issues.",
+    },
+    {
+      id: 12,
+      name: "Dr. Vikas Chaudhary",
+      specialty: "Consultant Pediatrician",
+      image: DoctorVector,
+      description:
+        "Dr. Vikas Chaudhary is a Consultant Pediatrician caring for children’s health and development.",
+    },
+    {
+      id: 13,
+      name: "Dr. Kiran",
+      specialty: "Gynecologist",
+      image: DoctorVector,
+      description:
+        "Dr. Kiran is a Gynecologist who provides care for women’s health and pregnancy.",
+    },
+    {
+      id: 14,
+      name: "Dr. J. Chaudhary",
+      specialty: "Gynecologist",
+      image: DoctorVector,
+      description:
+        "Dr. J. Chaudhary is a Gynecologist offering treatment for women’s health concerns.",
+    },
+    {
+      id: 15,
+      name: "Dr. J. Kumar",
+      specialty: "Psychiatrist",
+      image: DoctorVector,
+      description:
+        "Dr. J. Kumar is a Psychiatrist who helps patients with mental health and emotional well-being.",
+    },
+    {
+      id: 16,
+      name: "Dr. Manoj Miglani",
+      specialty: "Spine Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Manoj Miglani is a Spine Surgeon treating back and spine-related problems.",
+    },
+    {
+      id: 17,
+      name: "Dr. Anil Kansal",
+      specialty: "Neurosurgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Anil Kansal is a Neurosurgeon who treats brain and nerve-related conditions.",
+    },
+    {
+      id: 18,
+      name: "Dr. Pankaj Sharma",
+      specialty: "Anasthetic Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Pankaj Sharma is an Anesthetic Surgeon ensuring safe anesthesia during surgeries.",
+    },
+    {
+      id: 19,
+      name: "Dr. Gagan Dabaas",
+      specialty: "Anasthetic Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Gagan Dabaas is an Anesthetic Surgeon focused on patient safety during operations.",
+    },
+    {
+      id: 20,
+      name: "Dr. Amit Sahu",
+      specialty: "Anasthetic Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Amit Sahu is an Anesthetic Surgeon providing safe anesthesia care.",
+    },
+    {
+      id: 21,
+      name: "Dr. Gurwinder",
+      specialty: "Anasthetic Surgeon",
+      image: DoctorVector,
+      description:
+        "Dr. Gurwinder is an Anesthetic Surgeon managing pain and anesthesia during surgery.",
+    },
+    {
+      id: 22,
+      name: "Dr. Ankit Sharma",
+      specialty: "physiotherapist",
+      image: DoctorVector,
+      description:
+        "Dr. Ankit Sharma is a Physiotherapist helping patients recover from pain and injuries.",
+    },
+    {
+      id: 23,
+      name: "Dr. Anil Sharma",
+      specialty: "MD Gastro",
+      image: DoctorVector,
+      description:
+        "Dr. Anil Sharma is a Gastro Specialist treating stomach and digestive problems.",
+    },
+    {
+      id: 24,
+      name: "Dr. Anil Aggarwal",
+      specialty: "DNB Urology",
+      image: DoctorVector,
+      description:
+        "Dr. Anil Aggarwal is a Urology Specialist treating kidney and urinary problems.",
     },
   ];
 
@@ -367,14 +209,13 @@ const DoctorsPage = () => {
     <>
       {/* Hero Section */}
       <section
-        className="relative w-full h-[500px] bg-cover bg-center md:mt-40 mt-20"
+        className="relative w-full h-[500px] bg-cover bg-center mt-37"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&h=600&fit=crop)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
-        {/*  */}
 
         <div className="relative h-full max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center h-full">
@@ -394,7 +235,7 @@ const DoctorsPage = () => {
 
               <div className="flex flex-wrap gap-4">
                 <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
-                  Book Appointment
+                  Make Appointment
                 </button>
                 <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#283B6A] transition-all duration-300">
                   More About Us
@@ -431,233 +272,29 @@ const DoctorsPage = () => {
         </div>
       </section>
 
-      {/* About Section with Certificates */}
-      <section className="relative w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Left - Text Content */}
-            <div>
-              <p className="text-[#13C5DD] font-semibold text-sm mb-3 uppercase">
-                Caring For The Health Of You And Your Family.
-              </p>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#283B6A] leading-tight mb-8">
-                We Provide All Aspects Of Medical Practice For Your Whole
-                Family!
-              </h2>
-            </div>
-
-            {/* Right - Description */}
-            <div className="flex flex-col justify-center">
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
-                We pride ourselves on providing the best transport and shipping
-                services available allover the world. Our skilled personnel and
-                processing software, combined with decades of experience!
-                Through integrated supply chain solutions, Equita drives
-                sustainable competitive advantages to some of Australia's
-                largest companies.
-              </p>
-
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-[#13C5DD]">
-                  <CheckCircle2 size={20} />
-                  <span className="text-gray-700 font-medium">
-                    Quality Control System
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 text-[#13C5DD]">
-                  <CheckCircle2 size={20} />
-                  <span className="text-gray-700 font-medium">
-                    Unrivalled Workmanship
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 text-[#13C5DD]">
-                  <CheckCircle2 size={20} />
-                  <span className="text-gray-700 font-medium">
-                    100% Satisfaction Guarantee
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Certificates Swiper */}
-          <div className="relative">
-            <Swiper
-              modules={[Autoplay, Pagination]}
-              spaceBetween={30}
-              slidesPerView={2}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-                el: ".cert-pagination",
-              }}
-              loop={true}
-              breakpoints={{
-                640: { slidesPerView: 3 },
-                768: { slidesPerView: 4 },
-                1024: { slidesPerView: 6 },
-              }}
-              className="certificates-swiper pb-12"
+      {/* Doctors Grid */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {doctors.map((doc) => (
+            <div
+              key={doc.id}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
             >
-              {certificates.map((cert) => (
-                <SwiperSlide key={cert.id}>
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <img
-                      src={cert.image}
-                      alt={`Certificate ${cert.id}`}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="cert-pagination flex justify-center gap-2 mt-4"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Doctors Grid Section */}
-      <section className="relative w-full bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/*  */}
-            {doctors.map((doctor) => (
-              <div
-                key={doctor.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                {/* Doctor Image */}
-                <div className="relative h-96 overflow-hidden">
-                  <img
-                    // Note: img1 is a single imported image, so all doctors will have the same image.
-                    src={doctor.image}
-                    alt={doctor.name}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-
-                {/* Doctor Info */}
-                <div className="p-8">
-                  <h3 className="text-[#283B6A] font-bold text-2xl mb-2">
-                    {doctor.name}
-                  </h3>
-                  <p className="text-[#13C5DD] font-semibold text-base mb-4">
-                    {doctor.specialty}
-                  </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {doctor.description}
-                  </p>
-
-                  {/* Bottom Border */}
-                  <div className="mt-6 h-1 bg-[#13C5DD] w-full"></div>
-                </div>
+              <img
+                src={doc.image}
+                alt={doc.name}
+                className="h-80 w-full object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#283B6A]">{doc.name}</h3>
+                <p className="text-[#13C5DD] font-semibold">{doc.specialty}</p>
+                <p className="text-gray-600 mt-2">{doc.description}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+        <TimeTableData />
       </section>
-
-      {/* Timetable Section */}
-      <div className="bg-gray-50 min-h-screen w-full p-4 md:p-10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-[#283B6A] mb-12">
-            Weekly Schedule & Timetable
-          </h2>
-          {/* Filter */}
-          <div className="max-w-md mx-auto mb-10">
-            <select
-              value={selectedSpecialty}
-              onChange={(e) => setSelectedSpecialty(e.target.value)}
-              className="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-[#13C5DD] focus:ring-2 focus:ring-[#13C5DD] font-semibold appearance-none"
-            >
-              <option value="all">All Specialties</option>
-              {allSpecialties.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-            {/*  */}
-          </div>
-
-          {/* Schedule By Day */}
-          <div className="max-w-5xl mx-auto space-y-10">
-            {days.map((day) => {
-              const dayData = scheduleData[day.toLowerCase()]?.filter(
-                (item) =>
-                  selectedSpecialty === "all" ||
-                  item.specialty === selectedSpecialty
-              );
-
-              // Only render the day if there is data after filtering
-              if (!dayData || dayData.length === 0) return null;
-
-              return (
-                <section
-                  key={day}
-                  className="bg-white rounded-xl shadow-lg p-6"
-                >
-                  <h2 className="text-2xl font-semibold mb-4 text-[#283B6A] border-b pb-2 border-gray-100">
-                    {day}
-                  </h2>
-
-                  <div className="flex flex-col gap-4">
-                    {dayData.map(({ time, specialty, doctor }, idx) => (
-                      <div
-                        key={idx}
-                        className="flex flex-col md:flex-row md:items-center md:justify-between bg-[#4A5F8F] text-white rounded-lg p-4 hover:bg-[#334155] transition text-sm md:text-base"
-                      >
-                        <div className="md:w-1/3 font-bold mb-1 md:mb-0">
-                          {doctor}
-                        </div>
-                        <div className="md:w-1/3 text-[#13C5DD] font-medium mb-1 md:mb-0">
-                          {specialty}
-                        </div>
-                        <div className="md:w-1/3 text-right font-mono text-white/90">
-                          {time}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              );
-            })}
-            {/* Display a message if no data matches the filter */}
-            {days.every(
-              (day) =>
-                scheduleData[day.toLowerCase()]?.filter(
-                  (item) =>
-                    selectedSpecialty === "all" ||
-                    item.specialty === selectedSpecialty
-                ).length === 0
-            ) && (
-              <p className="text-center text-gray-500 text-lg py-10">
-                No doctors found for the selected specialty on any day.
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Custom Styles */}
-      <style jsx>{`
-        /* ... your existing custom styles ... */
-        :global(.cert-pagination .swiper-pagination-bullet) {
-          width: 10px;
-          height: 10px;
-          background: #283b6a;
-          opacity: 0.3;
-          transition: all 0.3s ease;
-        }
-        :global(.cert-pagination .swiper-pagination-bullet-active) {
-          background: #13c5dd;
-          opacity: 1;
-        }
-      `}</style>
     </>
   );
 };
