@@ -1,5 +1,5 @@
 // src/Components/Header/Header.jsx
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Phone,
   MapPin,
@@ -8,30 +8,29 @@ import {
   Menu,
   X,
   ChevronDown,
-} from "lucide-react";
-import logo from "../../assets/Lotusss.png";
-import { Link, useLocation } from "react-router-dom";
-import gynecology from "../../assets/GynoVector/gynoicon.svg";
-import dental from "../../assets/GynoVector/dentalIcon.svg";
-import lapro from "../../assets/GynoVector/laproicon.svg";
-import urology from "../../assets/GynoVector/urologyicon.svg";
-import ent from "../../assets/GynoVector/enticon.svg";
-import physi from "../../assets/GynoVector/physiicon.svg";
-import pedi from "../../assets/GynoVector/child_careicon.svg";
-import xray from "../../assets/GynoVector/xrayicon.svg";
-import lab from "../../assets/GynoVector/laboicon.svg";
-import ortho from "../../assets/GynoVector/orthoicon.svg";
-import ultra from "../../assets/GynoVector/ultraicon.svg";
-import pulmo from "../../assets/GynoVector/pulmonaryicon.svg";
-import ecg from "../../assets/GynoVector/Copilot_20251129_152104.png";
-import color from "../../assets/GynoVector/a2vcolor.svg";
-import echo from "../../assets/GynoVector/Echocardiographyicon.svg";
-import laser from "../../assets/GynoVector/a2vlaser.svg";
-import TpaInsaurence from "../../Components/Insaurance/TpaInsaurence";
+} from 'lucide-react';
+import logo from '../../assets/Lotusss.png';
+import { Link, useLocation } from 'react-router-dom';
+import gynecology from '../../assets/GynoVector/gynoicon.svg';
+import dental from '../../assets/GynoVector/dentalIcon.svg';
+import lapro from '../../assets/GynoVector/laproicon.svg';
+import urology from '../../assets/GynoVector/urologyicon.svg';
+import ent from '../../assets/GynoVector/enticon.svg';
+import physi from '../../assets/GynoVector/physiicon.svg';
+import pedi from '../../assets/GynoVector/child_careicon.svg';
+import xray from '../../assets/GynoVector/xrayicon.svg';
+import lab from '../../assets/GynoVector/laboicon.svg';
+import ortho from '../../assets/GynoVector/orthoicon.svg';
+import ultra from '../../assets/GynoVector/ultraicon.svg';
+import pulmo from '../../assets/GynoVector/pulmonaryicon.svg';
+import ecg from '../../assets/GynoVector/Copilot_20251129_152104.png';
+import color from '../../assets/GynoVector/a2vcolor.svg';
+import echo from '../../assets/GynoVector/Echocardiographyicon.svg';
+import laser from '../../assets/GynoVector/a2vlaser.svg';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+  const [activeLink, setActiveLink] = useState('Home');
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
@@ -47,62 +46,59 @@ const Header = () => {
   // Facilities
   const facilities = [
     {
-      name: "Obstetric and Gynaecology",
-      path: "/facilities/Gynecology",
+      name: 'Obstetric and Gynaecology',
+      path: '/facilities/Gynecology',
       src: gynecology,
     },
     {
-      name: "Laparoscopic Surgery",
-      path: "/facilities/Laparoscopic",
+      name: 'Laparoscopic Surgery',
+      path: '/facilities/Laparoscopic',
       src: lapro,
     },
     {
-      name: "Dental and Cosmetics",
-      path: "/facilities/Dental",
+      name: 'Dental and Cosmetics',
+      path: '/facilities/Dental',
       src: dental,
     },
-    { name: "Laser Surgery", path: "/facilities/Laser", src: laser },
+    { name: 'Laser Surgery', path: '/facilities/Laser', src: laser },
     {
-      name: "Urological Surgery",
-      path: "/facilities/urological",
+      name: 'Urological Surgery',
+      path: '/facilities/urological',
       src: urology,
     },
-    { name: "Physiotherapy", path: "/facilities/physiotherapy", src: physi },
-    { name: "Pediatrics", path: "/facilities/pediatrics", src: pedi },
-    { name: "ENT", path: "/facilities/Ent", src: ent },
+    { name: 'Physiotherapy', path: '/facilities/physiotherapy', src: physi },
+    { name: 'Pediatrics', path: '/facilities/pediatrics', src: pedi },
+    { name: 'ENT', path: '/facilities/Ent', src: ent },
   ];
 
   // Radiology
   const radiology = [
-    { name: "ECG", path: "/Radiology/ecg", src: ecg },
-    { name: "Color Doppler", path: "/Radiology/color-doppler", src: color },
-    { name: "Path Lab", path: "/Radiology/path-lab", src: lab },
-    { name: "X-Ray", path: "/Radiology/XRay", src: xray },
-    { name: "Ultra-Sound", path: "/Radiology/ultrasound", src: ultra },
-    { name: "Echocardiography", path: "/Radiology/echo", src: echo },
-    { name: "Pulmonary", path: "/Radiology/pulmonary", src: pulmo },
-    { name: "ORTHO", path: "/Radiology/ortho", src: ortho },
+    { name: 'ECG', path: '/Radiology/ecg', src: ecg },
+    { name: 'Color Doppler', path: '/Radiology/color-doppler', src: color },
+    { name: 'Path Lab', path: '/Radiology/path-lab', src: lab },
+    { name: 'X-Ray', path: '/Radiology/XRay', src: xray },
+    { name: 'Ultra-Sound', path: '/Radiology/ultrasound', src: ultra },
+    { name: 'Echocardiography', path: '/Radiology/echo', src: echo },
+    { name: 'Pulmonary', path: '/Radiology/pulmonary', src: pulmo },
+    { name: 'ORTHO', path: '/Radiology/ortho', src: ortho },
   ];
 
   // Services
   const servicesItems = [
-    { name: "Admission Process", path: "/Admission" },
-    { name: "Room Facilities", path: "/services/room-facilities" },
-    { name: "Pharmacy Service", path: "/services/pharmacy" },
-    { name: "Ambulance Service", path: "/services/ambulance" },
+    { name: 'Admission Process', path: '/Admission' },
+    { name: 'Room Facilities', path: '/services/room-facilities' },
+    { name: 'Pharmacy Service', path: '/services/pharmacy' },
+    { name: 'Ambulance Service', path: '/services/ambulance' },
   ];
 
   const navigationItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/About-us" },
-    { name: "Our Specialties", path: "/departments", hasMegaMenu: true },
-    { name: "Doctors", path: "/DoctorsPage" },
-    {
-      name: "TPA Insurance (Soon)",
-      path: "/TPA-Insurance",
-    },
-    { name: "Services", path: "/Service", hasDropdown: true },
-    { name: "Contact", path: "/Contact" },
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/About-us' },
+    { name: 'Our Specialties', path: '/departments', hasMegaMenu: true },
+    { name: 'Doctors', path: '/DoctorsPage' },
+    { name: 'TPA Insurance', path: '#', isComingSoon: true }, // ⭐ UPDATED
+    { name: 'Services', path: '/Service', hasDropdown: true },
+    { name: 'Contact', path: '/Contact' },
   ];
 
   const location = useLocation();
@@ -125,18 +121,18 @@ const Header = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
 
@@ -179,18 +175,18 @@ const Header = () => {
     const el = headerRef.current;
     if (!el) return;
     const h = Math.ceil(el.getBoundingClientRect().height);
-    document.documentElement.style.setProperty("--header-height", `${h}px`);
-    document.documentElement.style.setProperty("scroll-padding-top", `${h}px`);
+    document.documentElement.style.setProperty('--header-height', `${h}px`);
+    document.documentElement.style.setProperty('scroll-padding-top', `${h}px`);
   };
 
   useEffect(() => {
     setHeaderHeightVar();
     const onResize = () => setHeaderHeightVar();
-    window.addEventListener("resize", onResize);
+    window.addEventListener('resize', onResize);
 
-    if (typeof ResizeObserver !== "undefined" && headerRef.current) {
+    if (typeof ResizeObserver !== 'undefined' && headerRef.current) {
       resizeObserverRef.current = new ResizeObserver(() =>
-        setHeaderHeightVar()
+        setHeaderHeightVar(),
       );
       resizeObserverRef.current.observe(headerRef.current);
     }
@@ -198,7 +194,7 @@ const Header = () => {
     const t = setTimeout(setHeaderHeightVar, 50);
 
     return () => {
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener('resize', onResize);
       clearTimeout(t);
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
     };
@@ -240,7 +236,6 @@ const Header = () => {
               <div className="flex items-center gap-2 hover:text-[#1F9C9C] transition-colors cursor-pointer">
                 <Phone size={14} />
                 <span className="hidden xl:inline">Emergency: </span>
-
                 <a href="tel:9210399470">
                   <span>011-49785874 || 9210399470</span>
                 </a>
@@ -270,7 +265,7 @@ const Header = () => {
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center flex-shrink-0">
-              <Link to="/" onClick={() => handleLinkClick("Home")}>
+              <Link to="/" onClick={() => handleLinkClick('Home')}>
                 <img
                   src={logo}
                   alt="Hospital Logo"
@@ -310,33 +305,33 @@ const Header = () => {
                   {item.hasMegaMenu ? (
                     <>
                       <button className="relative text-[#1B5FA3] font-medium hover:text-[#1F9C9C] transition-colors duration-300 py-2 flex items-center gap-1 text-sm xl:text-base whitespace-nowrap">
-                        <span className={megaMenuOpen ? "text-[#1F9C9C]" : ""}>
+                        <span className={megaMenuOpen ? 'text-[#1F9C9C]' : ''}>
                           {item.name}
                         </span>
                         <ChevronDown
                           size={16}
                           className={`transition-transform duration-300 ${
-                            megaMenuOpen ? "rotate-180" : ""
+                            megaMenuOpen ? 'rotate-180' : ''
                           }`}
                         />
                         <span
                           className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                            megaMenuOpen ? "w-full" : "w-0"
+                            megaMenuOpen ? 'w-full' : 'w-0'
                           }`}
                         />
                       </button>
 
-                      {/* Desktop Mega Menu - CENTERED WITHOUT SCROLL */}
+                      {/* Desktop Mega Menu */}
                       <div
                         className={`fixed left-1/2 -translate-x-1/2 mt-2 w-[90vw] max-w-7xl bg-white shadow-2xl rounded-lg border border-gray-100 z-50 transition-all duration-300 origin-top ${
                           megaMenuOpen
-                            ? "opacity-100 visible scale-100"
-                            : "opacity-0 invisible scale-95"
+                            ? 'opacity-100 visible scale-100'
+                            : 'opacity-0 invisible scale-95'
                         }`}
-                        style={{ top: "var(--header-height, 120px)" }}
+                        style={{ top: 'var(--header-height, 120px)' }}
                       >
                         <div className="grid grid-cols-1 md:grid-cols-3 divide-x divide-gray-200">
-                          {/* Facilities - NO SCROLL */}
+                          {/* Facilities */}
                           <div className="p-4 xl:p-6">
                             <h3 className="text-base xl:text-lg font-bold text-[#1B5FA3] mb-3 pb-2 border-b-2 border-[#1F9C9C]">
                               FACILITIES
@@ -364,7 +359,7 @@ const Header = () => {
                             </div>
                           </div>
 
-                          {/* Radiology - NO SCROLL */}
+                          {/* Radiology */}
                           <div className="p-4 xl:p-6">
                             <h3 className="text-base xl:text-lg font-bold text-[#1B5FA3] mb-3 pb-2 border-b-2 border-[#1F9C9C]">
                               RADIOLOGY
@@ -443,7 +438,7 @@ const Header = () => {
                       <button className="relative text-[#1B5FA3] font-medium hover:text-[#1F9C9C] transition-colors duration-300 py-2 flex items-center gap-1 text-sm xl:text-base whitespace-nowrap">
                         <span
                           className={
-                            servicesDropdownOpen ? "text-[#1F9C9C]" : ""
+                            servicesDropdownOpen ? 'text-[#1F9C9C]' : ''
                           }
                         >
                           {item.name}
@@ -451,12 +446,12 @@ const Header = () => {
                         <ChevronDown
                           size={16}
                           className={`transition-transform duration-300 ${
-                            servicesDropdownOpen ? "rotate-180" : ""
+                            servicesDropdownOpen ? 'rotate-180' : ''
                           }`}
                         />
                         <span
                           className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                            servicesDropdownOpen ? "w-full" : "w-0"
+                            servicesDropdownOpen ? 'w-full' : 'w-0'
                           }`}
                         />
                       </button>
@@ -465,10 +460,10 @@ const Header = () => {
                       <div
                         className={`absolute left-0 mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-100 z-50 transition-all duration-300 origin-top ${
                           servicesDropdownOpen
-                            ? "opacity-100 visible scale-100"
-                            : "opacity-0 invisible scale-95"
+                            ? 'opacity-100 visible scale-100'
+                            : 'opacity-0 invisible scale-95'
                         }`}
-                        style={{ top: "calc(100% + 8px)" }}
+                        style={{ top: 'calc(100% + 8px)' }}
                       >
                         <div className="py-2">
                           {servicesItems.map((service, index) => (
@@ -484,6 +479,18 @@ const Header = () => {
                         </div>
                       </div>
                     </>
+                  ) : item.isComingSoon ? (
+                    // ⭐ COMING SOON BUTTON
+                    <button
+                      className="relative text-[#1B5FA3] font-medium hover:text-[#1F9C9C] transition-colors duration-300 py-2 text-sm xl:text-base whitespace-nowrap group cursor-not-allowed"
+                      disabled
+                    >
+                      <span className="text-gray-400">{item.name}</span>
+                      <span className="absolute -top-3 -right-[-20px] bg-gradient-to-r from-orange-500 to-red-500 text-white text-[9px] xl:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md animate-pulse">
+                        SOON
+                      </span>
+                      <span className="absolute -bottom-1 left-0 h-0.5 bg-gray-300 w-0 group-hover:w-full transition-all duration-300 ease-out" />
+                    </button>
                   ) : (
                     <Link
                       to={item.path}
@@ -492,14 +499,14 @@ const Header = () => {
                     >
                       <span
                         className={
-                          activeLink === item.name ? "text-[#1F9C9C]" : ""
+                          activeLink === item.name ? 'text-[#1F9C9C]' : ''
                         }
                       >
                         {item.name}
                       </span>
                       <span
                         className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                          activeLink === item.name ? "w-full" : "w-0"
+                          activeLink === item.name ? 'w-full' : 'w-0'
                         }`}
                       />
                     </Link>
@@ -546,15 +553,15 @@ const Header = () => {
         <div
           className={`lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
             mobileMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? 'opacity-100 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setMobileMenuOpen(false)}
-          style={{ top: "var(--header-height, 120px)" }}
+          style={{ top: 'var(--header-height, 120px)' }}
         >
           <div
             className={`bg-white w-full max-w-sm ml-auto h-full overflow-y-auto no-scrollbar shadow-2xl transform transition-transform duration-300 ${
-              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+              mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -573,7 +580,7 @@ const Header = () => {
                         <ChevronDown
                           size={18}
                           className={`transition-transform duration-300 ${
-                            mobileMegaMenuOpen ? "rotate-180" : ""
+                            mobileMegaMenuOpen ? 'rotate-180' : ''
                           }`}
                         />
                       </button>
@@ -638,7 +645,7 @@ const Header = () => {
                         <ChevronDown
                           size={18}
                           className={`transition-transform duration-300 ${
-                            mobileServicesOpen ? "rotate-180" : ""
+                            mobileServicesOpen ? 'rotate-180' : ''
                           }`}
                         />
                       </button>
@@ -657,13 +664,25 @@ const Header = () => {
                         </div>
                       )}
                     </div>
+                  ) : item.isComingSoon ? (
+                    // ⭐ MOBILE COMING SOON
+                    <div className="relative px-6 py-4 border-b border-gray-100 cursor-not-allowed opacity-60">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-gray-400">
+                          {item.name}
+                        </span>
+                        <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-md">
+                          COMING SOON
+                        </span>
+                      </div>
+                    </div>
                   ) : (
                     <Link
                       to={item.path}
                       className={`block px-6 py-4 font-medium hover:bg-gray-50 transition-colors border-b border-gray-100 ${
                         activeLink === item.name
-                          ? "text-[#1F9C9C] bg-cyan-50"
-                          : "text-[#1B5FA3]"
+                          ? 'text-[#1F9C9C] bg-cyan-50'
+                          : 'text-[#1B5FA3]'
                       }`}
                       onClick={() => handleLinkClick(item.name)}
                     >
@@ -682,21 +701,25 @@ const Header = () => {
                 >
                   Doctors' Timetable
                 </Link>
-                <Link to="/Doctors-Timetable">
+                <a
+                  href="https://wa.me/919210399470?text=Hello%20Lotus%20Hospital%20👋%20I%20want%20to%20book%20an%20appointment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <button
                     className="w-full bg-[#1F9C9C] text-white py-3 rounded-lg font-medium hover:bg-[#0FA8C0] transition-all shadow-md"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Book Appointment →
                   </button>
-                </Link>
+                </a>
               </div>
 
               {/* Mobile Contact Info */}
               <div className="px-6 py-4 bg-gray-50 mt-4 space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-gray-700">
                   <Phone size={16} className="text-[#1B5FA3]" />
-                  <span>Emergency:011-49785874</span>
+                  <span>Emergency: 011-49785874</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-700">
                   <MapPin size={16} className="text-[#1B5FA3]" />

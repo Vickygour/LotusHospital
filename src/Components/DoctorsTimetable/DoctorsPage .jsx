@@ -212,7 +212,7 @@ const DoctorsPage = () => {
         className="relative w-full h-[500px] bg-cover bg-center mt-37"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&h=600&fit=crop)",
+            'url(https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&h=600&fit=crop)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
@@ -234,12 +234,16 @@ const DoctorsPage = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
-                  Make Appointment
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#283B6A] transition-all duration-300">
-                  More About Us
-                </button>
+                <Link to="contact">
+                  <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg">
+                    Book Appointment
+                  </button>
+                </Link>
+                <Link to="/about-us">
+                  <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#283B6A] transition-all duration-300">
+                    More About Us
+                  </button>
+                </Link>
               </div>
             </div>
 

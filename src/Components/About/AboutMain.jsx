@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import OurDoctor from "../HeroSection/OurDoctor";
 import MissionVision from "../MissionVision";
+import { Link } from "react-router-dom";
 
 const AboutMain = () => {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -343,12 +344,16 @@ const AboutMain = () => {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-6 md:mt-8">
-                <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#13C5DD] transition-all duration-300 text-center">
-                  Book Appointment
-                </button>
-                <button className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
-                  Contact Us
-                </button>
+                <a href="tel:9210399470">
+                  <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#13C5DD] transition-all duration-300 text-center">
+                    Book Appointment
+                  </button>
+                </a>
+                <Link to="/contact">
+                  <button className="bg-white text-[#283B6A] px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -359,16 +364,16 @@ const AboutMain = () => {
               <div
                 key={service.id}
                 className={`relative group bg-[#13C5DD]/40 backdrop-blur-sm border border-white/20 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:bg-[#0FA8C0]/60 cursor-pointer ${
-                  index === 0 ? "rounded-tl-lg sm:rounded-tl-2xl" : ""
-                } ${index === 1 ? "sm:rounded-tr-2xl lg:rounded-none" : ""} ${
-                  index === services.length - 1 ? "lg:rounded-tr-2xl" : ""
-                } ${index === 2 ? "md:rounded-tr-2xl lg:rounded-none" : ""}`}
+                  index === 0 ? 'rounded-tl-lg sm:rounded-tl-2xl' : ''
+                } ${index === 1 ? 'sm:rounded-tr-2xl lg:rounded-none' : ''} ${
+                  index === services.length - 1 ? 'lg:rounded-tr-2xl' : ''
+                } ${index === 2 ? 'md:rounded-tr-2xl lg:rounded-none' : ''}`}
                 onMouseEnter={() => !isMobile && setExpandedCard(service.id)}
                 onMouseLeave={() => !isMobile && setExpandedCard(null)}
                 onClick={() =>
                   isMobile &&
                   setExpandedCard(
-                    expandedCard === service.id ? null : service.id
+                    expandedCard === service.id ? null : service.id,
                   )
                 }
               >
@@ -391,8 +396,8 @@ const AboutMain = () => {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
                     expandedCard === service.id
-                      ? "max-h-40 sm:max-h-48 opacity-100"
-                      : "max-h-0 opacity-0"
+                      ? 'max-h-40 sm:max-h-48 opacity-100'
+                      : 'max-h-0 opacity-0'
                   }`}
                 >
                   <p className="text-white/90 text-xs sm:text-sm md:text-base text-center leading-relaxed">
@@ -404,7 +409,7 @@ const AboutMain = () => {
                 <div className="mt-2 sm:mt-3 md:mt-4 flex justify-center">
                   <ChevronDown
                     className={`w-4 h-4 sm:w-5 sm:h-5 text-white/60 transition-transform duration-300 ${
-                      expandedCard === service.id ? "rotate-180" : ""
+                      expandedCard === service.id ? 'rotate-180' : ''
                     }`}
                   />
                 </div>
@@ -444,12 +449,16 @@ const AboutMain = () => {
             long-term medical support, we're here every step of the way.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#283B6A] transition-all duration-300 text-center">
-              Our Services
-            </button>
+            <Link to="/Admission">
+              <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#283B6A] transition-all duration-300 text-center">
+                Our Services
+              </button>
+            </Link>
+            <Link to="/contact">
             <button className="bg-[#13C5DD] hover:bg-[#0FA8C0] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg md:rounded-xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl text-center">
               Contact Us Today
             </button>
+            </Link>
           </div>
         </div>
       </section>
