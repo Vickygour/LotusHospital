@@ -484,7 +484,7 @@ const Header = () => {
                       disabled
                     >
                       <span className="text-gray-400">{item.name}</span>
-                      <span className="absolute -top-2 -right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white text-[9px] xl:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md animate-pulse">
+                      <span className="absolute -top-3 -right-[-20px] bg-gradient-to-r from-orange-500 to-red-500 text-white text-[9px] xl:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md animate-pulse">
                         SOON
                       </span>
                       <span className="absolute -bottom-1 left-0 h-0.5 bg-gray-300 w-0 group-hover:w-full transition-all duration-300 ease-out" />
