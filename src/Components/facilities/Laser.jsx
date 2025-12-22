@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Phone, X, CheckCircle } from "lucide-react";
-import doctorImg from "../../assets/doctorImage.jpg";
+import doctorImg from "../../assets/Vector.jpg";
 import patientImg from "../../assets/patient.jpeg";
 // reuse an existing banner (or replace with your laser banner)
 import laserBanner from "../../assets/BannerGyno.jpg";

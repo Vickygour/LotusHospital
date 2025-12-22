@@ -8,7 +8,7 @@ import { FaSyringe, FaFlask, FaVial, FaDna } from "react-icons/fa";
 import labBanner from "../../assets/PathBanner.jpg";
 import labMachine from "../../assets/Pathlab1.jpg";
 import reportReadout from "../../assets/Pathlab2.jpg";
-import patientImg from "../../assets/img2.png";
+import patientImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#0a566a",

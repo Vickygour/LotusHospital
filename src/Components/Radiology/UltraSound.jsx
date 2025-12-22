@@ -13,7 +13,7 @@ import {
 import usBanner from "../../assets/UltraBanner.jpg";
 import usMachine from "../../assets/Ultra1.jpg";
 import usSample from "../../assets/Ultra2.jpg";
-import radiologistImg from "../../assets/img2.png";
+import radiologistImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#0b5560",

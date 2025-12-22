@@ -8,7 +8,7 @@ import { FaLungs, FaProcedures, FaHeartbeat, FaUserMd } from "react-icons/fa";
 import pulmBanner from "../../assets/PulBanner.jpg";
 import pulmMachine from "../../assets/Pul1.jpg";
 import pulmSample from "../../assets/Pul2.jpg";
-import pulmonologistImg from "../../assets/img2.png";
+import pulmonologistImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#0b5560",

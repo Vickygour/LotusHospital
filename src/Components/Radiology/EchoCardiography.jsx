@@ -8,7 +8,7 @@ import { FaHeart, FaStethoscope, FaUserMd, FaWaveSquare } from "react-icons/fa";
 import echoBanner from "../../assets/Echo1.jpg"; // hero banner for echo
 import heartDiagram from "../../assets/Echo2.jpg"; // anatomy diagram
 import echoSample from "../../assets/Echo3.jpg"; // sample echocardiogram image
-import cardiologistImg from "../../assets/img2.png"; // doctor photo
+import cardiologistImg from "../../assets/Vector.jpg"; // doctor photo
 const COLORS = {
   deep: "#0b5560",
   accent: "#19a6a6",

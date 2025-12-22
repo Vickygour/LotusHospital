@@ -6,7 +6,7 @@ import { Phone, CheckCircle, ClipboardList, X } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 
 // --- ASSETS & CONFIGURATION (Updated imports to ensure all icons are available) ---
-import doctorImg from "../../assets/doctorImage.jpg";
+import doctorImg from "../../assets/Vector.jpg";
 import dentalPatientImg from "../../assets/dentalPatientImg.webp";
 import dentalBanner from "../../assets/DentalBanner.jpg";
 // Specific Icons

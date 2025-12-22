@@ -1,7 +1,7 @@
 // src/Components/facilities/ENT.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import doctorImg from "../../assets/doctorImage.jpg";
+import doctorImg from "../../assets/Vector.jpg";
 import patientImg from "../../assets/patient.jpeg";
 import { Phone, X } from "lucide-react";
 import banner from "../../assets/BannerGyno.jpg";

@@ -1,7 +1,7 @@
 // src/Components/facilities/Paediatrics.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import doctorImg from "../../assets/doctorImage.jpg";
+import doctorImg from "../../assets/Vector.jpg";
 import patientImg from "../../assets/patient.jpeg";
 import { Phone } from "lucide-react";
 // Banner (reuse existing banner asset)

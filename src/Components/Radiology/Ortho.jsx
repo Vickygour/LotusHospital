@@ -14,7 +14,7 @@ import {
 import orthoBanner from "../../assets/OrthoBanner.jpg";
 import orthoTheatre from "../../assets/Ortho1.jpg";
 import orthoXraySample from "../../assets/Ortho2.jpg";
-import orthoDocImg from "../../assets/img2.png";
+import orthoDocImg from "../../assets/Vector.jpg";
 const COLORS = {
   deep: "#18394a", // deep blue-green
   accent: "#1fa6a6",

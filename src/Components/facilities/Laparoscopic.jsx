@@ -4,7 +4,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Phone } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
-import doctorImg from "../../assets/doctorImage.jpg";
+import doctorImg from "../../assets/Vector.jpg";
 import patientImg from "../../assets/patient.jpeg";
 import gynecologyBanner from "../../assets/BannerGyno.jpg"; // Asset name kept as requested
 import icon1 from "../../assets/GynoVector/21afaf9e283cebe5cd63cce585c93953.svg";

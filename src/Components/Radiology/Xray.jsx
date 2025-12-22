@@ -7,7 +7,7 @@ import { FaXRay, FaBone, FaBaby, FaUserMd } from "react-icons/fa";
 import xrayBanner from "../../assets/XrayBanner.jpg";
 import xrayMachine from "../../assets/Xray1.jpg";
 import xrayImage from "../../assets/Xray2.jpg";
-import radiologistImg from "../../assets/img2.png";
+import radiologistImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#16324a",

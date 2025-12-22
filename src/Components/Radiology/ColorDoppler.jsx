@@ -8,7 +8,7 @@ import { FaHeartbeat, FaSyringe, FaWalking, FaBaby } from "react-icons/fa";
 import dopplerBanner from "../../assets/ColorBanner.jpg";
 import dopplerMachine from "../../assets/color1.jpg";
 import dopplerReadout from "../../assets/color2.jpg";
-import patientImg from "../../assets/doppler3.jpg";
+import patientImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#0a566a",

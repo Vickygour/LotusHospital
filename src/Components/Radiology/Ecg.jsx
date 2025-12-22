@@ -8,7 +8,7 @@ import { FaHeartbeat, FaSearch, FaRunning, FaTint } from "react-icons/fa";
 import ecgBanner from "../../assets/ECGBanner.jpg";
 import ecgMachine from "../../assets/heart_diagram.jpg";
 import ecgReadout from "../../assets/Ecg_ReadOut.png";
-import patientImg from "../../assets/patient.jpeg";
+import patientImg from "../../assets/Vector.jpg";
 
 const COLORS = {
   deep: "#0f3b5a", // Deep Blue
