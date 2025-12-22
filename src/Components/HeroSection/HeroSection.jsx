@@ -10,6 +10,9 @@ import Sunil from "../../assets/SunilSir.jpg";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import LogoCarousel from "../LogoCarousel";
+import boy1 from "../../assets/boy1testimonial.jpg";
+import boy from "../../assets/boytestimonial.jpg";
+import girl from "../../assets/girltestimonial.jpg";
 
 import {
   ChevronLeft,
@@ -234,7 +237,7 @@ const HeroSection = () => {
         "Their doctors include highly qualified practitioners who come from a range of backgrounds & bring with them a diversity of skills and special interests. They also registered nurses available to triage any urgent matters, and the administration and staff all have exceptional skills!!",
       author: "Sarthak",
       role: "Promina",
-      avatar: "https://i.pravatar.cc/100?img=12",
+      avatar: boy,
     },
     {
       id: 2,
@@ -242,7 +245,7 @@ const HeroSection = () => {
         "The medical care provided was exceptional. The staff was professional, caring, and always available when needed. I highly recommend their services to anyone looking for quality healthcare.",
       author: "Nikhil Sarthak",
       role: "Healthcare Professional",
-      avatar: "https://i.pravatar.cc/100?img=33",
+      avatar: boy1,
     },
     {
       id: 3,
@@ -250,7 +253,7 @@ const HeroSection = () => {
         "Outstanding service from start to finish. The doctors took time to explain everything clearly and the support team was incredibly helpful throughout my treatment journey.",
       author: "Khushi Naik",
       role: "Patient",
-      avatar: "https://i.pravatar.cc/100?img=45",
+      avatar: girl,
     },
   ];
 

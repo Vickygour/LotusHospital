@@ -5,8 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Phone } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import doctorImg from "../../assets/Vector.jpg";
-import patientImg from "../../assets/patient.jpeg";
-import gynecologyBanner from "../../assets/BannerGyno.jpg"; // Asset name kept as requested
+import patientImg from "../../assets/LaproPatient.jpg";
+import gynecologyBanner from "../../assets/Laprobanner.jpg"; // Asset name kept as requested
 import icon1 from "../../assets/GynoVector/21afaf9e283cebe5cd63cce585c93953.svg";
 import icon3 from "../../assets/GynoVector/38e537276497b3f1b97ad38a0c8d9391.svg";
 import icon9 from "../../assets/GynoVector/d3fbf9e3c0b27457e243a9795d8d7039.svg";
@@ -55,26 +55,26 @@ const SERVICES = [
   {
     id: 1,
     img: icon1,
-    title: "General Surgical Excellence (MIS)",
-    desc: "We perform routine and complex general surgeries—including **cholecystectomy, hernia repair, and splenectomy**—using minimally invasive techniques for superior patient outcomes and cosmesis.",
+    title: "Advanced Minimally Invasive Surgery",
+    desc: "Our surgical department specializes in high-precision procedures such as cholecystectomy, complex hernia repairs, and splenectomy. By utilizing small-incision techniques, we ensure that patients experience significantly less pain, reduced blood loss, and minimal scarring compared to traditional open surgeries, leading to a much smoother clinical journey.",
   },
   {
     id: 3,
     img: icon3,
-    title: "State-of-the-Art Technology",
-    desc: "Our operating theatres are equipped with **4K Ultra-HD Visualization Systems** and advanced energy devices, ensuring microscopic precision and the safest surgical environment.",
+    title: "High-Definition Surgical Infrastructure",
+    desc: "Precision in surgery depends on visibility. Our operating suites are integrated with 4K Ultra-HD Visualization Systems that provide our surgeons with unparalleled clarity. Combined with next-generation energy devices for tissue sealing, this technology ensures maximum safety and microscopic accuracy even in the most delicate internal procedures.",
   },
   {
     id: 7,
     img: icon9,
-    title: "Fellowship-Trained Surgeons",
-    desc: "Our specialists are highly credentialed, many holding advanced **Fellowships in Minimally Invasive and Bariatric Surgery**, offering world-class expertise right here at Lotus Hospital.",
+    title: "Elite Clinical Leadership",
+    desc: "Quality healthcare is driven by expertise. Our surgical team comprises highly credentialed specialists who have earned advanced Fellowships in Minimally Invasive and Bariatric Surgery from world-renowned institutions. This level of specialization allows Lotus Hospital to offer complex surgical solutions that were previously only available in Tier-1 global medical centers.",
   },
   {
     id: 10,
     img: icon10,
-    title: "Enhanced Recovery After Surgery (ERAS)",
-    desc: "We utilize tailored ERAS protocols, focusing on preemptive pain control, early mobilization, and optimal nutrition to accelerate recovery and minimize post-operative complications.",
+    title: "Comprehensive Enhanced Recovery Protocols",
+    desc: "Recovery is just as important as the surgery itself. We implement tailored ERAS protocols designed to accelerate your return to daily life. This holistic approach includes preemptive pain management to reduce dependency on heavy medication, early mobilization techniques, and optimized nutritional support to prevent post-operative complications and shorten hospital stays.",
   },
 ];
 
@@ -281,11 +281,23 @@ export default function Laparoscopic() {
                 </p>
                 <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <a
-                    href="/contact"
+                    href="https://wa.me/919210399470?text=Hi, I would like to book an appointment."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg text-white font-medium text-sm sm:text-base hover:opacity-90 transition-opacity"
                     style={{ background: COLORS.accent }}
                   >
-                    Request Appointment
+                    {/* WhatsApp Icon (Optional but recommended) */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.972L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.479 1.338-.942.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                    Book via WhatsApp
                   </a>
 
                   <a
@@ -450,11 +462,23 @@ export default function Laparoscopic() {
               </div>
               <div className="mt-4">
                 <a
-                  href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-3 px-4 py-2 rounded-lg text-white font-medium"
+                  href="https://wa.me/919210399470?text=Hi, I would like to book an appointment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg text-white font-medium text-sm sm:text-base hover:opacity-90 transition-opacity"
                   style={{ background: COLORS.accent }}
                 >
-                  Book Appointment
+                  {/* WhatsApp Icon (Optional but recommended) */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.972L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.479 1.338-.942.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                  </svg>
+                  Book an Appointment
                 </a>
               </div>
               <div className="mt-4 text-xs text-gray-500">

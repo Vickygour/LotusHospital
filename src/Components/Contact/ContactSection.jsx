@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   MapPin,
   Phone,
@@ -8,44 +8,44 @@ import {
   Heart,
   Plus,
   Minus,
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [expandedFaq, setExpandedFaq] = useState(3);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contact: '',
-    message: '',
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
   // Initialize EmailJS with your Public Key
   useEffect(() => {
-    emailjs.init('SrovcxuzWh0xOEnOl'); // Replace with your actual public key
+    emailjs.init("SrovcxuzWh0xOEnOl"); // Replace with your actual public key
   }, []);
 
   const faqs = [
     {
       id: 1,
-      question: 'How can I book an appointment at Lotus Hospital?',
+      question: "How can I book an appointment at Lotus Hospital?",
       answer:
-        'You can book an appointment by filling out the enquiry form on our website, calling our reception desk, or visiting Lotus Hospital in person. Our staff will assist you in scheduling an appointment with the appropriate doctor or department.',
+        "You can book an appointment by filling out the enquiry form on our website, calling our reception desk, or visiting Lotus Hospital in person. Our staff will assist you in scheduling an appointment with the appropriate doctor or department.",
     },
     {
       id: 2,
-      question: 'Do I need an appointment before visiting the hospital?',
+      question: "Do I need an appointment before visiting the hospital?",
       answer:
-        'While walk-in patients are accepted in certain cases, we recommend booking an appointment in advance to reduce waiting time and ensure the availability of the concerned doctor, especially for specialist consultations.',
+        "While walk-in patients are accepted in certain cases, we recommend booking an appointment in advance to reduce waiting time and ensure the availability of the concerned doctor, especially for specialist consultations.",
     },
     {
       id: 3,
-      question: 'What should I bring for my first visit?',
+      question: "What should I bring for my first visit?",
       answer:
-        'For your first visit, please bring a valid ID, any previous medical reports, prescriptions, test results, and your health insurance details (if applicable). This helps our doctors understand your medical history better.',
+        "For your first visit, please bring a valid ID, any previous medical reports, prescriptions, test results, and your health insurance details (if applicable). This helps our doctors understand your medical history better.",
     },
   ];
 
@@ -65,37 +65,37 @@ const ContactSection = () => {
     // EmailJS send method
     emailjs
       .send(
-        'service_rnn3l8m', // Replace with your EmailJS Service ID
-        'template_x7e1fjv', // Replace with your EmailJS Template ID
+        "service_rnn3l8m", // Replace with your EmailJS Service ID
+        "template_x7e1fjv", // Replace with your EmailJS Template ID
         {
           name: formData.name,
           email: formData.email,
           contact: formData.contact,
           message: formData.message,
-        },
+        }
       )
       .then(
         (result) => {
-          console.log('Email sent successfully:', result.text);
-          setSubmitStatus('success');
+          console.log("Email sent successfully:", result.text);
+          setSubmitStatus("success");
           setLoading(false);
           // Reset form
           setFormData({
-            name: '',
-            email: '',
-            contact: '',
-            message: '',
+            name: "",
+            email: "",
+            contact: "",
+            message: "",
           });
           // Clear success message after 5 seconds
           setTimeout(() => setSubmitStatus(null), 5000);
         },
         (error) => {
-          console.log('Email send failed:', error.text);
-          setSubmitStatus('error');
+          console.log("Email send failed:", error.text);
+          setSubmitStatus("error");
           setLoading(false);
           // Clear error message after 5 seconds
           setTimeout(() => setSubmitStatus(null), 5000);
-        },
+        }
       );
   };
 
@@ -182,17 +182,17 @@ const ContactSection = () => {
                   disabled={loading}
                   className="w-full bg-[#283B6A] hover:bg-[#1f2e52] text-white py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {loading ? 'Sending...' : 'Submit Enquiry'}
+                  {loading ? "Sending..." : "Submit Enquiry"}
                 </button>
 
                 {/* Success/Error Messages */}
-                {submitStatus === 'success' && (
+                {submitStatus === "success" && (
                   <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
                     Your message has been sent successfully! We will contact you
                     soon.
                   </div>
                 )}
-                {submitStatus === 'error' && (
+                {submitStatus === "error" && (
                   <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">
                     Failed to send message. Please try again or contact us
                     directly.
@@ -206,9 +206,9 @@ const ContactSection = () => {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
               style={{
                 backgroundImage:
-                  'url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=1000&fit=crop)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                  "url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=1000&fit=crop)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#283B6A]/95 to-[#13C5DD]/90"></div>
@@ -224,11 +224,25 @@ const ContactSection = () => {
                     family's health matters.
                   </p>
                 </div>
-                <Link to="/Contact">
-                  <button className="bg-white text-[#283B6A] px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg self-start">
-                    Book an Appointment
-                  </button>
-                </Link>
+                <a
+                  href="https://wa.me/919210399470?text=Hi, I would like to book an appointment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg text-white font-medium text-sm sm:text-base hover:opacity-90 transition-opacity"
+                  style={{ background: "#283B6A" }}
+                >
+                  {/* WhatsApp Icon (Optional but recommended) */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.972L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.479 1.338-.942.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                  </svg>
+                  Book An Appointment
+                </a>
               </div>
             </div>
           </div>
@@ -308,8 +322,8 @@ const ContactSection = () => {
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
                         expandedFaq === faq.id
-                          ? 'max-h-96 opacity-100'
-                          : 'max-h-0 opacity-0'
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="px-6 pb-6">
