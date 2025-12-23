@@ -1,5 +1,5 @@
 // src/Components/Header/Header.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   Phone,
   MapPin,
@@ -8,29 +8,30 @@ import {
   Menu,
   X,
   ChevronDown,
-} from 'lucide-react';
-import logo from '../../assets/Lotusss.png';
-import { Link, useLocation } from 'react-router-dom';
-import gynecology from '../../assets/GynoVector/gynoicon.svg';
-import dental from '../../assets/GynoVector/dentalIcon.svg';
-import lapro from '../../assets/GynoVector/laproicon.svg';
-import urology from '../../assets/GynoVector/urologyicon.svg';
-import ent from '../../assets/GynoVector/enticon.svg';
-import physi from '../../assets/GynoVector/physiicon.svg';
-import pedi from '../../assets/GynoVector/child_careicon.svg';
-import xray from '../../assets/GynoVector/xrayicon.svg';
-import lab from '../../assets/GynoVector/laboicon.svg';
-import ortho from '../../assets/GynoVector/orthoicon.svg';
-import ultra from '../../assets/GynoVector/ultraicon.svg';
-import pulmo from '../../assets/GynoVector/pulmonaryicon.svg';
-import ecg from '../../assets/GynoVector/Copilot_20251129_152104.png';
-import color from '../../assets/GynoVector/a2vcolor.svg';
-import echo from '../../assets/GynoVector/Echocardiographyicon.svg';
-import laser from '../../assets/GynoVector/a2vlaser.svg';
+} from "lucide-react";
+import logo from "../../assets/Lotusss.png";
+import { Link, useLocation } from "react-router-dom";
+import gynecology from "../../assets/GynoVector/gynoicon.svg";
+import dental from "../../assets/GynoVector/dentalIcon.svg";
+import lapro from "../../assets/GynoVector/laproicon.svg";
+import urology from "../../assets/GynoVector/urologyicon.svg";
+import ent from "../../assets/GynoVector/enticon.svg";
+import physi from "../../assets/GynoVector/physiicon.svg";
+import pedi from "../../assets/GynoVector/child_careicon.svg";
+import xray from "../../assets/GynoVector/xrayicon.svg";
+import lab from "../../assets/GynoVector/laboicon.svg";
+import ortho from "../../assets/GynoVector/orthoicon.svg";
+import ultra from "../../assets/GynoVector/ultraicon.svg";
+import pulmo from "../../assets/GynoVector/pulmonaryicon.svg";
+import ecg from "../../assets/GynoVector/Copilot_20251129_152104.png";
+import color from "../../assets/GynoVector/a2vcolor.svg";
+import echo from "../../assets/GynoVector/Echocardiographyicon.svg";
+import laser from "../../assets/GynoVector/a2vlaser.svg";
+import girl from "../../assets/girltestimonial.jpg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Home');
+  const [activeLink, setActiveLink] = useState("Home");
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileMegaMenuOpen, setMobileMegaMenuOpen] = useState(false);
@@ -46,59 +47,59 @@ const Header = () => {
   // Facilities
   const facilities = [
     {
-      name: 'Obstetric and Gynaecology',
-      path: '/facilities/Gynecology',
+      name: "Obstetric and Gynaecology",
+      path: "/facilities/Gynecology",
       src: gynecology,
     },
     {
-      name: 'Laparoscopic Surgery',
-      path: '/facilities/Laparoscopic',
+      name: "Laparoscopic Surgery",
+      path: "/facilities/Laparoscopic",
       src: lapro,
     },
     {
-      name: 'Dental and Cosmetics',
-      path: '/facilities/Dental',
+      name: "Dental and Cosmetics",
+      path: "/facilities/Dental",
       src: dental,
     },
-    { name: 'Laser Surgery', path: '/facilities/Laser', src: laser },
+    { name: "Laser Surgery", path: "/facilities/Laser", src: laser },
     {
-      name: 'Urological Surgery',
-      path: '/facilities/urological',
+      name: "Urological Surgery",
+      path: "/facilities/urological",
       src: urology,
     },
-    { name: 'Physiotherapy', path: '/facilities/physiotherapy', src: physi },
-    { name: 'Pediatrics', path: '/facilities/pediatrics', src: pedi },
-    { name: 'ENT', path: '/facilities/Ent', src: ent },
+    { name: "Physiotherapy", path: "/facilities/physiotherapy", src: physi },
+    { name: "Pediatrics", path: "/facilities/pediatrics", src: pedi },
+    { name: "ENT", path: "/facilities/Ent", src: ent },
   ];
 
   // Radiology
   const radiology = [
-    { name: 'ECG', path: '/Radiology/ecg', src: ecg },
-    { name: 'Color Doppler', path: '/Radiology/color-doppler', src: color },
-    { name: 'Path Lab', path: '/Radiology/path-lab', src: lab },
-    { name: 'X-Ray', path: '/Radiology/XRay', src: xray },
-    { name: 'Ultra-Sound', path: '/Radiology/ultrasound', src: ultra },
-    { name: 'Echocardiography', path: '/Radiology/echo', src: echo },
-    { name: 'Pulmonary', path: '/Radiology/pulmonary', src: pulmo },
-    { name: 'ORTHO', path: '/Radiology/ortho', src: ortho },
+    { name: "ECG", path: "/Radiology/ecg", src: ecg },
+    { name: "Color Doppler", path: "/Radiology/color-doppler", src: color },
+    { name: "Path Lab", path: "/Radiology/path-lab", src: lab },
+    { name: "X-Ray", path: "/Radiology/XRay", src: xray },
+    { name: "Ultra-Sound", path: "/Radiology/ultrasound", src: ultra },
+    { name: "Echocardiography", path: "/Radiology/echo", src: echo },
+    { name: "Pulmonary", path: "/Radiology/pulmonary", src: pulmo },
+    { name: "ORTHO", path: "/Radiology/ortho", src: ortho },
   ];
 
   // Services
   const servicesItems = [
-    { name: 'Admission Process', path: '/Admission' },
-    { name: 'Room Facilities', path: '/services/room-facilities' },
-    { name: 'Pharmacy Service', path: '/services/pharmacy' },
-    { name: 'Ambulance Service', path: '/services/ambulance' },
+    { name: "Admission Process", path: "/Admission" },
+    { name: "Room Facilities", path: "/services/room-facilities" },
+    { name: "Pharmacy Service", path: "/services/pharmacy" },
+    { name: "Ambulance Service", path: "/services/ambulance" },
   ];
 
   const navigationItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/About-us' },
-    { name: 'Our Specialties', path: '/departments', hasMegaMenu: true },
-    { name: 'Doctors', path: '/DoctorsPage' },
-    { name: 'TPA Insurance', path: '#', isComingSoon: true }, // ⭐ UPDATED
-    { name: 'Services', path: '/Service', hasDropdown: true },
-    { name: 'Contact', path: '/Contact' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/About-us" },
+    { name: "Our Specialties", path: "/departments", hasMegaMenu: true },
+    { name: "Doctors", path: "/DoctorsPage" },
+    { name: "TPA Insurance", path: "#", isComingSoon: true }, // ⭐ UPDATED
+    { name: "Services", path: "/Service", hasDropdown: true },
+    { name: "Contact", path: "/Contact" },
   ];
 
   const location = useLocation();
@@ -121,18 +122,18 @@ const Header = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
@@ -175,18 +176,18 @@ const Header = () => {
     const el = headerRef.current;
     if (!el) return;
     const h = Math.ceil(el.getBoundingClientRect().height);
-    document.documentElement.style.setProperty('--header-height', `${h}px`);
-    document.documentElement.style.setProperty('scroll-padding-top', `${h}px`);
+    document.documentElement.style.setProperty("--header-height", `${h}px`);
+    document.documentElement.style.setProperty("scroll-padding-top", `${h}px`);
   };
 
   useEffect(() => {
     setHeaderHeightVar();
     const onResize = () => setHeaderHeightVar();
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
 
-    if (typeof ResizeObserver !== 'undefined' && headerRef.current) {
+    if (typeof ResizeObserver !== "undefined" && headerRef.current) {
       resizeObserverRef.current = new ResizeObserver(() =>
-        setHeaderHeightVar(),
+        setHeaderHeightVar()
       );
       resizeObserverRef.current.observe(headerRef.current);
     }
@@ -194,7 +195,7 @@ const Header = () => {
     const t = setTimeout(setHeaderHeightVar, 50);
 
     return () => {
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("resize", onResize);
       clearTimeout(t);
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
     };
@@ -265,7 +266,7 @@ const Header = () => {
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center flex-shrink-0">
-              <Link to="/" onClick={() => handleLinkClick('Home')}>
+              <Link to="/" onClick={() => handleLinkClick("Home")}>
                 <img
                   src={logo}
                   alt="Hospital Logo"
@@ -305,18 +306,18 @@ const Header = () => {
                   {item.hasMegaMenu ? (
                     <>
                       <button className="relative text-[#1B5FA3] font-medium hover:text-[#1F9C9C] transition-colors duration-300 py-2 flex items-center gap-1 text-sm xl:text-base whitespace-nowrap">
-                        <span className={megaMenuOpen ? 'text-[#1F9C9C]' : ''}>
+                        <span className={megaMenuOpen ? "text-[#1F9C9C]" : ""}>
                           {item.name}
                         </span>
                         <ChevronDown
                           size={16}
                           className={`transition-transform duration-300 ${
-                            megaMenuOpen ? 'rotate-180' : ''
+                            megaMenuOpen ? "rotate-180" : ""
                           }`}
                         />
                         <span
                           className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                            megaMenuOpen ? 'w-full' : 'w-0'
+                            megaMenuOpen ? "w-full" : "w-0"
                           }`}
                         />
                       </button>
@@ -325,10 +326,10 @@ const Header = () => {
                       <div
                         className={`fixed left-1/2 -translate-x-1/2 mt-2 w-[90vw] max-w-7xl bg-white shadow-2xl rounded-lg border border-gray-100 z-50 transition-all duration-300 origin-top ${
                           megaMenuOpen
-                            ? 'opacity-100 visible scale-100'
-                            : 'opacity-0 invisible scale-95'
+                            ? "opacity-100 visible scale-100"
+                            : "opacity-0 invisible scale-95"
                         }`}
-                        style={{ top: 'var(--header-height, 120px)' }}
+                        style={{ top: "var(--header-height, 120px)" }}
                       >
                         <div className="grid grid-cols-1 md:grid-cols-3 divide-x divide-gray-200">
                           {/* Facilities */}
@@ -388,47 +389,169 @@ const Header = () => {
                           </div>
 
                           {/* CTA Section */}
-                          <div className="bg-gradient-to-br from-cyan-400 to-blue-500 p-4 xl:p-6 rounded-r-lg">
-                            <h3 className="text-base xl:text-lg font-bold text-white mb-4">
-                              ■ FACILITIES
-                            </h3>
-                            <div className="bg-white rounded-lg p-3 xl:p-4 mb-4 shadow-lg">
-                              <p className="text-xs xl:text-sm text-gray-700 mb-3">
-                                Cashless facility for Delhi University, TPDDL
-                                and All leading Medical Insurance Co 24/7
-                                emergency service
-                              </p>
-                              <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg p-3 flex items-center justify-center h-24 xl:h-32 mb-3">
-                                <div className="text-center">
-                                  <div className="w-12 h-12 xl:w-16 xl:h-16 bg-white rounded-full mx-auto mb-2 flex items-center justify-center shadow-md">
+                          <div className="bg-gradient-to-br from-[#0891b2] to-[#1e40af] p-3 xl:p-5 rounded-r-3xl shadow-2xl h-full flex flex-col relative overflow-hidden group">
+                            {/* Decorative Background Elements */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-cyan-400/10 transition-all duration-700"></div>
+                            <div className="absolute bottom-20 -left-10 w-24 h-24 bg-blue-400/10 rounded-full blur-2xl"></div>
+
+                            <div className="flex-grow space-y-5">
+                              {/* Header Section */}
+                              <div className="flex justify-between items-center border-b border-white/10 pb-4">
+                                <div className="flex flex-col">
+                                  <h3 className="text-xl xl:text-2xl font-black text-white leading-none tracking-tighter">
+                                    LOTUS{" "}
+                                    <span className="text-cyan-300 underline decoration-cyan-500/30">
+                                      HOSPITAL
+                                    </span>
+                                  </h3>
+                                  <span className="text-[9px] font-bold text-cyan-200/70 uppercase tracking-[0.2em] mt-1">
+                                    Multi-Speciality Centre
+                                  </span>
+                                </div>
+                                <div className="bg-green-500/10 border border-green-500/30 px-2 py-1 rounded-md flex items-center gap-1.5 backdrop-blur-sm">
+                                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_#4ade80]"></span>
+                                  <span className="text-[10px] font-black text-green-400 uppercase tracking-tight">
+                                    Active
+                                  </span>
+                                </div>
+                              </div>
+
+                              {/* Main Highlights Section */}
+                              <div className="space-y-4">
+                                <div className="space-y-1">
+                                  <h4 className="text-[11px] font-black text-cyan-300 uppercase tracking-widest">
+                                    Advanced Healthcare
+                                  </h4>
+                                  <p className="text-[18px] xl:text-[22px] text-white leading-tight font-black">
+                                    Specialized Care. <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-200">
+                                      Personalized Touch.
+                                    </span>
+                                  </p>
+                                </div>
+
+                                <p className="text-[13px] xl:text-[14px] text-cyan-50/80 leading-relaxed font-medium">
+                                  Experience{" "}
+                                  <span className="text-white font-bold italic underline decoration-cyan-400">
+                                    Next-Gen Surgery
+                                  </span>{" "}
+                                  with 4K Laparoscopic tech and 24/7 ICU support
+                                  at Delhi's leading surgical hub.
+                                </p>
+
+                                {/* Feature Icons Grid - Space Filler */}
+                                <div className="grid grid-cols-3 gap-3 pt-2">
+                                  <div className="flex flex-col items-center gap-1.5 bg-white/5 p-2 rounded-xl border border-white/10 hover:bg-white/10 transition-colors cursor-default">
                                     <svg
-                                      className="w-6 h-6 xl:w-10 xl:h-10 text-[#1B5FA3]"
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
+                                      className="w-5 h-5 text-cyan-300"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
                                     >
                                       <path
-                                        fillRule="evenodd"
-                                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                        clipRule="evenodd"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"
                                       />
                                     </svg>
+                                    <span className="text-[9px] text-white/70 font-bold uppercase tracking-tighter">
+                                      Emergency
+                                    </span>
                                   </div>
-                                  <p className="text-xs text-gray-600 font-medium">
-                                    Doctor Image Here
+                                  <div className="flex flex-col items-center gap-1.5 bg-white/5 p-2 rounded-xl border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                                    <svg
+                                      className="w-5 h-5 text-cyan-300"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                      />
+                                    </svg>
+                                    <span className="text-[9px] text-white/70 font-bold uppercase tracking-tighter">
+                                      Safe Care
+                                    </span>
+                                  </div>
+                                  <div className="flex flex-col items-center gap-1.5 bg-white/5 p-2 rounded-xl border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                                    <svg
+                                      className="w-5 h-5 text-cyan-300"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.727 2.903a2 2 0 01-1.18 1.18L3 14.28a2 2 0 00-.776-1.554l-1.414-1.414a2 2 0 01.554-1.554l2.121-2.121a2 2 0 011.554-.554l1.414 1.414a2 2 0 001.554.776l5.053-.553a2 2 0 011.18 1.18l.727 2.903a2 2 0 001.96 1.414l2.387-.477a2 2 0 001.022-.547l1.414-1.414a2 2 0 011.554-.554l2.121 2.121a2 2 0 01.554 1.554l-1.414 1.414a2 2 0 00-.547 1.022z"
+                                      />
+                                    </svg>
+                                    <span className="text-[9px] text-white/70 font-bold uppercase tracking-tighter">
+                                      Expertise
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Contact Card Section */}
+                              <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-2xl flex items-center gap-2 border border-white shadow-cyan-900/20">
+                                <div className="relative flex-shrink-0">
+                                  <img
+                                    src={girl}
+                                    className="w-14 h-14 rounded-2xl object-cover ring-2 ring-cyan-50 shadow-lg"
+                                  />
+                                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full shadow-lg"></div>
+                                </div>
+                                <div className="min-w-0">
+                                  <h5 className="text-[14px] font-black text-slate-900 truncate">
+                                    Priya Sharma
+                                  </h5>
+                                  <p className="text-[11px] text-cyan-600 font-bold uppercase tracking-tight">
+                                    Patient Care Manager
+                                  </p>
+                                  <p className="text-[10px] text-slate-400 font-medium italic mt-0.5">
+                                    Assisting with Bookings Now
                                   </p>
                                 </div>
                               </div>
-                              <input
-                                type="text"
-                                placeholder="Department & Doctor Name"
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs xl:text-sm focus:outline-none focus:ring-2 focus:ring-[#1F9C9C]"
-                              />
                             </div>
-                            <a href="tel:+919210399470">
-                              <button className="w-full bg-white text-[#1B5FA3] py-2 xl:py-2.5 rounded-md font-semibold text-xs xl:text-sm hover:bg-gray-50 transition-colors shadow-md hover:shadow-lg">
-                                BOOK CONSULTATION
-                              </button>
-                            </a>
+
+                            {/* Footer CTA */}
+                            <div className="mt-8 space-y-3">
+                              <a
+                                href="tel:+919210399470"
+                                className="block transform transition-transform hover:scale-[1.02] active:scale-95"
+                              >
+                                <button className="w-full bg-cyan-400 hover:bg-white text-blue-900 py-4 rounded-2xl font-black text-sm transition-all shadow-[0_15px_30px_-5px_rgba(34,211,238,0.4)] flex items-center justify-center gap-2">
+                                  <div className="bg-blue-900/10 p-1.5 rounded-lg">
+                                    <svg
+                                      className="w-4 h-4 text-blue-900"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="3"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                      />
+                                    </svg>
+                                  </div>
+                                  BOOK APPOINTMENT NOW
+                                </button>
+                              </a>
+                              <div className="flex items-center justify-center gap-2 text-[10px] text-white/50 font-bold tracking-widest uppercase">
+                                <span>No Wait Time</span>
+                                <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+                                <span>Express Care</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -438,7 +561,7 @@ const Header = () => {
                       <button className="relative text-[#1B5FA3] font-medium hover:text-[#1F9C9C] transition-colors duration-300 py-2 flex items-center gap-1 text-sm xl:text-base whitespace-nowrap">
                         <span
                           className={
-                            servicesDropdownOpen ? 'text-[#1F9C9C]' : ''
+                            servicesDropdownOpen ? "text-[#1F9C9C]" : ""
                           }
                         >
                           {item.name}
@@ -446,12 +569,12 @@ const Header = () => {
                         <ChevronDown
                           size={16}
                           className={`transition-transform duration-300 ${
-                            servicesDropdownOpen ? 'rotate-180' : ''
+                            servicesDropdownOpen ? "rotate-180" : ""
                           }`}
                         />
                         <span
                           className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                            servicesDropdownOpen ? 'w-full' : 'w-0'
+                            servicesDropdownOpen ? "w-full" : "w-0"
                           }`}
                         />
                       </button>
@@ -460,10 +583,10 @@ const Header = () => {
                       <div
                         className={`absolute left-0 mt-2 w-56 bg-white shadow-xl rounded-lg border border-gray-100 z-50 transition-all duration-300 origin-top ${
                           servicesDropdownOpen
-                            ? 'opacity-100 visible scale-100'
-                            : 'opacity-0 invisible scale-95'
+                            ? "opacity-100 visible scale-100"
+                            : "opacity-0 invisible scale-95"
                         }`}
-                        style={{ top: 'calc(100% + 8px)' }}
+                        style={{ top: "calc(100% + 8px)" }}
                       >
                         <div className="py-2">
                           {servicesItems.map((service, index) => (
@@ -499,14 +622,14 @@ const Header = () => {
                     >
                       <span
                         className={
-                          activeLink === item.name ? 'text-[#1F9C9C]' : ''
+                          activeLink === item.name ? "text-[#1F9C9C]" : ""
                         }
                       >
                         {item.name}
                       </span>
                       <span
                         className={`absolute -bottom-1 left-0 h-0.5 bg-[#1F9C9C] transition-all duration-300 ease-out ${
-                          activeLink === item.name ? 'w-full' : 'w-0'
+                          activeLink === item.name ? "w-full" : "w-0"
                         }`}
                       />
                     </Link>
@@ -553,15 +676,15 @@ const Header = () => {
         <div
           className={`lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
             mobileMenuOpen
-              ? 'opacity-100 pointer-events-auto'
-              : 'opacity-0 pointer-events-none'
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
           }`}
           onClick={() => setMobileMenuOpen(false)}
-          style={{ top: 'var(--header-height, 120px)' }}
+          style={{ top: "var(--header-height, 120px)" }}
         >
           <div
             className={`bg-white w-full max-w-sm ml-auto h-full overflow-y-auto no-scrollbar shadow-2xl transform transition-transform duration-300 ${
-              mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -580,7 +703,7 @@ const Header = () => {
                         <ChevronDown
                           size={18}
                           className={`transition-transform duration-300 ${
-                            mobileMegaMenuOpen ? 'rotate-180' : ''
+                            mobileMegaMenuOpen ? "rotate-180" : ""
                           }`}
                         />
                       </button>
@@ -645,7 +768,7 @@ const Header = () => {
                         <ChevronDown
                           size={18}
                           className={`transition-transform duration-300 ${
-                            mobileServicesOpen ? 'rotate-180' : ''
+                            mobileServicesOpen ? "rotate-180" : ""
                           }`}
                         />
                       </button>
@@ -681,8 +804,8 @@ const Header = () => {
                       to={item.path}
                       className={`block px-6 py-4 font-medium hover:bg-gray-50 transition-colors border-b border-gray-100 ${
                         activeLink === item.name
-                          ? 'text-[#1F9C9C] bg-cyan-50'
-                          : 'text-[#1B5FA3]'
+                          ? "text-[#1F9C9C] bg-cyan-50"
+                          : "text-[#1B5FA3]"
                       }`}
                       onClick={() => handleLinkClick(item.name)}
                     >
